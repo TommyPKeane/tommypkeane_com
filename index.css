@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "Bungee Shade";
+  src: url("/fonts/Bungee_Shade/BungeeShade-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Fredericka the Great";
+  src: url("/fonts/Fredericka_the_Great/FrederickatheGreat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Fredoka One";
+  src: url("/fonts/Fredoka_One/FredokaOne-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Love Ya Like A Sister";
+  src: url("/fonts/Love_Ya_Like_A_Sister/LoveYaLikeASister-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("/fonts/Patrick_Hand/PatrickHand-Regular.ttf");
+}
+
+:root {
+  --var-font-block: "Bungee Shade", sans-serif;
+  --var-font-common: "Fredoka One", sans-serif;
+  --var-font-special: "Fredericka the Great", sans-serif;
+  --var-font-text-serif: "Love Ya Like A Sister", sans-serif;
+  --var-font-text: "Patrick Hand", sans-serif;
+}
+
+h1.h1_me {
+  font-family: var(--var-font-text-serif);
+}
+
+p {
+  font-family: sans-serif;
+  font-family: var(--var-font-text);
+}
+
+body {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0.25vw;
+  margin-right: auto;
+  margin-bottom: 0.35vw;
+  margin-left: auto;
+  width: 70vw;
+  background-color: navajowhite;
+}
+
+header {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0.25vw;
+  margin-right: auto;
+  margin-bottom: 0.35vw;
+  margin-left: auto;
+  width: 70%;
+  font-size: 1.0vw;
+}
+
+header div.title_container {
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 0.25vw;
+  margin-right: auto;
+  margin-bottom: 0.35vw;
+  margin-left: auto;
+}
+
+header div.title_container h1,
+header div.title_container h2 {
+  display: inline-block;
+  margin-top: 0.10vw;
+  margin-bottom: 0.10vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+header div.title_container h1.h1_special {
+  font-family: var(--var-font-special);
+  color: crimson;
+  font-size: 3rem;
+}
+
+header div.title_container h1.h1_common {
+  font-family: var(--var-font-common);
+  color: cadetblue;
+  font-size: 2.25rem;
+}
+
+header div.title_container#div_me a {
+  text-decoration: none;
+  color: orange;
+}
+
+header div.title_container#div_me a:visited h1 {
+  color: coral;
+  opacity: 0.7;
+}
+
+header div.title_container#div_me a:hover h1 {
+  color: darkorchid;
+  opacity: 1.0;
+}
+
+header div.title_container#div_me a h1 {
+  font-family: var(--var-font-block);
+  font-size: 2rem;
+}
+
+header p {
+  font-family: var(--var-font-text);
+  color: crimson;
+  text-shadow: 2px 1px 3px lightgray;
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.65;
+}
+
+header p tt {
+  font-size: 0.8rem;
+}
+
+main {
+}
+
+main article {
+}
+
+main article header {
+}
+
+main article header h1 {
+  font-family: var(--var-font-common);
+  color: cadetblue;
+  font-size: 2.25rem;
+  font-weight: 400;
+}
+
+main article div.article_body {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main article div.article_body p {
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75;
+  letter-spacing: 2px;
+  font-family: var(--var-font-text);
+  color: seagreen;
+  width: 80%;
+}
+
+code.hljs {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  width: 100%;
+}
