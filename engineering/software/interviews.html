@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tommypkeane_eng_sw_interviews</title>
+  <link rel="stylesheet" href="/index.css">
+  <script src="/libs/mathjax/tex-svg-full.js" id="MathJax-script" defer></script>
+  <link rel="stylesheet" href="/libs/highlight-js/styles/default.css">
+  <script src="/libs/highlight-js/highlight.pack.js" id="Highlight-js-script"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <header>
+    <div id="div_me" class="title_container">
+      <a href="/index.html">
+        <h1 class="h1_me">tommy p. keane</h1>
+      </a>
+    </div>
+    <div class="title_container">
+      <h1 class="h1_special">Software</h1>
+      <h1 class="h1_common">Engineering</h1>
+    </div>
+    <div class="subtitle_container">
+      <h1>Coding Interviews</h1>
+    </div>
+    <p>Code and Examples I've collected from online research, interview preparations, and from interviews I've gone through for Full-Stack Developer and Software Engineer roles. These are collected by memory, or are derived from any reference materials as noted. Explanations and documentation herein are my own.</p>
+    <p>To not accidentally contribute to any plagiarism from web-searches, my <tt>robots.txt</tt> is disabling crawlers and any questions that I've recreated from memory from an interview will not indicate the company/site where I ran into the question(s) or problem(s).</p>
+    <p>My Academic background is in Electrical Engineering and Imaging Science, specializing in applied mathematics and statistics in multi-dimensional Signal Processing. Without a formal Computer Science education, I've not run into a lot of the &ldquo;Big-O&rdquo; Notation concepts and recursion optimization problems that typically arise in Software Engineering interviews. As I advance in my career as a Software Engineer, Data Scientist, Data Engineer, and Test Engineer, documenting these concepts help solidify them for me since I don't usually run into them in any actual professional work -- so they're good refreshes every few years if needing to go through more interviews.</p>
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>Fibonnacci Recursion</h1>
+      </header>
+      <div class="article_body">
+        $$F_{0} \overset{\Delta}{=} 0$$
+        $$F_{1} \overset{\Delta}{=} 1$$
+        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <pre>
+          <code class="python">
+          def get_fibonacci(n):
+            """Compute the Fibonacci Number given the index.
+
+            Note that this is a recursive function.
+
+            Args:
+              n (int): Sequence index of Fibonacci Number to compute (Natural Number)
+            Returns:
+              int: Fibonacci Number
+            """
+            fib = None;
+            if (n == 0):
+              fib = 0;
+            elif (n == 1):
+              fib = 1;
+            else:
+              if (n < 0):
+                raise ValueError("n must be a Natural number");
+              else:
+                fib = get_fibonacci(n - 1) + get_fibonacci(n - 2);
+              # fi
+            # fi
+            return fib;
+          # fed
+          </code>
+        </pre>
+      </div>
+      <footer>
+      </footer>
+    </article>
+    <article>
+      <header>
+        <h1>Fibonnacci &ldquo;Dynamic Programming&rdquo;</h1>
+      </header>
+      <div class="article_body">
+        $$F_{0} \overset{\Delta}{=} 0$$
+        $$F_{1} \overset{\Delta}{=} 1$$
+        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <pre>
+          <code class="python">
+          def get_fibonacci_numbers_upto(N):
+            """Compute the first N Fibonacci Numbers (starting at index 0).
+
+            Args:
+              N (int): Count of the First N Fibonacci Numbers to compute (Natural Number)
+            Returns:
+              list: The first N Fibonacci Numbers
+            """
+            fibs = [0, 1];
+            for n in range(2, N, 1):
+              fibs.append(fibs[n - 1] + fibs[n - 2]);
+            # rof
+            return fibs;
+          # fed
+          </code>
+        </pre>
+      </div>
+      <footer>
+      </footer>
+    </article>
+    <article>
+      <header>
+        <h1>Prime Numbers</h1>
+      </header>
+      <div class="article_body">
+        <p>A <b>Prime Number</b>, by definition, is a Natural Number (\(\mathbb{N}\)) that is only divisible by itself and \(1\), within the set of Natural Numbers.</p>
+        <p>The following is a naive approach to compare float-division and integer-division between the number-under-test and all the Natural Numbers that are less than the number-under-test. Since we know that all Natural Numbers are divisible by \(1\), we can make the minor optimization to skip it and start at \(2\). This also simplifies the conditional logic to determine if the number-under-test is a <b>Prime Number</b> or not.</p>
+        <p>This is not necessarily optimized as it tests basically every possible Natural Number. For small numbers-under-test, the comparison set of Natural Numbers will be relatively small, but this approach scales linearly with \(x\), the number-under-test. This means that it is faster to check if \(10\) is a Prime Number, than it is to check if \(100\) is.</p>
+        <p>Arguably, this is how it usually is for Prime Numbers, so as long as you're only testing relatively small numbers, this shouldn't be too bad of an implementation.</p>
+        <pre>
+          <code class="python">
+          def is_prime(x):
+            """Determine if x is a Prime Number.
+
+            Args:
+              x (int): The value to test (Natural Number).
+            Returns:
+              bool: Is x a Prime Number?
+            """
+            answer = True;
+            if (x < 2):
+              answer = False;
+            else:
+              for i in range(2, x, 1):
+                if ((x / i) == (x // i)):
+                  answer = False;
+                  break;
+                # fi
+              # rof
+            # fi
+            return answer;
+          # fed
+          </code>
+        </pre>
+        <p>How could we optimize this?</p>
+        <p>One approach may be to approach this as a reverse-sorting operation, so instead of stepping through all comparison divisors incrementally, we could instead jump around in a random or algorithmic fashion to try to lower the average number of iterations needed to find a valid divisor.</p>
+        <p>Obviously, this would not optimize the iterations for a Prime Number, since it would have to go through all iterations anyways, to prove that it is a Prime Number.</p>
+        <p>Another optimization, though risky, could be to allow a threshold argument for the function. By following one of the optimized sorting-algorithm approaches, we could potentially say something like: &ldquo;we've jumped around enough that we have like 80% certainty that this is a Prime Number&rdquo;. In that case, with the threshold argument being \(0.80\), we could stop the iterations and return an "80% Confident" boolean value indicating that the value is a Prime Number.</p>
+        <p>The risk here is that our "search" algorithm needs to be reasonable and robust enough, that we actually can trust this "confidence" threshold value's judgement/alignment.</p>
+      </div>
+      <footer>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
