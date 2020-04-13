@@ -148,6 +148,11 @@ main article div.article_body {
   margin-right: auto;
 }
 
+main article header h1:hover {
+  color: coral;
+  cursor: row-resize;
+}
+
 main article div.article_body p {
   text-align: justify;
   margin-left: auto;
