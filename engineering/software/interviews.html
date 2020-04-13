@@ -24,17 +24,22 @@
     </div>
     <p>Code and Examples I've collected from online research, interview preparations, and from interviews I've gone through for Full-Stack Developer and Software Engineer roles. These are collected by memory, or are derived from any reference materials as noted. Explanations and documentation herein are my own.</p>
     <p>To not accidentally contribute to any plagiarism from web-searches, my <tt>robots.txt</tt> is disabling crawlers and any questions that I've recreated from memory from an interview will not indicate the company/site where I ran into the question(s) or problem(s).</p>
-    <p>My Academic background is in Electrical Engineering and Imaging Science, specializing in applied mathematics and statistics in multi-dimensional Signal Processing. Without a formal Computer Science education, I've not run into a lot of the &ldquo;Big-O&rdquo; Notation concepts and recursion optimization problems that typically arise in Software Engineering interviews. As I advance in my career as a Software Engineer, Data Scientist, Data Engineer, and Test Engineer, documenting these concepts help solidify them for me since I don't usually run into them in any actual professional work -- so they're good refreshes every few years if needing to go through more interviews.</p>
+    <p>My Academic background is in Electrical Engineering and Imaging Science, specializing in applied mathematics and statistics in Signal Processing. Without a formal Computer Science education, I've not run into a lot of the &ldquo;Big-O&rdquo; Notation concepts and recursion optimization problems that typically arise in Software Engineering interviews. As I advance in my career as a Software Engineer, Data Scientist, Data Engineer, and Test Engineer, documenting these concepts help solidify them for me since I don't usually run into them in any actual professional work -- so they're good refreshes every few years if needing to go through more interviews.</p>
+    <p>Click on the titles to expand each section -- or <u style="cursor: pointer;" onclick="fn_post_load();">click here</u> to toggle them all.</p>
   </header>
   <main>
     <article>
       <header>
-        <h1>Fibonnacci Recursion</h1>
+        <h1 onclick="fn_toggle('id_fibonacci_recursive', 'block');">Fibonnacci Recursion</h1>
       </header>
-      <div class="article_body">
+      <div id="id_fibonacci_recursive" class="article_body">
+        <p>The <b>Fibonacci Sequence</b> is made up of <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci Numbers</a> which are <a href="https://en.wikipedia.org/wiki/Natural_number" title="Positive Integer values exclusively greater-than (or equal to) zero.">Natural Numbers</a> derived according to the following equation:</p>
+        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <p>As a recursive mathematical function, any \(F_{n}\) is derived from the two preceeding Fibonacci Numbers in the sequence. Since everything has to start somewhere, and \(n\) is restricted to the <b>Natural Numbers</b>, we have these two initial Fibonacci Number definitions:</p>
         $$F_{0} \overset{\Delta}{=} 0$$
         $$F_{1} \overset{\Delta}{=} 1$$
-        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <p>So, if we wanted to implement the equation for \(F_{n}\) as a recursive programmatic function, we also need to first establish those same initial conditions. And since we only want to compute Fibonacci Numbers from Natural Numbers for the Fibonacci Index, \(n\), then we need to also restrict the function argument.</p>
+        <p>Below is a simple example in Python 3.x notation of a recursive function for getting any Fibonacci Number of index \(n\) simply by providing \(n\).</p>
         <pre>
           <code class="python">
           def get_fibonacci(n):
@@ -63,18 +68,28 @@
           # fed
           </code>
         </pre>
+        <p>The nested conditionals provide all the checks for a valid index, and whether its one of the initial condition indices. This should prevent any false results by simply raising a <tt>ValueError</tt> exception if an invalid value of \(n\) is provided.</p>
+        <p>Could this be optimized? or is this non-optimal?</p>
+        <p>It's hard to argue that this isn't succinct, but operationally it's going to be a bit expensive since it will result in a growing number of function calls as \(n\) gets larger and larger.</p>
+        <p>Each time <tt>get_fibonacci()</tt> is called explicitly, it will allocate its local variables automatically (in this case) in the stack-RAM, taking up a block/chunk of the stack. But then, when it is called implicitly through the recursion during the explicit external call, those "inner" calls also need their own local space in the stack-RAM and we now need new pointers to return to the proper outer scope when the computation/call is finished.</p>
+        <p>This function will then potentially eat-up a relatively large amount of RAM for a reasonably large value of \(n\) that should otherwise seem computationally tangible.</p>
+        <p>Recursion, therefore, is succinct but not necessarily optimized for computational efficiency.</p>
       </div>
       <footer>
       </footer>
     </article>
     <article>
       <header>
-        <h1>Fibonnacci &ldquo;Dynamic Programming&rdquo;</h1>
+        <h1 onclick="fn_toggle('id_fibonacci_dynamic', 'block');">Fibonnacci &ldquo;Dynamic Programming&rdquo;</h1>
       </header>
-      <div class="article_body">
+      <div  id="id_fibonacci_dynamic" class="article_body">
+        <p>From the previous example, we again have the definition of a Fibonacci Number given a Fibonacci index: \(n\), shown below:</p>
+        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <p>And, we also have the initial conditions:</p>
         $$F_{0} \overset{\Delta}{=} 0$$
         $$F_{1} \overset{\Delta}{=} 1$$
-        $$F_{n} = F_{n-1} + F_{n-2},\,\forall n \in \mathbb{N}_{2}$$
+        <p>The previous example followed the mathematical function to implement a programmatically recursive function that relied on calling itself. The issue that approach can have is that it may be seen or may become quite computationally inefficient, especially given such a simple circumstance.</p>
+        <p>One alternative approach is usually referred to as recursion-unwinding through "Dynamic Programming". Instead of recursively calling a simple function, we can make a slightly more complex function that relies on iterative computations to dynamically allocate/generate the Fibonacci Numbers. Here is a simple example using Python v3 notation:</p>
         <pre>
           <code class="python">
           def get_fibonacci_numbers_upto(N):
@@ -93,16 +108,27 @@
           # fed
           </code>
         </pre>
+        <p>Unfortunately, this is not exactly the same exact implementation as the first example.</p>
+        <p>Here, we are computing the first-\(N\) Fibonacci Numbers, not just computing the \(n\)-th number. But, since it's a recursive Function mathematically, in either approach we actually are computing all the previous Fibonacci Numbers to get to the one we're looking for.</p>
+        <p>It's just that in the recursive example, we didn't write-out or return the previous values for longterm storage. But, as a simple approach, we append all of the values to the local array <tt>fibs</tt>, in this "Dynamic Programming" example.</p>
+        <p>To get the very same functionality, we could simply change <tt>return fibs;</tt> to be <tt>return fibs[-1];</tt>, and we'd have the same results.</p>
+        <p>Is this optimal? or is this computationally efficient?</p>
+        <p>This is arguably a more computationally efficient approach since there's a lot less call-stack overhead to this method, but we're retaining and returning the entire array of Fibonacci Numbers, so again we're still growing with the size of \(N\) -- this is why this is the "Dynamic Programming" approach, since we're using a dynamically-sized array.</p>
+        <p>While we can't do it in one function, alone, we could optimize this further through what's known as <b>memoization</b> or <b>caching</b>. So that if we called this function with 5 and then with 7, the call to 7 should reuse all the values computed in the call with 5.</p>
+        <p>A way to do this would be to move <tt>fibs</tt> to exist in the outer, global scope so that is preserved through the lifetime of the application. Then, as long as the application is running, any call would check the size of <tt>fibs</tt>, and it wouldn't always run <tt>range(2, N, 1)</tt> but would instead run over <tt>range(L, N, 1)</tt> where <tt>L = len(fibs)</tt>. The array <tt>fibs</tt> would be memoized or cached, in the sense that its previous uses wouldn't be lost after the function returns.</p>
+        <p>The "weirdness", here, though, would be that calling the function with 30,000 the first time might take a little while, but then a call of 30,001 would be almost instant, save for the dynamic allocation costs of moving a 30,000 length array around. And, at that point, any call with any value less than 30,001 would actually be basically instant because it wouldn't need to loop at all.</p>
+        <p>The downside of caching is that you're going to have that array of numbers, which you may or may not ever use, hanging around for the runtime of the application, and unless you write it out to disk, you're going to lose it on each run of the application. It's only going to gain you efficiency in certain cases, and only when it's used a lot or quite repeatedly. In those repetitive cases though, it may not be bad to further "optimize" the runtime by simply pre-allocating the array with a function call with a large enough \(N\) during the program start-up. It'll add a start-up delay, but at that point you've created a Lookup Table that will make most, if not all calls, fairly instant.</p>
+        <p>There are always further optimizations, but readability is one of the best antidotes to bugs.</p>
       </div>
       <footer>
       </footer>
     </article>
     <article>
       <header>
-        <h1>Prime Numbers</h1>
+        <h1 onclick="fn_toggle('id_prime_numbers', 'block');">Prime Numbers</h1>
       </header>
-      <div class="article_body">
-        <p>A <b>Prime Number</b>, by definition, is a Natural Number (\(\mathbb{N}\)) that is only divisible by itself and \(1\), within the set of Natural Numbers.</p>
+      <div id="id_prime_numbers" class="article_body">
+        <p>A <a href="https://en.wikipedia.org/wiki/Prime_number">Prime Number</a>, by definition, is a Natural Number (\(\mathbb{N}\)) that is only divisible by itself and \(1\), within the set of Natural Numbers.</p>
         <p>The following is a naive approach to compare float-division and integer-division between the number-under-test and all the Natural Numbers that are less than the number-under-test. Since we know that all Natural Numbers are divisible by \(1\), we can make the minor optimization to skip it and start at \(2\). This also simplifies the conditional logic to determine if the number-under-test is a <b>Prime Number</b> or not.</p>
         <p>This is not necessarily optimized as it tests basically every possible Natural Number. For small numbers-under-test, the comparison set of Natural Numbers will be relatively small, but this approach scales linearly with \(x\), the number-under-test. This means that it is faster to check if \(10\) is a Prime Number, than it is to check if \(100\) is.</p>
         <p>Arguably, this is how it usually is for Prime Numbers, so as long as you're only testing relatively small numbers, this shouldn't be too bad of an implementation.</p>
@@ -135,11 +161,12 @@
         <p>One approach may be to approach this as a reverse-sorting operation, so instead of stepping through all comparison divisors incrementally, we could instead jump around in a random or algorithmic fashion to try to lower the average number of iterations needed to find a valid divisor.</p>
         <p>Obviously, this would not optimize the iterations for a Prime Number, since it would have to go through all iterations anyways, to prove that it is a Prime Number.</p>
         <p>Another optimization, though risky, could be to allow a threshold argument for the function. By following one of the optimized sorting-algorithm approaches, we could potentially say something like: &ldquo;we've jumped around enough that we have like 80% certainty that this is a Prime Number&rdquo;. In that case, with the threshold argument being \(0.80\), we could stop the iterations and return an "80% Confident" boolean value indicating that the value is a Prime Number.</p>
-        <p>The risk here is that our "search" algorithm needs to be reasonable and robust enough, that we actually can trust this "confidence" threshold value's judgement/alignment.</p>
+        <p>The risk here is that our "search" algorithm needs to be reasonable and robust enough, so that we actually can trust this "confidence" threshold value's judgement/alignment.</p>
       </div>
       <footer>
       </footer>
     </article>
   </main>
+  <script type="text/javascript" src="/index.js"></script>
 </body>
 </html>
