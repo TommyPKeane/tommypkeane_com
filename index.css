@@ -29,6 +29,15 @@
   --var-font-special: "Fredericka the Great", sans-serif;
   --var-font-text-serif: "Love Ya Like A Sister", sans-serif;
   --var-font-text: "Patrick Hand", sans-serif;
+
+  --var-colour-blk-brdr: coral;
+  --var-colour-blk-shdw: gray;
+  --var-colour-blk-bvl-lt: white;
+  --var-colour-blk-bvl-dk: lightgray;
+  --var-colour-blk-bg: lavender;
+  --var-colour-blk-bg-hvr: lightblue;
+  --var-colour-blk-txt: darkseagreen;
+  --var-colour-blk-txt-shdw: darkolivegreen;
 }
 
 h1.h1_me {
@@ -126,6 +135,53 @@ header p tt {
 }
 
 main {
+}
+
+main div.link_block {
+  width: 20vw;
+  padding-top: 1vw;
+  padding-right: 1vw;
+  padding-bottom: 1vw;
+  padding-left: 1vw;
+  background-color: var(--var-colour-blk-bg);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--var-colour-blk-brdr);
+  border-top-right-radius: 1vw;
+  border-bottom-right-radius: 1vw;
+  border-bottom-left-radius: 1vw;
+  border-top-left-radius: 1vw;
+  box-shadow: -5px 5px 3px 1px var(--var-colour-blk-shdw),
+    2px -2px 3px 1px lightgray inset,
+    -2px 2px 3px 1px white inset;
+}
+
+main div.link_block:hover {
+  box-shadow: -2px 2px 3px 5px var(--var-colour-blk-shdw) inset;
+  background-color: var(--var-colour-blk-bg-hvr);
+}
+
+main div.link_block a {
+  text-decoration: none;
+  color: var(--var-colour-blk-txt);
+  text-shadow: -1px 1px 0px var(--var-colour-blk-txt-shdw);
+}
+
+main div.link_block:hover a {
+  color: var(--var-colour-blk-txt);
+  text-shadow: -2px 2px 1px var(--var-colour-blk-txt-shdw);
+}
+
+main div.link_block a h1 {
+  font-size: 2.25vw;
+}
+
+main div.link_block a p,
+main div.link_block:hover a p {
+  font-size: 1.15vw;
+  color: var(--var-colour-blk-txt-shdw);
+  text-shadow: none;
 }
 
 main article {
