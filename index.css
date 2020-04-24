@@ -128,6 +128,9 @@ header p {
   font-size: 1rem;
   text-align: justify;
   line-height: 1.65;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header p tt {
@@ -213,7 +216,7 @@ main article div.article_body p {
   text-align: justify;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.75;
+  line-height: 2.00;
   letter-spacing: 2px;
   font-family: var(--var-font-text);
   color: seagreen;
@@ -225,4 +228,58 @@ code.hljs {
   margin-right: auto;
   text-align: left;
   width: 100%;
+}
+
+div.article_body table.tb_data_maths {
+  margin-left: auto;
+  margin-right: auto;
+  color: seagreen;
+  font-family: var(--var-font-text);
+  font-size: 120%;
+}
+
+div.article_body table.tb_data_maths tr td,
+div.article_body table.tb_data_maths tr th {
+  text-align: center;
+  font-family: monospace;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+div.article_body table.tb_data_maths tr:nth-child(even) td {
+  background-color: mistyrose;
+}
+
+div.article_body table.tb_data_maths tr:nth-child(odd) td {
+  background-color: moccasin; 
+}
+
+div.article_body table.tb_data_maths tr th:first-child,
+div.article_body table.tb_data_maths tr td:first-child {
+  text-align: right;
+}
+
+div.article_body table.tb_data_maths caption {
+  white-space: nowrap;
+  overflow-x: visible;
+  font-size: 80%;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+
+div.article_body table.tb_data_maths caption:before {
+  content: "Table: ";
+  font-weight: bold;
+}
+
+div.article_body table.tb_data_maths caption a {
+  color: rebeccapurple;
+}
+
+div.article_body table.tb_data_maths caption a:visited {
+  color: salmon;
+}
+
+mjx-container {
+  color: seagreen;
 }
