@@ -49,6 +49,12 @@ p {
   font-family: var(--var-font-text);
 }
 
+html {
+  background-image: url("/images/frond-palm-04.svg");
+  background-size: 300px 300px;
+  background-repeat: repeat;
+}
+
 body {
   text-align: center;
   vertical-align: middle;
