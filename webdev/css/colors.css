@@ -1,0 +1,34 @@
+div.demo_color_block_container {
+   display: inline-block;
+   text-align: center;
+   vertical-align: top;
+   width: 12vw;
+   margin-top: 0.25vw;
+   margin-right: 0.25vw;
+   margin-bottom: 1.25vw;
+   margin-left: 0.25vw;
+}
+
+div.demo_color_block_container div.demo_color_block {
+   width: 10vw;
+   height: 10vw;
+   border-radius: 2vw;
+   margin-top: 0vw;
+   margin-right: auto;
+   margin-bottom: 0.50vw;
+   margin-left: auto;
+   box-shadow: 0.25vw 0.25vw 0.15vw rgba(0, 0, 0, 0.25);
+}
+
+main article div.article_body div.demo_color_block_container p {
+   display: block;
+   font-family: var(--var-font-text-serif);
+   color: black;
+   text-align: center;
+   line-height: 1.00;
+   font-size: 0.65vw;
+   margin-top: 0vw;
+   margin-right: auto;
+   margin-bottom: 0.45vw;
+   margin-left: auto;
+}
