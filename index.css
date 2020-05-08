@@ -30,18 +30,14 @@
   --var-font-text-serif: "Love Ya Like A Sister", sans-serif;
   --var-font-text: "Patrick Hand", sans-serif;
 
-  --var-colour-blk-brdr: coral;
-  --var-colour-blk-shdw: gray;
+  --var-colour-blk-brdr: none;
+  --var-colour-blk-shdw: salmon;
   --var-colour-blk-bvl-lt: white;
   --var-colour-blk-bvl-dk: lightgray;
   --var-colour-blk-bg: lavender;
   --var-colour-blk-bg-hvr: lightblue;
   --var-colour-blk-txt: darkseagreen;
   --var-colour-blk-txt-shdw: darkolivegreen;
-}
-
-h1.h1_me {
-  font-family: var(--var-font-text-serif);
 }
 
 p {
@@ -56,14 +52,20 @@ html {
 }
 
 body {
+  border-radius: 2vw;
   text-align: center;
   vertical-align: middle;
-  margin-top: 0.25vw;
+  margin-top: 3.25vw;
   margin-right: auto;
   margin-bottom: 0.35vw;
   margin-left: auto;
+  padding-top: 0.25vw;
+  padding-right: 0vw;
+  padding-bottom: 0.35vw;
+  padding-left: 0vw;
   width: 70vw;
   background-color: navajowhite;
+  box-shadow: -1vw 1vw 0.5vw rgba(0, 0, 0, 0.35);
 }
 
 header {
@@ -71,7 +73,7 @@ header {
   vertical-align: middle;
   margin-top: 0.25vw;
   margin-right: auto;
-  margin-bottom: 0.35vw;
+  margin-bottom: 2.35vw;
   margin-left: auto;
   width: 70%;
   font-size: 1.0vw;
@@ -87,12 +89,49 @@ header div.title_container {
 }
 
 header div.title_container h1,
-header div.title_container h2 {
+header div.title_container h2,
+header div.title_container h3 {
   display: inline-block;
   margin-top: 0.10vw;
   margin-bottom: 0.10vw;
   margin-left: 1vw;
   margin-right: 1vw;
+}
+
+header div.title_container h1.h1_me {
+  font-family: var(--var-font-special);
+  font-size: 6vw;
+  color: var(--var-colour-blk-shdw);
+  margin-bottom: 0.85vw;
+}
+
+header div.title_container h2.h2_me {
+  display: block;
+  font-family: var(--var-font-common);
+  color: seagreen;
+  margin-bottom: 0.55vw;
+}
+
+header div.title_container h3 {
+  font-family: var(--var-font-common);
+  color: seagreen;
+  margin-right: 0.35vw;
+  margin-left: 0.35vw;
+}
+
+header div.title_container h3 {
+  font-family: var(--var-font-common);
+  color: lightseagreen;
+  margin-top: 0.55vw;
+  margin-right: 0.35vw;
+  margin-left: 0.35vw;
+}
+
+header div.title_container h4 {
+  font-family: var(--var-font-common);
+  color: salmon;
+  margin-right: 0.35vw;
+  margin-left: 0.35vw;
 }
 
 header div.title_container h1.h1_special {
@@ -147,15 +186,20 @@ main {
 }
 
 main div.link_block {
-  width: 20vw;
+  width: 15vw;
+  min-height: 8vw;
+  display: inline-block;
+  vertical-align: middle;
   padding-top: 1vw;
   padding-right: 1vw;
   padding-bottom: 1vw;
   padding-left: 1vw;
+  margin-top: auto;
+  margin-right: 2vw;
+  margin-bottom: 2vw;
+  margin-left: 2vw;
   background-color: var(--var-colour-blk-bg);
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   border: 2px solid var(--var-colour-blk-brdr);
   border-top-right-radius: 1vw;
   border-bottom-right-radius: 1vw;
@@ -171,19 +215,21 @@ main div.link_block:hover {
   background-color: var(--var-colour-blk-bg-hvr);
 }
 
-main div.link_block a {
+main a {
+  vertical-align: middle;
   text-decoration: none;
   color: var(--var-colour-blk-txt);
   text-shadow: -1px 1px 0px var(--var-colour-blk-txt-shdw);
 }
 
-main div.link_block:hover a {
+main a:hover div.link_block {
   color: var(--var-colour-blk-txt);
   text-shadow: -2px 2px 1px var(--var-colour-blk-txt-shdw);
 }
 
-main div.link_block a h1 {
+main div.link_block h1 {
   font-size: 2.25vw;
+  vertical-align: middle;
 }
 
 main div.link_block a p,
