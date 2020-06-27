@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <!--[if IE]><link rel="shortcut icon" href="{{ico_file}}" type="image/x-icon"><![endif]-->
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body>
+    <header>
+      {{{header_contents}}}
+    </header>
+    <main>
+      {{{main_contents}}}
+    </main>
+    <footer>
+      {{{footer_contents}}}
+    </footer>
+    {{#scriptfiles}}
+      <script type="text/javascript" src="{{scriptname}}"></script>
+    {{/scriptfiles}}
+  </body>
+</html>
