@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>tommypkeane_science_data_probability_interview_questions</title>
+  <link rel="stylesheet" href="/index.css">
+  <script src="/libs/mathjax/tex-svg-full.js" id="MathJax-script" defer></script>
+  <link rel="stylesheet" href="/libs/highlight-js/styles/default.css">
+  <script src="/libs/highlight-js/highlight.pack.js" id="Highlight-js-script"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+  <header>
+    <div id="div_me" class="title_container">
+      <a href="/index.html">
+        <h1 class="h1_me">tommy p. keane</h1>
+      </a>
+    </div>
+    <div class="title_container">
+      <h1 class="h1_special">Data Science</h1>
+      <h1 class="h1_common">Probability</h1>
+    </div>
+    <div class="subtitle_container">
+      <h1>Interview Questions</h1>
+    </div>
+    <p>Personally, I've found that Interview Questions for Data Science on Probability are (like Software Engineering interviews) usually more formula-based than application-based.</p>
+    <p>When working with a new dataset, these are topics that you'll need to know or "have in your back pocket" to get some familiarity with the dataset, but they're very unlikely to be used, alone, to actually <i>do</i> the Data Science work or analytics in a product. Most of these items can be chalked-up to memorizing some trivia about Probability relationships and formulas, though they are certainly not trivial. The realistic caveat is that rarely will you be forced to know these things off the top of your head, at the drop of a hat, during your day to day work in Data Science or Machine Learning. In an actual job, you'll have access to research references, you'll be writing code with tests and verifications by using standard libraries, and you'll be expected to produce a summarizing report that you've presumably reviewed and edited before sharing it.</p>
+    <p>So, while these may be necessary "factoids" to show Data Science knowledge, I don't consider them to accurately represent skill or expertise. But, you gotta do what you gotta do.</p>
+    <p>Click on the titles to expand each section -- or <u style="cursor: pointer;" onclick="fn_post_load();">click here</u> to toggle them all.</p>
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1 onclick="fn_toggle('id_probability_classifier_binary', 'block');">Probabilities for a Binary Classifier</h1>
+      </header>
+      <div id="id_probability_classifier_binary" class="article_body">
+        <p>This example is hard to name, because it's basically a question about using the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a> and the equations for <a href="https://en.wikipedia.org/wiki/Conditional_probability">Conditional Probability</a> (often called <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">Bayes' Theorem</a>). The caveat here is that it's usually going to be presented as a word-problem, with the expectation that you recognize the problem, know the equations, and have access to a simple calculator to compute the probability value in-question. It's a "trick" question in the sense that there's a "trick" to it, but it's otherwise pretty simplistic.</p>
+        <p>In a Data Science career, you would run across this whenever using Binary Classification (two classes), but it's not really as informative as descriptive statistics. Basically, you shouldn't rely on this computation to be the end-all/be-all summary of a Binary Classifier, because, if anything, it inspires a bunch of follow-up questions from stakeholders and other engineers/scientists, which you'd be expected to answer thoughtfully and well-informedly.</p>
+        <p>But anways, here is an example of this kind of question:</p>
+        <p><i>Say that there is a disease that affects 1% of the Population, but you have a test for the disease. Your test has a true-negative rate of 3% and a false-negative rate of 6%. If someone takes the test and it says they have the disease, what is the Probability that they actually have the disease, as shown by your test?</i></p>
+        <p>First thing to recognize is that the question itself is looking for a <b>Probability of Accuracy</b>, and this is what leads to the assumption that you know and recognize an application of the <a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a>. So for convience, let's summarize that here, first:</p>
+        <p><a href="https://en.wikipedia.org/wiki/Law_of_total_probability">Law of Total Probability</a> is basically a definition that shows that if you can take the support of an Event (its "sample space") and partition it, completely (non-overlapping segmentation), then you can relate the Probability of that Event (\(A\)) to the Joint Probabilities betwen \(A\) and all the partition Events \(B_{i}\):</p>
+        $$P(A) = \sum_{i=1}^{N}\biggl(P(A\cap B_{i})\biggr)$$
+        <p>Essentially, this is saying that you can relate the Probability of something to the Joint Probabilities between that thing and its partitions (subset) of outcomes (events).</p>
+        <p>Back to the question, we're being asked to find "[i]f someone takes the test and it says they have the disease, what is the Probability that they actually have the disease [...]?". So let's say that the Probability of a Positive Outcome of the test is \(P(S)\), and the Probability of a Negative Outcome of the test is \(P(G)\); we can also say that there's an objective Probability of having the disease, \(P(D)\), and an objective Probability of not having the disease (being well), \(P(W)\). Let's clarify these relationships:</p>
+        $$P(S) = 1 - P(N)$$
+        $$P(D) = 1 - P(W)$$
+        <p>So, the question we're being asked is: if the test has shown a positive outcome, what is the likelihood that you actually have the disease? Which we can formulate as:</p>
+        $$P(D\mid S) =\, ???$$
+        <p>The positive (successful) test outcome is the (pre-)condition on the question of the probability of actually having the disease. So that's great, we've isolated the question and turned it into a Probability value that we now just need to compute. Obviously we're missing some kind of equivalence formula here for a conditional probability, so that we can compute it from the numbers we were given, so let's next expand out the conditional probability into an equation base on the rules for <a href="https://en.wikipedia.org/wiki/Conditional_probability">Conditional Probabilities</a>:</p>
+        $$P(X \mid Y) = \frac{P(X \cap Y)}{P(Y)}$$
+        <p>So, now we can show:</p>
+        $$P(D \mid S) = \frac{P(D \cap S)}{P(S)}$$
+        <p>But, obviously, we now need to understand what values we were given in the question.</p>
+        <p>So first, we're told that "there is a disease that affects 1% of the Population", which means that \(P(D) = 0.01\), so that also means that \(P(W) = 0.99\).</p>
+        <p>Next, we told about the True Negative (\(TN\)) and False Negative (\(FN\)) rates:</p>
+        $$TNR = 0.03$$
+        $$FNR = 0.06$$
+        <p>If we go back to our known equation, we see that we have two unknown values:</p>
+        $$P(D \mid S) = \frac{P(D \cap S)}{P(S)}$$
+        $$P(D \cap S) =\, ???$$
+        $$P(S) =\, ???$$
+        <p>First, from the Law of Total Probability, we can say that we know the denominator is:</p>
+        $$P(S) = P(D \cap S) + P(W \cap S)$$
+        <p>And this is because our Probability of a positive test is partitioned only by whether the person tested has the disease (\(D\)) or not (is well: \(W\)). Note, also, that (by definition):</p>
+        $$P(X \cap Y) \equiv P(Y \cap X)$$
+        <p>So now we still have two unknowns:</p>
+        $$P(D \mid S) = \frac{P(D \cap S)}{P(D \cap S) + P(W \cap S)}$$
+        $$P(D \cap S) =\, ???$$
+        $$P(W \cap S) =\, ???$$
+        <p>However, this is an easier formulation because these are all Joint Probabilities that we should recognize as the rates from the <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion Matrix</a> values for the test.</p>
+        <p>The <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion Matrix</a> of the test has four elements: \(TP\), \(TN\), \(FP\), and \(FN\), which are expressed as:</p>
+        $$TPR = P(S \mid D) = \frac{P(S \cap D)}{P(D)} = 1 - FNR$$
+        $$FPR = P(S \mid W) = \frac{P(S \cap W)}{P(W)} = 1 - TNR$$
+        $$TNR = P(G \mid W) = \frac{P(G \cap W)}{P(W)} = 1 - FPR$$
+        $$FNR = P(G \mid D) = \frac{P(G \cap D)}{P(D)} = 1 - TPR$$
+        <p>And we also have their conditional duals as the detection rates:</p>
+        $$PPV = P(D \mid S) = \frac{P(D \cap S)}{P(S)} = 1 - FDR$$
+        $$FDR = P(W \mid S) = \frac{P(W \cap S)}{P(S)} = 1 - PPV$$
+        $$NPV = P(W \mid G) = \frac{P(W \cap G)}{P(G)} = 1 - FOR$$
+        $$FOR = P(D \mid G) = \frac{P(D \cap G)}{P(G)} = 1 - NPV$$
+        <p>Let's now use Bayes' Theorem and show:</p>
+        $$P(D \mid S) = \frac{P(S \mid D) \cdot P(D)}{P(S)}$$
+        $$P(D \mid S) = \frac{TPR \cdot P(D)}{P(S)}$$
+        $$P(D \mid S) = \frac{(1 - FNR) \cdot P(D)}{P(S)}$$
+        <p>So now our right-hand side of the equation is down to 1 unknown: \(P(S)\), which we had defined above from the Law of Total Probability:</p>
+        $$P(S) = P(D \cap S) + P(W \cap S)$$
+        $$P(S) = P(S \cap D) + P(S \cap W)$$
+        $$P(S) = \biggl(P(S \mid D) \cdot P(D)\biggr) + \biggl(P(S \mid W) \cdot P(W)\biggr)$$
+        $$P(S) = \biggl(TPR \cdot P(D)\biggr) + \biggl(FPR \cdot P(W)\biggr)$$
+        $$P(S) = \biggl((1 - FNR) \cdot P(D)\biggr) + \biggl((1 - TNR) \cdot (1 - P(D))\biggr)$$
+        <p>So, finally, we have elminated all our unknowns through equality substitions and we have:</p>
+        $$P(D \mid S) = \frac{(1 - FNR) \cdot P(D)}{(1 - FNR) \cdot P(D) + (1 - TNR) \cdot (1 - P(D))}$$
+        <p>And we can fill in our values:</p>
+        $$FNR = 0.06$$
+        $$TNR = 0.03$$
+        $$P(D) = 0.01$$
+        <p>... giving us:</p>
+        $$P(D \mid S) = \frac{(1 - FNR) \cdot P(D)}{(1 - FNR) \cdot P(D) + (1 - TNR) \cdot (1 - P(D))}$$
+        $$P(D \mid S) = \frac{(1 - 0.06) \cdot 0.01}{(1 - 0.06) \cdot 0.01 + (1 - 0.03) \cdot (1 - 0.01)}$$
+        $$P(D \mid S) = \frac{(0.94 \cdot 0.01}{(0.94 \cdot 0.01) + (0.97 \cdot 0.99)}$$
+        $$P(D \mid S) = \frac{0.0094}{0.0094 + 0.9603}$$
+        $$P(D \mid S) = \frac{0.0094}{0.0094 + 0.9603}$$
+        $$P(D \mid S) = 0.9694$$
+        $$P(D \mid S) = 96.94\%$$
+        <p>Meaning that under these conditions, it is 96.94% likely that you have the disease if the test comes-out Positive (for the disease) -- again: if the test says you have the disease, there's a 96.94% chance that it's correct.</p>
+      </div>
+      <footer>
+      </footer>
+    </article>
+  </main>
+    <footer>
+      <p>Copyright &copy; 2020, Tommy P. Keane, All Rights Reserved.</p>
+      <p>Last Updated: 2020-05-10</p>
+    </footer>
+  <script type="text/javascript" src="/index.js"></script>
+</body>
+</html>
