@@ -137,7 +137,10 @@ header div.title_container h4 {
 header div.title_container h1.h1_special {
   font-family: var(--var-font-special);
   color: crimson;
-  font-size: 3rem;
+  font-size: 1.5rem;
+  transform: rotate(-15deg);
+  margin-right: -1rem;
+  text-transform: uppercase;
 }
 
 header div.title_container h1.h1_common {
