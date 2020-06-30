@@ -8,167 +8,105 @@
     <meta name="description" content="{{description}}">
     <meta name="author" content="{{author}}">
     {{#stylesheets}}
-      <link rel="stylesheet" href="{{cssname}}">
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
     {{/stylesheets}}
   </head>
-  <body>
+  <body class="{{body_theme_class}}">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="/img/feather/globe.svg" width="32" height="32" alt="www subdomain">
-          tommypkeane.com
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <img src="/img/feather/home.svg" width="16" height="16" style="vertical-align: baseline;" alt="Home Icon">
-                home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/about">
-                <img src="/img/feather/smile.svg" width="16" height="16" style="vertical-align: baseline;" alt="About-Me Icon">
-                about
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/resume">
-                <img src="/img/feather/briefcase.svg" width="16" height="16" style="vertical-align: baseline;" alt="Professional History Icon">
-                resum&eacute;
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="/img/feather/menu.svg" width="16" height="16" style="vertical-align: baseline;" alt="Menu Icon">
-                other sites
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="https://www.github.com/tommypkeane">
-                  <img src="/img/feather/github.svg" width="16" height="16" style="vertical-align: baseline;" alt="GitHub Icon">
-                  GitHub
-                </a>
-                <a class="dropdown-item" href="https://www.bitbucket.com/tommypkeane">
-                  <img src="/img/feather/droplet.svg" width="16" height="16" style="vertical-align: baseline;" alt="Bitbucket Icon">
-                  Bitbucket
-                </a>
-                <a class="dropdown-item" href="https://scholar.google.com/citations?user=R00XRd8AAAAJ&hl=en">
-                  <img src="/img/feather/award.svg" width="16" height="16" style="vertical-align: baseline;" alt="Google Scholar (Publications) Icon">
-                  Google Scholar
-                </a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item disabled" href="#">
-                  <img src="/img/feather/briefcase.svg" width="16" height="16" style="vertical-align: baseline;" alt="LinkedIn Icon">
-                  LinkedIn (No Account)
-                </a>
-                <a class="dropdown-item disabled" href="#">
-                  <img src="/img/feather/twitter.svg" width="16" height="16" style="vertical-align: baseline;" alt="Twitter Icon">
-                  Twitter (No Account)
-                </a>
-                <a class="dropdown-item disabled" href="#">
-                  <img src="/img/feather/facebook.svg" width="16" height="16" style="vertical-align: baseline;" alt="Facebook Icon">
-                  Facebook (No Account)
-                </a>
-                <a class="dropdown-item disabled" href="#">
-                  <img src="/img/feather/instagram.svg" width="16" height="16" style="vertical-align: baseline;" alt="Instagram Icon">
-                  Instagram (No Account)
-                </a>
-              </div>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="/settings">
-                <img src="/img/feather/settings.svg" width="16" height="16" style="vertical-align: baseline;" alt="Home Icon">
-                settings
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+      {{> header_contents}}
     </header>
-    <main>
+    <main class="">
+      <div class="mt-4" style="height: 1px;"></div>
       <div class="container">
-        <div class="row">
-          <h1>Configuration Options</h1>
-        </div>
         <div class="row">
           <div class="card col-sm">
             <div class="card-body">
-              <h5 class="card-title">Site Theme</h5>
-              <select name="theme" id="id_theme_choice">
-                <option value="light_on_dark">Light Text on Dark Background</option>
-                <option value="dark_on_light">Dark Text on Light Background</option>
-              </select>
+              <div class="row">
+                <h1 class="card-title">Configuration Options</h1>
+              </div>
+              <div class="row">
+                <div class="card w-50">
+                  <div class="card-body">
+                    <h5 class="card-title">Site Theme</h5>
+                    <div class="form-group">
+                      <label for="id_theme_choice">Choose a Theme</label>
+                      <select name="theme" id="id_theme_choice" class="form-control">
+                        <option value="light_on_dark">Light Text on Dark Background</option>
+                        <option value="dark_on_light">Dark Text on Light Background</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="mt-4" style="height: 1px;"></div>
       <div class="container">
         <div class="row">
-          <h1>Notice</h1>
-          <p>This website -- under the <tt>www</tt> subdomain (<tt>www.tommypkeane.com</tt>) -- does not use cookies unless you have manually chosen to set them, by clicking the button below. Per the EU's <a href="https://gdpr.eu/">GDPR</a>, it requires manual consent to store the cookies <i>via</i> your webbrowser by clicking the <b>Set Cookies</b> button. If you do not want cookies or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain.</p>
-        </div>
-        <div class="row">
-          <div class="card col-sm alert alert-success">
+          <div class="card col-sm">
             <div class="card-body">
-              <h5 class="card-title">Store Settings</h5>
-              <p class="card-text">By clicking the <b>Set Cookies</b> button you are consenting to let this site store the selected configuration options as "cookies" in your webbrowser.</p>
-              <button id="id_button_set_cookies" type="button" class="btn btn-primary" onclick="cookie_submit();">
-                <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Set Cookies
-              </button>
+              <div class="row">
+                <h1 class="card-title">Notice</h1>
+                <p>This website -- under the <tt>www</tt> subdomain (<tt>www.tommypkeane.com</tt>) -- does not use cookies unless you have manually chosen to set them, by clicking the button below. Per the EU's <a href="https://gdpr.eu/">GDPR</a>, it requires manual consent to store the cookies <i>via</i> your webbrowser by clicking the <b>Set Cookies</b> button. If you do not want cookies or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain. Note that all HTTP request data, including headers (thus, "cookies"), are encrypted under HTTPS traffic. This site only supports HTTPS traffic, as a point of best-practice.</p>
+              </div>
+              <div class="row">
+                <div class="card col-sm notice alert alert-success">
+                  <div class="card-body">
+                    <h5 class="card-title">Store Settings</h5>
+                    <p class="card-text">By clicking the <b>Set Cookies</b> button you are consenting to let this site store the selected configuration options as "cookies" in your webbrowser. Cookie values will be sent in subsequent HTTP request headers, which you can inspect in your browser.</p>
+                    <button id="id_button_set_cookies" type="button" class="btn {{btncls_cookies_store}}" onclick="cookie_submit();">
+                      <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Set Cookies
+                    </button>
+                  </div>
+                </div>
+                <div class="card col-sm notice alert alert-warning">
+                  <div class="card-body">
+                    <h5 class="card-title">Clear Settings</h5>
+                    <p class="card-text">By clicking the <b>Erase Cookies</b> button you are consenting to let this site update the cookies to be null-valued and immediately expired. Only the cookies from this site will be affected. Expired cookies should be deleted by your browser automatically.</p>
+                    <button id="id_button_erase_cookies" type="button" class="btn {{btncls_cookies_erase}}" onclick="cookie_erase();">
+                      <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Erase Cookies
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <h1>Previously Stored Cookies</h1>
+                <p>Note that this table won't change after you set or erase the cookies, so you will need to refresh this page if you want to see the latest values. As soon as you've clicked the buttons, though, the values will be changed in your webbrowser, but this table will be outdated. After a refresh, this table is up-to-date.</p>
+                <table class="table {{table_class}}">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Key (Name)</th>
+                      <th scope="col">Value</th>
+                      <th scope="col">Lifetime [sec]</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#cookies}}
+                    <tr>
+                      <th scope="row">{{index}}</th>
+                      <td>{{key}}</td>
+                      <td>{{value}}</td>
+                      <td>{{lifetime}}</td>
+                    </tr>
+                    {{/cookies}}
+                  </tbody>
+                </table>
+                <p>If you would like to see more details about cookies, you can view them in your browser's developer tools. These links will send you to each browser's documentation on how to use their Developer Tools features.</p>
+                <ul>
+                  <li>How to view Cookies in <a href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/cookies">Microsoft Edge</a>?</li>
+                  <li>How to view Cookies in <a href="https://developers.google.com/web/tools/chrome-devtools/storage/cookies">Google Chrome (Chromium)</a>?</li>
+                  <li>How to view Cookies in <a href="https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector">Mozilla Firefox</a>?</li>
+                  <li>How to view Cookies in <a href="https://developer.apple.com/safari/tools/">Apple Safari</a>?</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="card col-sm alert alert-warning">
-            <div class="card-body">
-              <h5 class="card-title">Clear Settings</h5>
-              <p class="card-text">By clicking the <b>Erase Cookies</b> button you are consenting to let this site update the cookies to be null-valued and immediately expired. Only the cookies from this site will be affected.</p>
-              <button id="id_button_erase_cookies" type="button" class="btn btn-primary" onclick="cookie_erase();">
-                <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Erase Cookies
-              </button>
-            </div>
-          </div>
         </div>
-        <div class="row">
-          <h1>Previously Stored Cookies</h1>
-          <p>Note that this table won't change after you set or erase the cookies, so you will need to refresh this page if you want to see the latest values. As soon as you've clicked the buttons, though, the values will be changed in your webbrowser, but this table will be outdated. After a refresh, this table is up-to-date.</p>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Key (Name)</th>
-                <th scope="col">Value</th>
-                <th scope="col">Lifetime [sec]</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#cookies}}
-              <tr>
-                <th scope="row">{{index}}</th>
-                <td>{{key}}</td>
-                <td>{{value}}</td>
-                <td>{{lifetime}}</td>
-              </tr>
-              {{/cookies}}
-            </tbody>
-          </table>
-          <p>If you would like to see more details about cookies, you can view them in your browser's developer tools. These links will send you to each browser's documentation on how to use their Developer Tools features.</p>
-          <ul>
-            <li>How to view Cookies in <a href="https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/storage/cookies">Microsoft Edge</a>?</li>
-            <li>How to view Cookies in <a href="https://developers.google.com/web/tools/chrome-devtools/storage/cookies">Google Chrome (Chromium)</a>?</li>
-            <li>How to view Cookies in <a href="https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector">Mozilla Firefox</a>?</li>
-            <li>How to view Cookies in <a href="https://developer.apple.com/safari/tools/">Apple Safari</a>?</li>
-          </ul>
-      </div>
     </main>
     <footer>
       {{{footer_contents}}}
