@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <!--[if IE]><link rel="shortcut icon" href="{{ico_file}}" type="image/x-icon"><![endif]-->
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body class="{{body_theme_class}}">
+    <header>
+      {{> header_contents}}
+    </header>
+    <main>
+      <div class="mt-4" style="height: 1rem;"></div>
+        <div class="card w-75">
+          <div class="card-body">
+            <h1 class="card-title">Not Found</h1>
+            <h5>HTTP Error 404</h5>
+            <p class="card-text" style="font-size: 80%;">Oops! That was an invalid request; so either I messed-up and didn't setup any content for the link you just clicked, or you tried to visit a URL that this domain doesn't support. Sorry about that! Please try using the navigation links at the top of this page to get back to our regularly scheduled programming.</p>
+            <img src="/img/contact-tommy_purple-pink.png">
+          </div>
+        </div>
+      <div class="mt-4" style="height: 1rem;"></div>
+    </main>
+    <footer>
+      {{{footer_contents}}}
+    </footer>
+    {{#scriptfiles}}
+      <script type="text/javascript" src="{{scriptname}}"></script>
+    {{/scriptfiles}}
+  </body>
+</html>
