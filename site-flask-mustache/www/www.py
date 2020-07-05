@@ -35,10 +35,56 @@ THEME_CLASSES = {
       "btncls_cookies_erase": "btn-outline-danger",
       "navbar": "navbar-light bg-light",
    },
-}
+};
+
+BASE_STYLESHEETS = [
+   { "cssname": "/css/bootstrap.min.css", },
+   { "cssname": "/css/index.css", },
+];
+
+BASE_SCRIPTS = [
+   { "scriptname": "/js/jquery.min.js", },
+   { "scriptname": "/js/bootstrap.bundle.min.js", },
+   { "scriptname": "/js/d3.min.js", },
+   { "scriptname": "/js/cookie.js", },
+   { "scriptname": "/js/index.js", },
+];
 
 
 webapp = flask.Flask(__name__);
+
+def _get_file_contents_str(filename,):
+   """Get the SVG XML as a string, for raw injection into document.
+   """
+   contents_str = None;
+   with open(filename, "r") as file_obj:
+      contents_str = file_obj.read();
+   # htiw
+   return (contents_str);
+# fed
+
+def _get_resume_details():
+   """Get the template replacement data for the resume/cv job details.
+   """
+   data_dct = {
+      "job_unemployment": _get_file_contents_str("./resume_cv/job_unemployment.mustache"),
+      "job_software_engineer_businessintelligence": _get_file_contents_str("./resume_cv/job_software_engineer_businessintelligence.mustache"),
+      "job_software_engineer_satcom": _get_file_contents_str("./resume_cv/job_software_engineer_satcom.mustache"),
+      "job_graduate_research_assistant": _get_file_contents_str("./resume_cv/job_graduate_research_assistant.mustache"),
+      "job_graduate_teaching_assistant": _get_file_contents_str("./resume_cv/job_graduate_teaching_assistant.mustache"),
+      "job_student_phd": _get_file_contents_str("./resume_cv/job_student_phd.mustache"),
+      "job_student_msc": _get_file_contents_str("./resume_cv/job_student_msc.mustache"),
+      "job_student_bsc": _get_file_contents_str("./resume_cv/job_student_bsc.mustache"),
+      "job_student_hs": _get_file_contents_str("./resume_cv/job_student_hs.mustache"),
+      "job_coop_videosecurity": _get_file_contents_str("./resume_cv/job_coop_videosecurity.mustache"),
+      "job_coop_weatherdata": _get_file_contents_str("./resume_cv/job_coop_weatherdata.mustache"),
+      "job_coop_touchscreen_repair": _get_file_contents_str("./resume_cv/job_coop_touchscreen_repair.mustache"),
+      "job_coop_network_technician": _get_file_contents_str("./resume_cv/job_coop_network_technician.mustache"),
+      "job_cashier_grocery": _get_file_contents_str("./resume_cv/job_cashier_grocery.mustache"),
+      "job_cashier_electronics": _get_file_contents_str("./resume_cv/job_cashier_electronics.mustache"),
+   };
+   return (data_dct);
+# fed
 
 def _generate_html(source_file, data_dct,):
    """Generate HTML from a Mustache File and Data Dictionary.
@@ -56,10 +102,13 @@ def _generate_html(source_file, data_dct,):
       header_str = header_file_obj.read();
    # htiw
 
+   partials_dct = {
+      "header_contents": header_str,
+   };
+   partials_dct.update(_get_resume_details());
+
    stache_compiler = pystache.Renderer(
-      partials= {
-         "header_contents": header_str,
-      }
+      partials= partials_dct,
    );
 
    raw_str = None;
@@ -78,39 +127,34 @@ def _generate_html(source_file, data_dct,):
    return (html_str);
 # fed
 
-def _get_svg(filename,):
-   """Get the SVG XML as a string, for raw injection into document.
-   """
-   contents_str = None;
-
-   with open(filename, "r") as svg_file:
-      contents_str = svg_file.read();
-   # htiw
-
-   return (contents_str);
-# fed
-
-def _get_nav_template_data():
+def _get_template_data_icons():
    """Get the template replacement data for the common site navbar.
    """
    data_dct = {
-      "icon_home": _get_svg("./img/feather/home.svg"),
-      "icon_about_me": _get_svg("./img/feather/smile.svg"),
-      "icon_cv_resume": _get_svg("./img/feather/briefcase.svg"),
-      "icon_other_sites": _get_svg("./img/feather/menu.svg"),
-      "icon_settings": _get_svg("./img/feather/settings.svg"),
-      "icon_github": _get_svg("./img/feather/github.svg"),
-      "icon_bitbucket": _get_svg("./img/feather/droplet.svg"),
-      "icon_google_scholar": _get_svg("./img/feather/award.svg"),
-      "icon_instagram": _get_svg("./img/feather/instagram.svg"),
-      "icon_facebook": _get_svg("./img/feather/facebook.svg"),
-      "icon_twitter": _get_svg("./img/feather/twitter.svg"),
-      "icon_linkedin": _get_svg("./img/feather/linkedin.svg"),
-      "icon_projects": _get_svg("./img/feather/tool.svg"),
-      "icon_raspberrypi": _get_svg("./img/feather/cpu.svg"),
-      "icon_odroid": _get_svg("./img/feather/cpu.svg"),
-      "icon_pinetime": _get_svg("./img/feather/watch.svg"),
-      "icon_pinephone": _get_svg("./img/feather/phone.svg"),
+      "icon_home": _get_file_contents_str("./img/feather/home.svg"),
+      "icon_about_me": _get_file_contents_str("./img/feather/smile.svg"),
+      "icon_cv_resume": _get_file_contents_str("./img/feather/briefcase.svg"),
+      "icon_other_sites": _get_file_contents_str("./img/feather/menu.svg"),
+      "icon_settings": _get_file_contents_str("./img/feather/settings.svg"),
+      "icon_github": _get_file_contents_str("./img/feather/github.svg"),
+      "icon_bitbucket": _get_file_contents_str("./img/feather/droplet.svg"),
+      "icon_google_scholar": _get_file_contents_str("./img/feather/award.svg"),
+      "icon_instagram": _get_file_contents_str("./img/feather/instagram.svg"),
+      "icon_facebook": _get_file_contents_str("./img/feather/facebook.svg"),
+      "icon_twitter": _get_file_contents_str("./img/feather/twitter.svg"),
+      "icon_linkedin": _get_file_contents_str("./img/feather/linkedin.svg"),
+      "icon_projects_hw": _get_file_contents_str("./img/feather/tool.svg"),
+      "icon_raspberrypi": _get_file_contents_str("./img/feather/cpu.svg"),
+      "icon_odroid": _get_file_contents_str("./img/feather/cpu.svg"),
+      "icon_pinetime": _get_file_contents_str("./img/feather/watch.svg"),
+      "icon_pinephone": _get_file_contents_str("./img/feather/phone.svg"),
+      "icon_projects_sw": _get_file_contents_str("./img/feather/tool.svg"),
+      "icon_photography": _get_file_contents_str("./img/feather/camera.svg"),
+      "icon_publications": _get_file_contents_str("./img/feather/file-text.svg"),
+      "img_scroll_to_top": _get_file_contents_str("./img/feather/chevrons-up.svg"),
+      "img_intro_collapse": _get_file_contents_str("./img/feather/chevrons-up.svg"),
+      "img_intro_expand": _get_file_contents_str("./img/feather/chevrons-down.svg"),
+      "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
    };
    return (data_dct);
 # fed
@@ -134,39 +178,32 @@ def intro():
       body_theme_class = "default";
    # fi
 
+   stylesheets_lst = BASE_STYLESHEETS;
+   # stylesheets_lst.append(...);
+
+   scripts_lst = BASE_SCRIPTS;
+
    template_data = dict();
-   template_data.update(_get_nav_template_data());
+   template_data.update(
+      _get_template_data_icons()
+   );
    template_data.update(
       {
-         "title": "tommypkeane-com",
-         "ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
-         "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
-         "description": "Landing Page for tommypkeane.com, website of Tommy P. Keane, Data-Scientist and Software-Engineer.",
+         "title": "Tommy P. Keane - Professional Website",
+         "description": "Landing Page for www.tommypkeane.com, website of Tommy P. Keane, Data-Scientist and Software-Engineer.",
          "author": "Tommy P. Keane",
-         "stylesheets": [
-            { "cssname": "/css/bootstrap.min.css", },
-            { "cssname": "/css/index.css", },
-         ],
+      }
+   );
+   template_data.update(
+      {
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
-         "header_contents": """<h1>Tommy P. Keane</h1>""",
-         "icon_home": _get_svg("./img/feather/home.svg"),
-         "main_contents": (
-"""<h1>Hiya!</h1>
-<select name="theme" id="id_theme_choice">
-  <option value="light_on_dark">Light Text on Dark Background</option>
-  <option value="dark_on_light">Dark Text on Light Background</option>
-</select>
-<button type="button" onclick="cookie_submit();">Set Cookies</button>
-"""
-         ),
-         "footer_contents": "",
-         "scriptfiles": [
-            { "scriptname": "/js/jquery.min.js", },
-            { "scriptname": "/js/bootstrap.bundle.min.js", },
-            { "scriptname": "/js/d3.min.js", },
-            { "scriptname": "/js/cookie.js", },
-         ],
+      }
+   );
+   template_data.update(
+      {
+         "stylesheets": stylesheets_lst,
+         "scriptfiles": scripts_lst,
       }
    );
 
@@ -214,33 +251,25 @@ def customise():
       );
    # rof
 
+   stylesheets_lst = BASE_STYLESHEETS;
+   # stylesheets_lst.append(...);
+
+   scripts_lst = BASE_SCRIPTS;
+
    template_data = dict();
-   template_data.update(_get_nav_template_data());
+   template_data.update(_get_template_data_icons());
    template_data.update(
       {
-         "title": "tommypkeane-com_settings",
-         "ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
-         "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
+         "title": "Settings (www.tommypkeane.com)",
          "description": "Settings (Cookie Management) Page for www.tommypkeane.com with per GDPR compliance.",
          "author": "Tommy P. Keane",
-         "stylesheets": [
-            { "cssname": "/css/bootstrap.min.css", },
-            { "cssname": "/css/index.css", },
-         ],
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "table_class": THEME_CLASSES[body_theme_class]["table"],
          "btncls_cookies_store": THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
-         "main_contents": "",
-         "footer_contents": "",
-         "scriptfiles": [
-            { "scriptname": "/js/jquery.min.js", },
-            { "scriptname": "/js/bootstrap.bundle.min.js", },
-            { "scriptname": "/js/d3.min.js", },
-            { "scriptname": "/js/cookie.js", },
-            { "scriptname": "/js/settings.js", },
-         ],
+         "stylesheets": stylesheets_lst,
+         "scriptfiles": scripts_lst,
          "cookies" : cookies_lst,
       }
    );
@@ -291,33 +320,30 @@ def resume_cv():
       );
    # rof
 
+   stylesheets_lst = BASE_STYLESHEETS;
+   stylesheets_lst.append({"cssname": "/css/resume-cv.css",});
+
+   scripts_lst = BASE_SCRIPTS;
+   scripts_lst.append({"scriptname": "/js/cvtimeline.js",});
+
    template_data = dict();
-   template_data.update(_get_nav_template_data());
+   template_data.update(_get_template_data_icons());
+   template_data.update(_get_resume_details());
    template_data.update(
       {
-         "title": "tommypkeane-com_resume",
-         "ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
-         "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
+         "title": "Resumé / CV (www.tommypkeane.com)",
          "description": "History and Details of Professional Experience of Tommy P. Keane.",
          "author": "Tommy P. Keane",
-         "stylesheets": [
-            { "cssname": "/css/bootstrap.min.css", },
-            { "cssname": "/css/index.css", },
-         ],
+         "stylesheets": stylesheets_lst,
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "table_class": THEME_CLASSES[body_theme_class]["table"],
          "btncls_cookies_store": THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
          "main_contents": "",
+         "resume_cv_timeline": _get_file_contents_str("./img/cv_timeline_plain.svg"),
          "footer_contents": "",
-         "scriptfiles": [
-            { "scriptname": "/js/jquery.min.js", },
-            { "scriptname": "/js/bootstrap.bundle.min.js", },
-            { "scriptname": "/js/d3.min.js", },
-            { "scriptname": "/js/cookie.js", },
-            { "scriptname": "/js/settings.js", },
-         ],
+         "scriptfiles": scripts_lst,
          "cookies" : cookies_lst,
       }
    );
@@ -365,30 +391,32 @@ def error_404(error_code):
       );
    # rof
 
+   stylesheets_lst = BASE_STYLESHEETS;
+   stylesheets_lst.append({"cssname": "/css/resume-cv.css",});
+
+   scripts_lst = BASE_SCRIPTS;
+   scripts_lst.append({"scriptname": "/js/settings.js",});
+
    template_data = dict();
-   template_data.update(_get_nav_template_data());
+   template_data.update(_get_template_data_icons());
+   template_data.update(_get_resume_details());
    template_data.update(
       {
-         "title": "tommypkeane-com_resume",
-         "ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
-         "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
-         "description": "404 Error Page (Requested Resource Not Found).",
+         "title": "HTTP ERROR 404 (www.tommypkeane.com)",
+         "description": "404 Error Page -- Requested Resource Not Found.",
          "author": "Tommy P. Keane",
-         "stylesheets": [
-            { "cssname": "/css/bootstrap.min.css", },
-            { "cssname": "/css/index.css", },
-         ],
+      }
+   );
+   template_data.update(
+      {
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
-         "main_contents": "",
-         "footer_contents": "",
-         "scriptfiles": [
-            { "scriptname": "/js/jquery.min.js", },
-            { "scriptname": "/js/bootstrap.bundle.min.js", },
-            { "scriptname": "/js/d3.min.js", },
-            { "scriptname": "/js/cookie.js", },
-            { "scriptname": "/js/settings.js", },
-         ],
+      }
+   );
+   template_data.update(
+      {
+         "stylesheets": stylesheets_lst,
+         "scriptfiles": scripts_lst,
          "cookies" : cookies_lst,
       }
    );

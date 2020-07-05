@@ -1,4 +1,11 @@
 /* FONTS          */
+:root {
+  --dark-bg-colour: #480505;
+  --dark-bg-colour-alt: #397874;
+  --light-bg-colour: #F5F4B0;
+  --light-bg-colour-alt: #A1C398;
+};
+
 @font-face {
   font-family: "Agean";
   src: url("/fonts/Aegean.ttf");
@@ -8,7 +15,6 @@
 
 /* PAGE: PRIMITIVES */
 html {
-  background-image: url("/img/plants_palm-leaf_00.png");
   background-size: 300px 300px;
   background-repeat: repeat;
 }
@@ -24,7 +30,7 @@ body header nav {
 }
 
 body main {
-  width: 62.5%;
+  /*width: 62.5%;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -41,6 +47,19 @@ body main table {
 
 
 /* THEME: COMMON */
+.back-to-top {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20vw;
+  display: none;
+}
+
+.back-to-top svg {
+  width: 40px;
+  height: 40px;
+}
+
 body nav.bg-dark svg,
 body nav a.dropdown-item svg {
   vertical-align: middle;
@@ -82,6 +101,10 @@ body div.card .btn-outline-primary {
 
 
 /* THEME: DARK ON LIGHT */
+html.darkonlight {
+  background-image: url("/img/plants_pineapple_00_plain.svg");
+}
+
 body.darkonlight {
   color: #274532;
 }
@@ -137,7 +160,6 @@ body.darkonlight div.card.alert.alert-warning {
   background-color: #FA9966;
 }
 
-
 body.darkonlight main table {
   color: #274532;
 }
@@ -155,6 +177,10 @@ body.darkonlight main table tbody > tr:nth-child(2n) {
 
 
 /* THEME: LIGHT ON DARK */
+html.lightondark {
+  background-image: url("/img/plants_palm-leaf_00.png");
+}
+
 body.lightondark,
 body.lightondark nav.navbar-dark,
 body.lightondark nav.bg-dark li.nav-item a.nav-link,
@@ -164,7 +190,7 @@ body.lightondark nav a.dropdown-item {
 }
 
 body.lightondark a {
-  color: #2BD69E;
+  color: #FCFC3E;
 }
 
 body.lightondark nav.bg-dark {

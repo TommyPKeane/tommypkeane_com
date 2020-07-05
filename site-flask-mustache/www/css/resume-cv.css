@@ -1,0 +1,108 @@
+:root {
+  --dark-svg-bg-colour: #4F1784;
+  --light-svg-bg-colour: #F1FFF1;
+}
+
+div#hover_title {
+  visibility: hidden;
+  position: absolute;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  border-left: 5px solid #000000;
+  border-bottom: 5px solid #000000;
+  box-shadow: 4px 4px 15px #000000;
+}
+
+div.job-container {
+  width: 50%;
+}
+
+h3.card-title {
+  font-size: 2rem;
+}
+
+h4.card-subtitle {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+div.job-container div.card-body div.card {
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: 4px 4px 15px #000000;
+}
+
+div.job-container div.card-body div.card.header-card {
+  border-radius: 5px 5px 5px 5px;
+}
+
+div.job-container div.card ul li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#timeline_wide_container {
+  width: 95vw;
+}
+
+#timeline_wide_container svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 4px 4px 15px #000000;
+}
+
+#timeline_wide_container svg g#layer1 path:hover,
+#timeline_wide_container svg g#layer1 rect:hover {
+  cursor: pointer;
+}
+
+div.job-container.page-intro {
+  border-radius: 10px 10px 10px 10px;
+}
+
+footer.container {
+  width: 40vw;
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+body.lightondark div#hover_title {
+  background-color: var(--dark-bg-colour-alt);
+}
+
+body.lightondark div.job-container div.card-body div.card {
+  background-color: var(--dark-bg-colour);
+}
+
+body.lightondark div.job-container div.card-body div.card.header-card {
+  background-color: var(--dark-bg-colour-alt);
+}
+
+body.lightondark #timeline_wide_container svg #background_rect {
+  fill: var(--dark-svg-bg-colour) !important;
+}
+
+body.darkonlight footer {
+  background-color: var(--dark-bg-colour-alt);
+}
+
+
+body.darkonlight div#hover_title {
+  background-color: var(--light-bg-colour-alt);
+}
+
+body.darkonlight div.job-container div.card-body div.card {
+  background-color: var(--light-bg-colour);
+}
+
+body.darkonlight div.job-container div.card-body div.card.header-card {
+  background-color: var(--light-bg-colour-alt);
+}
+
+body.darkonlight #timeline_wide_container svg #background_rect {
+  fill: var(--light-svg-bg-colour) !important;
+}
+
+body.darkonlight footer {
+  background-color: var(--light-bg-colour-alt);
+}
