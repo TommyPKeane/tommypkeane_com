@@ -411,6 +411,7 @@ def error_404(error_code):
       {
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
+         "http_404_error_svg": _get_file_contents_str("img/http_404_tommy-lost_plain.svg"),
       }
    );
    template_data.update(
