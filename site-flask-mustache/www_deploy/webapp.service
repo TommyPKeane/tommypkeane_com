@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI Test Instance
+After=network.target
+
+[Service]
+Environment="PATH=/home/USERUSER/.pyenv/bin:/home/USERUSER/.pyenv/plugins/pyenv-virtualenv/shims:/home/USERUSER/.pyenv/shims:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:"
+User=USERUSER
+Group=USERGROUP
+WorkingDirectory=/var/www/flaskapp
+ExecStart=UWSGIAPP --ini /var/www/flaskapp/flask_app.ini
+
+[Install]
+WantedBy=multi-user.target
