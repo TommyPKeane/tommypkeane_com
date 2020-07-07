@@ -71,7 +71,6 @@ div.dropdown-menu {
   position: fixed;
   bottom: 20px;
   right: 20vw;
-  display: none;
 }
 
 .back-to-top svg {

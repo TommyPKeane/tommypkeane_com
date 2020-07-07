@@ -1,3 +1,7 @@
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
 $(document).ready(
    function hst_ready_func() {
       $(window).scroll(
@@ -11,7 +15,6 @@ $(document).ready(
       );
       $("#back-to-top").click(
          function () {
-            $("#back-to-top").tooltip("hide");
             $("body,html").animate(
                {
                   "scrollTop": 0
@@ -21,6 +24,5 @@ $(document).ready(
             return false;
          }
       );
-      $("#back-to-top").tooltip("show");
    }
 );
