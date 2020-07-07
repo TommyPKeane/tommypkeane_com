@@ -58,6 +58,10 @@ body footer a.footer_btn {
   color: #000000;
   display: block;
 }
+
+div.dropdown-menu {
+  left: -10%;
+}
 /* ------------- */
 
 
