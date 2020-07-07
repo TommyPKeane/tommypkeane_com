@@ -50,8 +50,7 @@ body footer {
   display: block;
 }
 
-body footer a.footer_btn {
-  color: #000000;
+body footer button {
   display: block;
 }
 
@@ -108,4 +107,8 @@ body div.card .btn-outline-success,
 body div.card .btn-outline-primary {
   color: #FFFFFF;
   border-color: #FFFFFF;
+}
+
+body div.modal-body {
+  font-size: 80%;
 }
