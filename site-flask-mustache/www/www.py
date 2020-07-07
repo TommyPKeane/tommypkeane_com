@@ -410,7 +410,7 @@ def error_404(error_code):
    stylesheets_lst = copy.deepcopy(BASE_STYLESHEETS);
    stylesheets_lst.append({"cssname": "/css/error.css",});
 
-   scripts_lst = BASE_SCRIPTS;
+   scripts_lst = copy.deepcopy(BASE_SCRIPTS);
    scripts_lst.append({"scriptname": "/js/settings.js",});
 
    template_data = dict();
