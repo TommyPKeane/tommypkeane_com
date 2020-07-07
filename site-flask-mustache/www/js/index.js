@@ -4,6 +4,9 @@ $(function () {
 
 $(document).ready(
    function hst_ready_func() {
+      for (let elm of document.getElementsByClassName("spinner-border")) {
+         elm.style.display = "none";
+      }
       $(window).scroll(
          function hst_window_scroll_func() {
             if ($(this).scrollTop() > 300) {

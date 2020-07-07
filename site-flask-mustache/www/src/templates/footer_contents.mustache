@@ -1,9 +1,8 @@
 <footer class="{{footer_class}}">
-  <a id="id_settings_btn" class="btn btn-outline-success btn-lg footer_btn" role="button" title="Click for site settings" data-toggle="tooltip" data-placement="top" href="/settings">
+  <button id="id_settings_btn" class="btn btn-outline-success btn-lg footer_btn" title="Click for site settings" data-toggle="modal" data-target="#id_settings_overlay">
   	{{{icon_settings}}}
-  </a>
-  <a id="id_contact_btn" class="btn btn-outline-success btn-lg footer_btn" role="button" title="Contact Info"data-placement="top" href="#">
+  </button>
+  <button id="id_contact_btn" class="btn btn-outline-success btn-lg footer_btn" title="Contact Info" data-toggle="modal" data-target="#id_contact_overlay">
     {{{icon_contact}}}
-  </a>
-  <div id="id_contact_overlay" class="modal"></div>
+  </button>
 </footer>
