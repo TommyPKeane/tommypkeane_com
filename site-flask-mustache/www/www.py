@@ -12,11 +12,14 @@ import sys;
 import flask;
 import pystache;
 
-from src import _base;
-from src import _util;
-from src import http_request;
-from src import ep_resume;
-from src import ep_errors;
+from src import (
+   _base,
+   _util,
+   http_request,
+   ep_resume,
+   ep_errors,
+   ep_cookies,
+);
 
 
 webapp = flask.Flask(__name__);
@@ -34,10 +37,17 @@ def intro():
       cookies_dct = flask.request.cookies.to_dict();
    # fi
 
+   ck_theme_lightondark_selected = None;
+   ck_theme_darkonlight_selected = None;
    body_theme_class = flask.request.cookies.get("theme");
 
    if (body_theme_class is None):
       body_theme_class = "default";
+      ck_theme_lightondark_selected = "selected";
+      ck_theme_darkonlight_selected = "";
+   else:
+      ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
+      ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
    # fi
 
    stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
@@ -60,6 +70,11 @@ def intro():
       {
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
          "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
+         "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
+         "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
+         "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
+         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
+         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
    );
    template_data.update(
@@ -102,6 +117,11 @@ def error_404(error_code):
 
    if (body_theme_class is None):
       body_theme_class = "default";
+      ck_theme_lightondark_selected = "selected";
+      ck_theme_darkonlight_selected = "";
+   else:
+      ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
+      ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
    # fi
 
    for (index, (key, value)) in enumerate(cookies_dct.items()):
@@ -135,6 +155,11 @@ def error_404(error_code):
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
          "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
          "http_404_error_svg": _util.get_file_contents_str("img/http_404_tommy-lost_plain.svg"),
+         "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
+         "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
+         "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
+         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
+         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
    );
    template_data.update(
@@ -179,6 +204,11 @@ def customise():
 
    if (body_theme_class is None):
       body_theme_class = "default";
+      ck_theme_lightondark_selected = "selected";
+      ck_theme_darkonlight_selected = "";
+   else:
+      ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
+      ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
    # fi
 
    for (index, (key, value)) in enumerate(cookies_dct.items()):
@@ -213,6 +243,8 @@ def customise():
          "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
+         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
+         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
    );
    template_data.update(
@@ -270,54 +302,14 @@ def get_static_font(path):
    return (response_obj);
 # fed
 
+webapp.register_blueprint(ep_cookies.app_bp);
 
-@webapp.route('/set/cookie', methods=["POST",])
-def setcookie():
-   """Store Cookies for Site
-   """
-   response_obj = flask.Response();
-   response_obj.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-   response_obj.headers["Pragma"] = "no-cache"
-   response_obj.headers["Expires"] = "0"
-   
-   theme_value = flask.request.json.get("theme");
-   gdpr_consent_date_value = flask.request.json.get("gdpr_consent");
-
-   response_obj.set_cookie(
-      "theme",
-      value= theme_value,
-      max_age= (0 if (theme_value == "") else _base.TWO_WEEKS_SECONDS),
-      # domain= "0.0.0.0",
-      # domain= "www.tommypkeane.com",
-      path= "/",
-      secure= False,
-      # secure= True,
-      httponly= True,
-      # samesite= "Strict",
-      samesite= "Lax",
-   );
-   
-   response_obj.set_cookie(
-      "gdpr_consent_date",
-      value= gdpr_consent_date_value,
-      max_age= (0 if (gdpr_consent_date_value == "") else _base.TWO_WEEKS_SECONDS),
-      # domain= "0.0.0.0",
-      # domain= "www.tommypkeane.com",
-      path= "/",
-      secure= False,
-      # secure= True,
-      httponly= True,
-      # samesite= "Strict",
-      samesite= "Lax",
-   );
-   
-   return (response_obj);
-# fed
 
 if (__name__ == "__main__"):
    webapp.run(
       host= "0.0.0.0",
       port= "80",
-      debug= True,
+      debug= False,
    );
 # fi
+

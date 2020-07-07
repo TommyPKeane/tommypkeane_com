@@ -2,9 +2,11 @@ import copy;
 
 import flask;
 
-from . import _base;
-from . import _util;
-from . import http_request;
+from . import (
+   _base,
+   _util,
+   http_request,
+);
 
 
 app_bp = flask.Blueprint('resume_cv', __name__);
@@ -52,10 +54,17 @@ def resume_cv():
       cookies_dct = flask.request.cookies.to_dict();
    # fi
 
+   ck_theme_lightondark_selected = None;
+   ck_theme_darkonlight_selected = None;
    body_theme_class = flask.request.cookies.get("theme");
 
    if (body_theme_class is None):
       body_theme_class = "default";
+      ck_theme_lightondark_selected = "selected";
+      ck_theme_darkonlight_selected = "";
+   else:
+      ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
+      ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
    # fi
 
    for (index, (key, value)) in enumerate(cookies_dct.items()):
@@ -89,10 +98,12 @@ def resume_cv():
    template_data.update(
       {
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
+         "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
          "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
          "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
-         "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
+         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
+         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
    );
    template_data.update(
