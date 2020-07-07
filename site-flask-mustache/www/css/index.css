@@ -4,11 +4,12 @@
   --dark-bg-colour-alt: #397874;
   --light-bg-colour: #F5F4B0;
   --light-bg-colour-alt: #A1C398;
-};
+}
 
 @font-face {
-  font-family: "Aegean";
-  src: url("/fonts/Aegean.ttf");
+  font-family: "Aegean-Regular";
+  src: url("/fonts/Aegean.ttf") format("truetype");
+  font-display: block;
 }
 /* ------------- */
 
@@ -25,7 +26,7 @@ body {
 }
 
 body header nav {
-  font-family: "Aegean";
+  font-family: "Aegean-Regular";
   font-size: 125%;
 }
 
@@ -42,6 +43,24 @@ body main p {
 body main ul,
 body main table {
   text-align: left;
+}
+
+body footer {
+  background-color: transparent;
+  position: fixed;
+  bottom: 2vw;
+  right: 2vw;
+  text-align: right;
+  display: block;
+}
+
+body footer a.footer_btn {
+  color: #000000;
+  display: block;
+}
+
+div.dropdown-menu {
+  left: -10%;
 }
 /* ------------- */
 

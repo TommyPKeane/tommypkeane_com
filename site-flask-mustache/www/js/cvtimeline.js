@@ -106,6 +106,12 @@ let reveal_info = function hst_reveal_info(clicked_elm_id) {
       block_to_details_map[clicked_elm_id]
    );
    selected_block.style.display = "block";
+   $("body,html").animate(
+      {
+         "scrollTop": $(selected_block).offset().top
+      },
+      250
+   );
    return;
 }
 
