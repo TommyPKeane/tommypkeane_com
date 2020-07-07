@@ -105,7 +105,7 @@ def resume_cv():
    );
 
    response_str = http_request.generate_html_common(
-      "resume.mustache",
+      "./src/templates/resume.mustache",
       template_data,
       partials_extra_dct= _get_resume_details(),
    );

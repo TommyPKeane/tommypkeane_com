@@ -1,0 +1,84 @@
+html.lightondark {
+  background-image: url("/img/plants_palm-leaf_00.png");
+}
+
+body.lightondark,
+body.lightondark nav.navbar-dark,
+body.lightondark nav.bg-dark li.nav-item a.nav-link,
+body.lightondark nav div.dropdown-menu,
+body.lightondark nav a.dropdown-item {
+  color: #F5DEC0;
+}
+
+body.lightondark a {
+  color: #FCFC3E;
+}
+
+body.lightondark nav.bg-dark {
+  background-color: #480505!important;
+}
+
+body.lightondark nav li.nav-item:hover {
+  background-color: #804A40;
+}
+
+body.lightondark nav a.dropdown-item.disabled {
+  color: #91B378;
+}
+
+body.lightondark nav div.dropdown-menu {
+  background-color: #480505;
+}
+
+body.lightondark nav div.dropdown-menu a:hover {
+  background-color: #804A40;
+}
+
+body.lightondark nav.bg-dark svg,
+body.lightondark nav a.dropdown-item svg {
+  color: #F5DEC0;
+  stroke: #F5DEC0;
+}
+
+body.lightondark nav div.dropdown-menu a.dropdown-item.disabled svg {
+  color: #91B378;
+  stroke: #91B378;
+}
+
+body.lightondark div.card {
+  background-color: #801A10;
+}
+
+body.lightondark main div.card select {
+  color: #F5DEC0;
+  background-color: #480505;
+}
+
+body.lightondark div.card.alert.alert-success {
+  color: #91E398;
+  background-color: #397874;
+}
+
+body.lightondark div.card.alert.alert-warning {
+  color: #F6C1FC;
+  background-color: #480505;
+}
+
+body.lightondark nav input[type=search] {
+  color: #F5DEC0;
+  background-color: #801A10;
+}
+
+body.lightondark main table {
+  color: #91B378;
+}
+
+body.lightondark main table thead tr {
+  color: #91B378;
+  background-color: #236682;
+}
+
+
+body.lightondark main table tbody > tr:nth-child(2n) {
+  background-color: #4F4F4F;
+}

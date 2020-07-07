@@ -40,13 +40,24 @@ def _get_template_data_icons():
 
 
 
-def generate_html_common(source_file, data_dct, partials_extra_dct= None):
+def generate_html_common(
+      source_file,
+      data_dct,
+      partials_extra_dct= None,
+   ):
+   """Create an HTML Response String with common Header and Footer contents.
+   """
    partials_dct = {
-      "header_contents": _util.get_file_contents_str("header_contents.mustache"),
-      "footer_contents": _util.get_file_contents_str("footer_contents.mustache"),
+      "header_contents": _util.get_file_contents_str("./src/templates/header_contents.mustache"),
+      "footer_contents": _util.get_file_contents_str("./src/templates/footer_contents.mustache"),
    };
 
-   contents_str = _util.generate_html(source_file, data_dct, partials_dct, partials_extra_dct,);
+   contents_str = _util.generate_html(
+      source_file,
+      data_dct,
+      partials_dct,
+      partials_extra_dct,
+   );
 
    return (contents_str);
 # fed

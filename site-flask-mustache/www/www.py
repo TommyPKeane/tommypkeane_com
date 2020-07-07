@@ -70,7 +70,7 @@ def intro():
    );
 
    response_str = http_request.generate_html_common(
-      "index.mustache",
+      "./src/templates/index.mustache",
       template_data,
    );
    
@@ -146,7 +146,7 @@ def error_404(error_code):
    );
 
    response_str = http_request.generate_html_common(
-      "404.mustache",
+      "./src/templates/404.mustache",
       template_data,
    );
 
@@ -224,7 +224,7 @@ def customise():
    );
 
    response_str = http_request.generate_html_common(
-      "settings.mustache",
+      "./src/templates/settings.mustache",
       template_data,
    );
 

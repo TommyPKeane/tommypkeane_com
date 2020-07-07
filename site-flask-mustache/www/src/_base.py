@@ -27,6 +27,8 @@ THEME_CLASSES = {
 BASE_STYLESHEETS = [
    { "cssname": "/css/bootstrap.min.css", },
    { "cssname": "/css/index.css", },
+   { "cssname": "/css/index-dark.css", },
+   { "cssname": "/css/index-light.css", },
 ];
 
 BASE_SCRIPTS = [

@@ -1,0 +1,71 @@
+html.darkonlight {
+  background-image: url("/img/plants_pineapple_00_plain.svg");
+}
+
+body.darkonlight {
+  color: #274532;
+}
+
+body.darkonlight nav.navbar-light,
+body.darkonlight nav.bg-light li.nav-item a.nav-link,
+body.darkonlight nav div.dropdown-menu,
+body.darkonlight nav a.dropdown-item {
+  color: #274532;
+}
+
+body.darkonlight nav a.dropdown-item.disabled {
+  color: #91B378;
+}
+
+body.darkonlight nav div.dropdown-menu {
+  background-color: #F5F4B0;
+}
+
+body.darkonlight nav.bg-light svg,
+body.darkonlight nav a.dropdown-item svg {
+  color: #274532;
+  stroke: #274532;
+}
+
+body.darkonlight nav div.dropdown-menu a.dropdown-item.disabled svg {
+  color: #91B378;
+  stroke: #91B378;
+}
+
+body.darkonlight nav.bg-light {
+  background-color: #F5F4B0!important;
+}
+
+body.darkonlight nav li.nav-item:hover {
+  background-color: #A1C398;
+}
+
+body.darkonlight nav div.dropdown-menu a:hover {
+  background-color: #A1C398;
+}
+
+body.darkonlight div.card {
+  background-color: #F5F4B0;
+}
+
+body.darkonlight div.card.alert.alert-success {
+  background-color: #69B884;
+}
+
+body.darkonlight div.card.alert.alert-warning {
+  color: #A6511C;
+  background-color: #FA9966;
+}
+
+body.darkonlight main table {
+  color: #274532;
+}
+
+body.darkonlight main table thead tr {
+  color: #F5F4B0;
+  background-color: #274532;
+}
+
+body.darkonlight main table tbody > tr:nth-child(2n) {
+  background-color: #B1D3B8;
+}
