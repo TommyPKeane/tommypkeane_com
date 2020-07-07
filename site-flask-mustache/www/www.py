@@ -5,6 +5,7 @@
 # @email talk@tommypkeane.com>
 # @copyright 2020, Tommy P. Keane
 
+import copy;
 import datetime;
 import sys;
 
@@ -15,11 +16,11 @@ TWO_WEEKS_SECONDS = 1_209_600;
 
 THEME_CLASSES = {
    "default": {
-      "body": "lightondark",
-      "table": "table-dark",
+      "body": "darkonlight",
+      "table": "table-light",
       "btncls_cookies_store": "btn-outline-primary",
       "btncls_cookies_erase": "btn-outline-danger",
-      "navbar": "navbar-dark bg-dark",
+      "navbar": "navbar-light bg-light",
    },
    "light_on_dark": {
       "body": "lightondark",
@@ -98,12 +99,9 @@ def _generate_html(source_file, data_dct,):
       filling in the replacement contents from the data dictionary.
    """
 
-   with open("header_contents.mustache", "r") as header_file_obj:
-      header_str = header_file_obj.read();
-   # htiw
-
    partials_dct = {
-      "header_contents": header_str,
+      "header_contents": _get_file_contents_str("header_contents.mustache"),
+      "footer_contents": _get_file_contents_str("footer_contents.mustache"),
    };
    partials_dct.update(_get_resume_details());
 
@@ -131,12 +129,10 @@ def _get_template_data_icons():
    """Get the template replacement data for the common site navbar.
    """
    data_dct = {
+      # FEATHER ICONS
       "icon_home": _get_file_contents_str("./img/feather/home.svg"),
       "icon_about_me": _get_file_contents_str("./img/feather/smile.svg"),
       "icon_cv_resume": _get_file_contents_str("./img/feather/briefcase.svg"),
-      "icon_other_sites": _get_file_contents_str("./img/feather/menu.svg"),
-      "icon_settings": _get_file_contents_str("./img/feather/settings.svg"),
-      "icon_github": _get_file_contents_str("./img/feather/github.svg"),
       "icon_bitbucket": _get_file_contents_str("./img/feather/droplet.svg"),
       "icon_google_scholar": _get_file_contents_str("./img/feather/award.svg"),
       "icon_instagram": _get_file_contents_str("./img/feather/instagram.svg"),
@@ -149,11 +145,17 @@ def _get_template_data_icons():
       "icon_pinetime": _get_file_contents_str("./img/feather/watch.svg"),
       "icon_pinephone": _get_file_contents_str("./img/feather/phone.svg"),
       "icon_projects_sw": _get_file_contents_str("./img/feather/tool.svg"),
-      "icon_photography": _get_file_contents_str("./img/feather/camera.svg"),
       "icon_publications": _get_file_contents_str("./img/feather/file-text.svg"),
       "img_scroll_to_top": _get_file_contents_str("./img/feather/chevrons-up.svg"),
       "img_intro_collapse": _get_file_contents_str("./img/feather/chevrons-up.svg"),
       "img_intro_expand": _get_file_contents_str("./img/feather/chevrons-down.svg"),
+      "icon_contact": _get_file_contents_str("./img/feather/phone.svg"),
+      # TOMMYTOFU ICONS
+      "icon_settings": _get_file_contents_str("./img/tommytofu/config.svg"),
+      "icon_other_sites": _get_file_contents_str("./img/tommytofu/menu.svg"),
+      "icon_github": _get_file_contents_str("./img/tommytofu/git-octocat.svg"),
+      "icon_photography": _get_file_contents_str("./img/tommytofu/camera-photo.svg"),
+      # OTHERS
       "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
    };
    return (data_dct);
@@ -178,10 +180,10 @@ def intro():
       body_theme_class = "default";
    # fi
 
-   stylesheets_lst = BASE_STYLESHEETS;
+   stylesheets_lst = copy.deepcopy(BASE_STYLESHEETS);
    # stylesheets_lst.append(...);
 
-   scripts_lst = BASE_SCRIPTS;
+   scripts_lst = copy.deepcopy(BASE_SCRIPTS);
 
    template_data = dict();
    template_data.update(
@@ -254,20 +256,28 @@ def customise():
    stylesheets_lst = BASE_STYLESHEETS;
    # stylesheets_lst.append(...);
 
-   scripts_lst = BASE_SCRIPTS;
+   scripts_lst = copy.deepcopy(BASE_SCRIPTS);
 
    template_data = dict();
    template_data.update(_get_template_data_icons());
    template_data.update(
       {
          "title": "Settings (www.tommypkeane.com)",
-         "description": "Settings (Cookie Management) Page for www.tommypkeane.com with per GDPR compliance.",
+         "description": "Settings (Cookie Management) Page for www.tommypkeane.com per GDPR compliance.",
          "author": "Tommy P. Keane",
+      }
+   );
+   template_data.update(
+      {
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "table_class": THEME_CLASSES[body_theme_class]["table"],
          "btncls_cookies_store": THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
+      }
+   );
+   template_data.update(
+      {
          "stylesheets": stylesheets_lst,
          "scriptfiles": scripts_lst,
          "cookies" : cookies_lst,
@@ -320,10 +330,10 @@ def resume_cv():
       );
    # rof
 
-   stylesheets_lst = BASE_STYLESHEETS;
+   stylesheets_lst = copy.deepcopy(BASE_STYLESHEETS);
    stylesheets_lst.append({"cssname": "/css/resume-cv.css",});
 
-   scripts_lst = BASE_SCRIPTS;
+   scripts_lst = copy.deepcopy(BASE_SCRIPTS);
    scripts_lst.append({"scriptname": "/js/cvtimeline.js",});
 
    template_data = dict();
@@ -334,15 +344,21 @@ def resume_cv():
          "title": "Resumé / CV (www.tommypkeane.com)",
          "description": "History and Details of Professional Experience of Tommy P. Keane.",
          "author": "Tommy P. Keane",
-         "stylesheets": stylesheets_lst,
+      }
+   );
+   template_data.update(
+      {
          "body_theme_class": THEME_CLASSES[body_theme_class]["body"],
          "table_class": THEME_CLASSES[body_theme_class]["table"],
          "btncls_cookies_store": THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
          "btncls_cookies_erase": THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "navbar_class": THEME_CLASSES[body_theme_class]["navbar"],
-         "main_contents": "",
+      }
+   );
+   template_data.update(
+      {
          "resume_cv_timeline": _get_file_contents_str("./img/cv_timeline_plain.svg"),
-         "footer_contents": "",
+         "stylesheets": stylesheets_lst,
          "scriptfiles": scripts_lst,
          "cookies" : cookies_lst,
       }
@@ -391,8 +407,8 @@ def error_404(error_code):
       );
    # rof
 
-   stylesheets_lst = BASE_STYLESHEETS;
-   stylesheets_lst.append({"cssname": "/css/resume-cv.css",});
+   stylesheets_lst = copy.deepcopy(BASE_STYLESHEETS);
+   stylesheets_lst.append({"cssname": "/css/error.css",});
 
    scripts_lst = BASE_SCRIPTS;
    scripts_lst.append({"scriptname": "/js/settings.js",});

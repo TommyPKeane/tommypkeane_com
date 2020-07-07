@@ -51,13 +51,7 @@
       {{> job_cashier_grocery}}
       <a id="back-to-top" href="#" class="btn btn-outline-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left">{{{img_scroll_to_top}}}</a>
     </main>
-    <footer class="container mt-5 mb-5">
-      {{footer_contents}}
-      <div class="card-body">
-        <p>If you have any questions, or would like to see a <i>much-shorter</i> PDF version (non-redacted) of my resum&eacute;, please feel free to reach out:</p>
-        <img src="/img/contact-tommy_purple-pink.png">
-      </div>
-    </footer>
+    {{> footer_contents}}
     {{#scriptfiles}}
       <script type="text/javascript" src="{{scriptname}}"></script>
     {{/scriptfiles}}
