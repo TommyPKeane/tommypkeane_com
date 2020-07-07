@@ -11,6 +11,15 @@ let cookie_submit = function hst_cookie_submit() {
    let req_obj = new XMLHttpRequest();
    req_obj.open("POST", "/set/cookie");
    req_obj.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+   req_obj.onreadystatechange = function () {
+      if (req_obj.readyState === 4) {
+         button.disabled = false;
+         spinner.style.display = "none";
+         location.reload();
+      }
+      return;
+   }
+   
    req_obj.send(
       JSON.stringify(
          {
@@ -19,16 +28,6 @@ let cookie_submit = function hst_cookie_submit() {
          }
       )
    );
-
-   window.setTimeout(
-      () => {
-         button.disabled = false;
-         spinner.style.display = "none";
-         return;
-      },
-      250
-   );
-
    return;
 }
 
@@ -45,6 +44,15 @@ let cookie_erase = function hst_cookie_erase() {
    let req_obj = new XMLHttpRequest();
    req_obj.open("POST", "/set/cookie");
    req_obj.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+   req_obj.onreadystatechange = function () {
+      if (req_obj.readyState === 4) {
+         button.disabled = false;
+         spinner.style.display = "none";
+         location.reload();
+      }
+      return;
+   }
+
    req_obj.send(
       JSON.stringify(
          {
@@ -53,15 +61,5 @@ let cookie_erase = function hst_cookie_erase() {
          }
       )
    );
-
-   window.setTimeout(
-      () => {
-         button.disabled = false;
-         spinner.style.display = "none";
-         return;
-      },
-      250
-   );
-
    return;
 }
