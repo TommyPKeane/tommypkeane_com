@@ -1,0 +1,68 @@
+:root {
+  --svg-dark-bg-colour: #4F1784;
+  --svg-dark-shadow-colour: #000000;
+  --svg-light-bg-colour: #F1FFF1;
+  --svg-light-shadow-colour: #000000;
+}
+
+body.lightondark div#hover_title {
+  background-color: var(--dark-bg-colour-alt);
+}
+
+body.lightondark div.job-container div.card-body div.card {
+  background-color: var(--dark-bg-colour);
+}
+
+body.lightondark div.job-container div.card-body div.card.header-card {
+  background-color: var(--dark-bg-colour-alt);
+}
+
+body.lightondark #timeline_wide_container svg #background_rect {
+  fill: var(--svg-dark-bg-colour) !important;
+}
+
+body.lightondark div.job-container div.card-body div.card {
+  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
+}
+
+body.lightondark div#hover_title {
+  border-left: 5px solid var(--svg-dark-shadow-colour);
+  border-bottom: 5px solid var(--svg-dark-shadow-colour);
+  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
+}
+
+body.lightondark #timeline_wide_container svg #block_grocery {
+  fill: #FFCEFE !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_electronics {
+  fill: #7F8EDF !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_touchscreen {
+  fill: #DFDF98 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_networking {
+  fill: #96D096 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_weather {
+  fill: #36D096 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_grad_teaching {
+  fill: #D69096 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_phd {
+  fill: #F6C0C6 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_sw_bi {
+  fill: #F6D076 !important;
+}
+
+body.lightondark #timeline_wide_container svg #block_unemployment {
+  fill: #A6E0F6 !important;
+}
