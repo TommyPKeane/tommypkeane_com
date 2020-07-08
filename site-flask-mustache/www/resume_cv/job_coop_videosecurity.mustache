@@ -1,11 +1,11 @@
-<div id="job_videosecurity" class="mt-4 job-container">
+<div id="job_videosecurity" class="container-fluid mt-3 job-container">
   <div class="card-body">
     <div class="card mt-3 header-card">
       <div class="card-body">
         <h3 class="card-title">C++ Developer (Co-Op)</h3>
       </div>
     </div>
-    <div class="card">
+    <div class="card mt-3">
       <div class="card-body">
         <h5 style="text-align: left;">Professional Experience:</h5>
         <ul>
@@ -15,16 +15,26 @@
           <li><b>Award(s):</b> None</li>
           <li><b>Publication(s):</b> None</li>
         </ul>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-body">
         <h5 style="text-align: left;">Technology "Stack"</h5>
         <ul>
           <li>MATLAB</li>
           <li>C++</li>
           <li>OpenCV</li>
         </ul>
+      </div>
+    </div>
+    <div class="card mt-3">
+      <div class="card-body">
         <h5 style="text-align: left;">Daily Tasks</h5>
-        <ul>
-          <li>...</li>
-        </ul>
+        <p>This was a co-op role where I worked on converting a prototype video-processing algorithm from MATLAB implementation into a production-ready C++ version. This company supported the funding for my M.Sc. Thesis research, purchased the intellectual property for the algorithm that I created, and then hired me to re-implement the algorithm in the Summer of 2010.</p>
+        <p>The original MATLAB implementation provided a proof-of-concept that was demonstrated live in the Digital Video and Signal Processing laboratory at RIT. To create a production-ready version I used OpenCV to replace the MATLAB Signal Processing Toolkit functionality and then converted the rest of the algorithm into an Object-Oriented C++ design. During the conversion process, however, I discovered an issue.</p>
+        <p>In the prototype design, some of the low-level computations of the Image Registration stages were operationally contingent on 64-bit floating-point values. This didn't pose an issue, as long as the resolution was preserved throughout each stage in the algorithm. Yet, for optimisation reasons, to try to move the algorithm towards near-realtime video-processing, this "extra" level of resolution in the computational data needed to be removed. The prototype was designed around the lazy computational-resolution in MATLAB, so making a direct translation into C++ did not provide enough gain in the speed of the algorithm as written. After an early attempt to simply remove some of the heavier high-resolution computations, the algorithm did get faster, but the loss of resolution had a cascading factorial-effect that lessened the overall accuracy of the algorithm.</p>
+        <p>So, in this co-op job, I did an <i>in situ</i> redesign of the algorithm stages while adhering to the underlying mathematical model. This mitigated the need for high-resolution computational data across multiple stages, while preserving the design.</p>
+        <p>The design and computational details are available in my M.Sc. publications -- which you can find in the info section for the M.Sc. Degree period on my CV Timeline, above.</p>
       </div>
     </div>
   </div>

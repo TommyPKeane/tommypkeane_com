@@ -16,8 +16,8 @@
     <header>
       {{> header_contents}}
     </header>
-    <main>
-      <div id="intro_container" class="container w-75 page-intro">
+    <main class="mt-3 mb-5">
+      <div id="intro_container" class="container-fluid w-75 page-intro">
         <div class="card mt-3 mb-3">
           <div class="card-body">
             <h3>Resum&eacute; / Curriculum Vit&aelig; (CV) / Employment History</h3>
@@ -31,7 +31,7 @@
           <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
         </div>
       </div>
-      <div id="timeline_wide_container" class="mt-4 container">
+      <div id="timeline_wide_container" class="mt-4 container-fluid">
         {{{resume_cv_timeline}}}
       </div>
       {{> job_unemployment}}
