@@ -33,6 +33,13 @@ webapp = flask.Flask(__name__);
 def intro():
    """Provide the Main Landing Page Response
    """
+   response_obj = flask.Response();
+   response_obj.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+   response_obj.headers["Pragma"] = "no-cache"
+   response_obj.headers["Expires"] = "0"
+
+   cookies_lst = [];
+
    cookies_dct = flask.request.json;
    if (cookies_dct is None):
       cookies_dct = flask.request.cookies.to_dict();
@@ -50,6 +57,17 @@ def intro():
       ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
       ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
    # fi
+
+   for (index, (key, value)) in enumerate(cookies_dct.items()):
+      cookies_lst.append(
+         {
+            "index": index,
+            "key": key,
+            "value": value,
+            "lifetime": _base.TWO_WEEKS_SECONDS,
+         },
+      );
+   # rof
 
    stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
    # stylesheets_lst.append(...);
@@ -78,6 +96,7 @@ def intro():
       {
          "stylesheets": stylesheets_lst,
          "scriptfiles": scripts_lst,
+         "cookies" : cookies_lst,
       }
    );
 
