@@ -9,4 +9,4 @@ from . import (
 );
 
 
-app_bp = flask.Blueprint('errors', __name__);
+app_bp = flask.Blueprint("errors", __name__);

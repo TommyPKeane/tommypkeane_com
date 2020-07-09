@@ -102,6 +102,7 @@ let hide_info = function hst_hide_info(clicked_elm_id) {
 
 let reveal_info = function hst_reveal_info(clicked_elm_id) {
    hide_jobs();
+   hide_title();
    let selected_block = document.getElementById(
       block_to_details_map[clicked_elm_id]
    );
@@ -132,14 +133,22 @@ $(document).mousemove(
 
 var $loop = setInterval(
    function() {
+      let window_width = $( window ).width();
+      let window_height = $( window ).width();
       $xp += (($mouseX - $xp) / drag_factor);
       $yp += (($mouseY - $yp) / drag_factor);
-      $("#hover_title").css(
-         {
-            "left": $xp - 40 +'px',
-            "top": $yp - 50 +'px'
-         }
-      );
+      let pos_obj = {
+         "top": $yp - 50 +"px",
+         "max-width": "500px"
+      }
+
+      if ($xp > (window_width / 2)) {
+         pos_obj["left"] = ($xp - 180 +"px");
+      } else {
+         pos_obj["left"] = ($xp - 40 +"px");
+      }
+
+      $("#hover_title").css(pos_obj);
    },
    30
 );

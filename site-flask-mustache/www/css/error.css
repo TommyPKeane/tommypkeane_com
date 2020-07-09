@@ -1,10 +1,3 @@
-:root {
-  --svg-dark-bg-colour: #0F6734;
-  --svg-dark-shadow-colour: #000000;
-  --svg-light-bg-colour: #E1EFF8;
-  --svg-light-shadow-colour: #000000;
-}
-
 div#id_404_svg_container {
   width: 80vw;
 }
@@ -14,10 +7,10 @@ div#id_404_svg_container svg {
   height: 100%;
 }
 
-body.lightondark div#id_404_svg_container svg #id_rect_bg {
-  fill: var(--svg-dark-bg-colour);
+html.lightondark div#id_404_svg_container svg #id_rect_bg {
+  fill: var(--darkmode-colour-red-lite-alt);
 }
 
-body.darkonlight div#id_404_svg_container svg #id_rect_bg {
-  fill: var(--svg-light-bg-colour);
+html.darkonlight div#id_404_svg_container svg #id_rect_bg {
+  fill: var(--colour-white);
 }

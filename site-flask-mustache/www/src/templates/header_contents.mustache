@@ -1,187 +1,185 @@
-<div id="id_contact_overlay" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Lookin' for me?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Hiya!</p>
-        <p>If you wanna talk career-opportunities, or science, or maths, or engineering, or software development, or whatever, you can reach out to:</p>
-        <img src="img/contact-tommy_purple-pink.png">
-        <p>If you wanted source-code for anything you've seen on this site, then it's probably gonna be over on <a href="https://github.com/tommypkeane">GitHub</a> account. If it's not there, try <a href="https://bitbucket.com/tommypkeane">BitBucket</a>; and if it's not there, then feel free to email.</p>
+<header>
+  <div id="id_contact_overlay" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Lookin' for me?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Hiya!</p>
+          <p>If you wanna talk career-opportunities, or science, or maths, or engineering, or software development, or whatever, you can reach out to:</p>
+          <img src="img/contact-tommy_purple-pink.png">
+          <p>If you wanted source-code for anything you've seen on this site, then it's probably gonna be over on <a href="https://github.com/tommypkeane">GitHub</a> account. If it's not there, try <a href="https://bitbucket.com/tommypkeane">BitBucket</a>; and if it's not there, then feel free to email.</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div id="id_settings_overlay" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Site Settings and Cookies</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>For the <tt>www</tt> subdomain of <tt>tommypkeane.com</tt>, this site does <i>not</i> use cookies unless you have manually chosen to set them, by clicking the <b>Set Cookies</b> button below. In accordance with the EU's <a href="https://gdpr.eu/">GDPR</a>, you are providing manual consent for this site to store the cookies <i>within</i> your webbrowser and use them in HTTP requests, <i>only</i> if you click the <b>Set Cookies</b> button.</p>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Site Theme</h5>
-            <div class="form-group">
-              <label for="id_theme_choice">Choose a Theme</label>
-              <select name="theme" id="id_theme_choice" class="form-control">
-                <option {{ck_theme_lightondark_selected}} value="light_on_dark">Light Text on Dark Background</option>
-                <option {{ck_theme_darkonlight_selected}} value="dark_on_light">Dark Text on Light Background</option>
-              </select>
+  <div id="id_settings_overlay" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Site Settings and Cookies</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>For the <tt>www</tt> subdomain of <tt>tommypkeane.com</tt>, this site does <i>not</i> use cookies unless you have manually chosen to set them, by clicking the <b>Set Cookies</b> button below. In accordance with the EU's <a href="https://gdpr.eu/">GDPR</a>, you are providing manual consent for this site to store the cookies <i>within</i> your webbrowser and use them in HTTP requests, <i>only</i> if you click the <b>Set Cookies</b> button.</p>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Site Theme</h5>
+              <div class="form-group">
+                <label for="id_theme_choice">Choose a Theme</label>
+                <select name="theme" id="id_theme_choice" class="form-control">
+                  <option {{ck_theme_lightondark_selected}} value="light_on_dark">Light Text on Dark Background</option>
+                  <option {{ck_theme_darkonlight_selected}} value="dark_on_light">Dark Text on Light Background</option>
+                </select>
+              </div>
             </div>
           </div>
+          <p class="mt-3">If you no longer want cookies, and/or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button to have them removed immediately. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain. If the table below is empty, then you have not consented or set any cookies for this site.</p>
+          <h4>Current Cookies</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Key (Name)</th>
+                <th scope="col">Value</th>
+                <th scope="col">Lifetime [sec]</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#cookies}}
+              <tr>
+                <th scope="row">{{index}}</th>
+                <td>{{key}}</td>
+                <td>{{value}}</td>
+                <td>{{lifetime}}</td>
+              </tr>
+              {{/cookies}}
+            </tbody>
+          </table>
         </div>
-        <p class="mt-3">If you no longer want cookies, and/or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button to have them removed immediately. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain. If the table below is empty, then you have not consented or set any cookies for this site.</p>
-        <h4>Current Cookies</h4>
-        <table class="table {{table_class}}">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Key (Name)</th>
-              <th scope="col">Value</th>
-              <th scope="col">Lifetime [sec]</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#cookies}}
-            <tr>
-              <th scope="row">{{index}}</th>
-              <td>{{key}}</td>
-              <td>{{value}}</td>
-              <td>{{lifetime}}</td>
-            </tr>
-            {{/cookies}}
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button id="id_button_set_cookies" type="button" class="btn {{btncls_cookies_store}}" onclick="cookie_submit();">
-          <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Set Cookies
-        </button>
-        <button id="id_button_erase_cookies" type="button" class="btn {{btncls_cookies_erase}}" onclick="cookie_erase();">
-          <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Erase Cookies
-        </button>
+        <div class="modal-footer">
+          <button id="id_button_set_cookies" type="button" class="btn btn-outline-success" onclick="cookie_submit();">
+            <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Set Cookies
+          </button>
+          <button id="id_button_erase_cookies" type="button" class="btn btn-outline-danger" onclick="cookie_erase();">
+            <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Erase Cookies
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<nav class="navbar navbar-expand-lg {{navbar_class}}">
-  <a class="navbar-brand" href="/">
-    {{{icon_home}}} 
-    tommypkeane.com
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/resume">
-          {{{icon_cv_resume}}}
-          CV
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{{icon_projects_hw}}}
-          HARDWARE
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/projects/hw/pinephone">
-            {{{icon_raspberrypi}}}
-            Raspberry Pi (SBC)
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+      {{{icon_home}}} 
+      tommypkeane.com
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      {{{icon_other_sites}}}
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/resume">
+            {{{icon_cv_resume}}}
+            CV
           </a>
-          <a class="dropdown-item" href="/projects/hw/pinephone">
-            {{{icon_odroid}}}
-            ODroid (SBC)
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{{icon_projects_hw}}}
+            HARDWARE
           </a>
-          <a class="dropdown-item" href="/projects/hw/pinetime">
-            {{{icon_pinetime}}}
-            PineTime (Pine64)
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/projects/hw/pinephone">
+              {{{icon_raspberrypi}}}
+              Raspberry Pi (SBC)
+            </a>
+            <a class="dropdown-item" href="/projects/hw/pinephone">
+              {{{icon_odroid}}}
+              ODroid (SBC)
+            </a>
+            <a class="dropdown-item" href="/projects/hw/pinetime">
+              {{{icon_pinetime}}}
+              PineTime (Pine64)
+            </a>
+            <a class="dropdown-item" href="/projects/hw/pinephone">
+              {{{icon_pinephone}}}
+              PinePhone (Pine64)
+            </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{{icon_projects_sw}}}
+            SOFTWARE
           </a>
-          <a class="dropdown-item" href="/projects/hw/pinephone">
-            {{{icon_pinephone}}}
-            PinePhone (Pine64)
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/projects/sw/cellularautomata">
+              {{{icon_raspberrypi}}}
+              Cellular Automata
+            </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="/photography">
+            {{{icon_photography}}}
+            PHOTOGRAPHY
           </a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{{icon_projects_sw}}}
-          SOFTWARE
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/projects/sw/cellularautomata">
-            {{{icon_raspberrypi}}}
-            Cellular Automata
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="/publications">
+            {{{icon_publications}}}
+            PUBLICATIONS
           </a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="/photography">
-          {{{icon_photography}}}
-          PHOTOGRAPHY
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link" href="/publications">
-          {{{icon_publications}}}
-          PUBLICATIONS
-        </a>
-      </li>
-    </ul>
-    <ul class="navbar-nav mr-sm-2">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{{icon_other_sites}}}
-          OTHER SITES
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="https://www.github.com/tommypkeane">
-            {{{icon_github}}}
-            GitHub
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{{icon_other_sites}}}
+            OTHER SITES
           </a>
-          <a class="dropdown-item" href="https://www.bitbucket.com/tommypkeane">
-            {{{icon_bitbucket}}}
-            Bitbucket
-          </a>
-          <a class="dropdown-item" href="https://www.scopus.com/authid/detail.uri?authorId=37066246200">
-            {{{icon_google_scholar}}}
-            Scopus (Elsevier)
-          </a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item disabled" href="#">
-            {{{icon_linkedin}}}
-            LinkedIn (No Account)
-          </a>
-          <a class="dropdown-item disabled" href="#">
-            {{{icon_twitter}}}
-            Twitter (No Account)
-          </a>
-          <a class="dropdown-item disabled" href="#">
-            {{{icon_facebook}}}
-            Facebook (No Account)
-          </a>
-          <a class="dropdown-item disabled" href="#">
-            {{{icon_instagram}}}
-            Instagram (No Account)
-          </a>
-        </div>
-      </li>
-    </ul>
-    <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
-  </div>
-</nav>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="https://www.github.com/tommypkeane">
+              {{{icon_github}}}
+              GitHub
+            </a>
+            <a class="dropdown-item" href="https://www.bitbucket.com/tommypkeane">
+              {{{icon_bitbucket}}}
+              Bitbucket
+            </a>
+            <a class="dropdown-item" href="https://www.scopus.com/authid/detail.uri?authorId=37066246200">
+              {{{icon_google_scholar}}}
+              Scopus (Elsevier)
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item disabled" href="#">
+              {{{icon_linkedin}}}
+              LinkedIn (No Account)
+            </a>
+            <a class="dropdown-item disabled" href="#">
+              {{{icon_twitter}}}
+              Twitter (No Account)
+            </a>
+            <a class="dropdown-item disabled" href="#">
+              {{{icon_facebook}}}
+              Facebook (No Account)
+            </a>
+            <a class="dropdown-item disabled" href="#">
+              {{{icon_instagram}}}
+              Instagram (No Account)
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

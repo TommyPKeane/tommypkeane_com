@@ -2,8 +2,8 @@
 <html lang="en-US" class="{{body_theme_class}}">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
-    <!--[if IE]><link rel="shortcut icon" href="{{ico_file}}" type="image/x-icon"><![endif]-->
     <link rel="icon" href="{{ico_png_file}}" type="image/png">
     <meta name="description" content="{{description}}">
     <meta name="author" content="{{author}}">
@@ -11,36 +11,23 @@
       <link rel="stylesheet" type="text/css" href="{{cssname}}">
     {{/stylesheets}}
   </head>
-  <body class="{{body_theme_class}}">
-    <header>
-      {{> header_contents}}
-    </header>
+  <body>
+    {{> header_contents}}
     <main>
-      <div class="mt-4" style="height: 1rem;"></div>
-      <div class="container">
-        <img src="/img/portrait-tommy_green.png">
-        <div class="mt-4" style="height: 1rem;"></div>
-        <div class="card w-75">
+      <div class="container-fluid mt-3">
+        <img class="img_wide" src="/img/portrait-tommy_green.png">
+        <div class="card page_intro mt-3">
           <div class="card-body">
             <h5 class="card-title">Hiya! Welcome!!!</h5>
             <p class="card-text">This is personal website of tommy p. keane (pictured above). If that doesn't look like the vegan tommy born in the 1980s that you're lookin' for, then you might be at the wrong site. Thanks for visting, though!</p>
             <p class="card-text">If this is the tommy you were expecting, feel free to use the navigation links at the top of this page to look around at some examples of our various projects, publications, and (past) professional experiences.</p>
-            
             <p class="card-text">This site was built using <a href="https://feathericons.com/">Feather Icons</a>, <a href="https://getbootstrap.com/">Bootstrap</a>, <a href="https://flask.palletsprojects.com">Flask</a>, <a href="https://jquery.com/">jQuery</a>, and the <a href="https://dn-works.com/ufas/">Aegean</a> typeface. Otherwise, unless noted, all the remaining content on this site was created by tommy. Please visit the <a href="/settings">Settings</a> page if you'd like to learn about this site's use of (optional) Cookies to customise the colour scheme.</p> 
           </div>
         </div>
-        <div class="mt-4" style="height: 1px;"></div>
-        <div class="card w-50">
-          <div class="card-body">
-            <img src="/img/contact-tommy_purple-pink.png">
-            <p class="card-text" style="font-size: 80%;">If you have any questions or would like to talk about professional opportunities in Machine Learning, Systems Integration, or Web Development, please feel free to contact tommy at the email address above.</p>
-          </div>
-        </div>
       </div>
-      <div class="mt-4" style="height: 4rem;"></div>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
     </main>
     {{> footer_contents}}
-    <a id="back-to-top" href="#" class="btn btn-outline-success btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
     {{#scriptfiles}}
       <script type="text/javascript" src="{{scriptname}}"></script>
     {{/scriptfiles}}
