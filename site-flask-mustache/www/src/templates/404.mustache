@@ -2,8 +2,8 @@
 <html lang="en-US" class="{{body_theme_class}}">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
-    <!--[if IE]><link rel="shortcut icon" href="{{ico_file}}" type="image/x-icon"><![endif]-->
     <link rel="icon" href="{{ico_png_file}}" type="image/png">
     <meta name="description" content="{{description}}">
     <meta name="author" content="{{author}}">
@@ -11,17 +11,15 @@
       <link rel="stylesheet" type="text/css" href="{{cssname}}">
     {{/stylesheets}}
   </head>
-  <body class="{{body_theme_class}}">
-    <header>
-      {{> header_contents}}
-    </header>
+  <body>
+    {{> header_contents}}
     <main>
       <div id="id_404_svg_container" class="container-fluid mt-5 mb-5">
         {{{http_404_error_svg}}}
       </div>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left">{{{img_scroll_to_top}}}</a>
     </main>
     {{> footer_contents}}
-    <a id="back-to-top" href="#" class="btn btn-outline-success btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left">{{{img_scroll_to_top}}}</a>
     {{#scriptfiles}}
       <script type="text/javascript" src="{{scriptname}}"></script>
     {{/scriptfiles}}
