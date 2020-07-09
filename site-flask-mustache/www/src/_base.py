@@ -3,24 +3,12 @@ TWO_WEEKS_SECONDS = 1_209_600;
 THEME_CLASSES = {
    "default": {
       "body": "darkonlight",
-      "table": "table-light",
-      "btncls_cookies_store": "btn-outline-primary",
-      "btncls_cookies_erase": "btn-outline-danger",
-      "navbar": "navbar-light bg-light",
    },
    "light_on_dark": {
       "body": "lightondark",
-      "table": "table-dark",
-      "btncls_cookies_store": "btn-outline-primary",
-      "btncls_cookies_erase": "btn-outline-danger",
-      "navbar": "navbar-dark bg-dark",
    },
    "dark_on_light": {
       "body": "darkonlight",
-      "table": "table-light",
-      "btncls_cookies_store": "btn-outline-primary",
-      "btncls_cookies_erase": "btn-outline-danger",
-      "navbar": "navbar-light bg-light",
    },
 };
 

@@ -98,10 +98,6 @@ def resume_cv():
    template_data.update(
       {
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
-         "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
-         "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
-         "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
-         "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
          "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }

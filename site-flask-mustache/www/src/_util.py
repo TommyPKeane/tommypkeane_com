@@ -1,5 +1,6 @@
 import pystache;
 
+
 def get_file_contents_str(filename,):
    """Get the SVG XML as a string, for raw injection into document.
    """

@@ -70,10 +70,6 @@ def intro():
    template_data.update(
       {
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
-         "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
-         "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
-         "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
-         "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
          "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
@@ -154,11 +150,7 @@ def error_404(error_code):
    template_data.update(
       {
          "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
-         "navbar_class": _base.THEME_CLASSES[body_theme_class]["navbar"],
          "http_404_error_svg": _util.get_file_contents_str("img/http_404_tommy-lost_plain.svg"),
-         "table_class": _base.THEME_CLASSES[body_theme_class]["table"],
-         "btncls_cookies_store": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_store"],
-         "btncls_cookies_erase": _base.THEME_CLASSES[body_theme_class]["btncls_cookies_erase"],
          "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
          "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
