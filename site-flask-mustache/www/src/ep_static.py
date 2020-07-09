@@ -9,10 +9,10 @@ from . import (
 );
 
 
-app_bp = flask.Blueprint('static_files', __name__);
+app_bp = flask.Blueprint("static_files", __name__);
 
 
-@app_bp.route('/img/<path:path>', methods=["GET",])
+@app_bp.route("/img/<path:path>", methods=["GET",])
 def get_static_img(path):
    """Provide the static image files when requested.
    """
@@ -21,7 +21,7 @@ def get_static_img(path):
 # fed
 
 
-@app_bp.route('/js/<path:path>', methods=["GET",])
+@app_bp.route("/js/<path:path>", methods=["GET",])
 def get_static_js(path):
    """Provide the static JavaScript files when requested.
    """
@@ -30,7 +30,7 @@ def get_static_js(path):
 # fed
 
 
-@app_bp.route('/css/<path:path>', methods=["GET",])
+@app_bp.route("/css/<path:path>", methods=["GET",])
 def get_static_css(path):
    """Provide the static CSS files when requested.
    """
@@ -39,7 +39,7 @@ def get_static_css(path):
 # fed
 
 
-@app_bp.route('/fonts/<path:path>', methods=["GET",])
+@app_bp.route("/fonts/<path:path>", methods=["GET",])
 def get_static_font(path):
    """Provide the static Font (Typeface) files when requested.
    """
