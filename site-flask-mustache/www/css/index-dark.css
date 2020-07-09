@@ -1,84 +1,138 @@
+:root {
+  --darkmode-colour-green-dark-dark: #051805;
+  --darkmode-colour-red-dark-dark: #280505;
+  --darkmode-colour-red-dark: #480505;
+  --darkmode-colour-red-lite: #801A10;
+  --darkmode-colour-red-lite-alt: #804A40;
+  --darkmode-colour-green-pale: #91B378;
+  --darkmode-colour-blue-dark-pale: #236682;
+  --darkmode-colour-blue-green-pale: #397874;
+  --darkmode-colour-yellow: #FCFC3E;
+  --darkmode-colour-yellow-pale: #F5DEC0;
+  --darkmode-colour-gray: #4F4F4F;
+}
+
+
 html.lightondark {
   background-image: url("/img/plants_palm-leaf_00.png");
 }
 
-body.lightondark,
-body.lightondark nav.navbar-dark,
-body.lightondark nav.bg-dark li.nav-item a.nav-link,
-body.lightondark nav div.dropdown-menu,
-body.lightondark nav a.dropdown-item {
-  color: #F5DEC0;
+html.lightondark body,
+html.lightondark body header,
+html.lightondark body header nav li.nav-item a.nav-link,
+html.lightondark body header nav div.dropdown-menu,
+html.lightondark body header nav a.dropdown-item {
+  color: var(--darkmode-colour-yellow-pale);
 }
 
-body.lightondark a {
-  color: #FCFC3E;
+html.lightondark nav .btn-outline-success {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
-body.lightondark nav.bg-dark {
-  background-color: #480505!important;
+html.lightondark nav .navbar-toggler {
+  color: var(--darkmode-colour-yellow-pale);
 }
 
-body.lightondark nav li.nav-item:hover {
-  background-color: #804A40;
+html.lightondark a {
+  color: var(--darkmode-colour-yellow);
 }
 
-body.lightondark nav a.dropdown-item.disabled {
-  color: #91B378;
+html.lightondark nav {
+  background-color: var(--darkmode-colour-red-dark) !important;
 }
 
-body.lightondark nav div.dropdown-menu {
-  background-color: #480505;
+html.lightondark nav li.nav-item:hover {
+  background-color: var(--darkmode-colour-red-lite-alt);
 }
 
-body.lightondark nav div.dropdown-menu a:hover {
-  background-color: #804A40;
+html.lightondark nav a.dropdown-item.disabled {
+  color: var(--darkmode-colour-green-pale);
 }
 
-body.lightondark nav.bg-dark svg,
-body.lightondark nav a.dropdown-item svg {
-  color: #F5DEC0;
-  stroke: #F5DEC0;
+html.lightondark nav div.dropdown-menu {
+  background-color: var(--darkmode-colour-red-dark);
 }
 
-body.lightondark nav div.dropdown-menu a.dropdown-item.disabled svg {
-  color: #91B378;
-  stroke: #91B378;
+html.lightondark nav div.dropdown-menu a:hover {
+  background-color: var(--darkmode-colour-red-lite-alt);
 }
 
-body.lightondark div.card {
-  background-color: #801A10;
+html.lightondark nav.bg-dark svg,
+html.lightondark nav a.dropdown-item svg {
+  color: var(--darkmode-colour-yellow-pale);
+  stroke: var(--darkmode-colour-yellow-pale);
 }
 
-body.lightondark main div.card select {
-  color: #F5DEC0;
-  background-color: #480505;
+html.lightondark nav div.dropdown-menu a.dropdown-item.disabled svg {
+  color: var(--darkmode-colour-green-pale);
+  stroke: var(--darkmode-colour-green-pale);
 }
 
-body.lightondark div.card.alert.alert-success {
+html.lightondark div.card {
+  background-color: var(--darkmode-colour-red-dark);
+}
+
+html.lightondark div.card .btn-outline-danger,
+html.lightondark div.card .btn-outline-success,
+html.lightondark div.card .btn-outline-primary {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+html.lightondark select,
+html.lightondark select.form-control {
+  color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--darkmode-colour-red-dark);
+}
+
+html.lightondark div.card.alert.alert-success {
   color: #91E398;
   background-color: #397874;
 }
 
-body.lightondark div.card.alert.alert-warning {
+html.lightondark div.card.alert.alert-warning {
   color: #F6C1FC;
-  background-color: #480505;
+  background-color: var(--darkmode-colour-red-dark);
 }
 
-body.lightondark nav input[type=search] {
-  color: #F5DEC0;
-  background-color: #801A10;
+html.lightondark nav input[type=search] {
+  color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--darkmode-colour-red-lite);
 }
 
-body.lightondark main table {
-  color: #91B378;
+html.lightondark table {
+  color: var(--darkmode-colour-yellow-pale);
 }
 
-body.lightondark main table thead tr {
-  color: #91B378;
-  background-color: #236682;
+html.lightondark table thead {
+  color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--colour-black);
 }
 
+html.lightondark table tbody tr th,
+html.lightondark table tbody tr td,
+html.lightondark table thead th {
+  border-color: var(--darkmode-colour-red-dark);
+  border-top-color: var(--darkmode-colour-red-dark);
+  border-bottom-color: var(--darkmode-colour-red-dark);
+}
 
-body.lightondark main table tbody > tr:nth-child(2n) {
-  background-color: #4F4F4F;
+html.lightondark table tbody > tr:nth-child(1n) {
+  background-color: var(--darkmode-colour-green-dark-dark);
+}
+
+html.lightondark table tbody > tr:nth-child(2n) {
+  background-color: var(--darkmode-colour-red-dark-dark);
+}
+
+html.lightondark div.modal-content {
+  color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--darkmode-colour-red-dark);
+}
+
+html.lightondark div.modal-header,
+html.lightondark div.modal-header button {
+  color: var(--darkmode-colour-red-dark);
+  background-color: var(--darkmode-colour-yellow-pale);
 }

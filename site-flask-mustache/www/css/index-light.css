@@ -1,71 +1,122 @@
+:root {
+  --lightmode-colour-green-dark: #274532;
+  --lightmode-colour-green-lite: #91B378;
+  --lightmode-colour-green-lite-alt: #A1C398;
+  --lightmode-colour-green-lite-alt-alt: #B1D3B8;
+  --lightmode-colour-green-rich: #69B884;
+  --lightmode-colour-yellow-pale: #F5F4B0;
+  --lightmode-colour-yellow-pale-alt: #FEFED0;
+  --lightmode-colour-brown: #A6511C;
+  --lightmode-colour-brown-lite: #FA9966;
+  --lightmode-colour-brown-lite-alt: #FAC966;
+  --lightmode-colour-brown-lite-alt-alt: #FCD986;
+}
+
+
 html.darkonlight {
   background-image: url("/img/plants_pineapple_00_plain.svg");
 }
 
-body.darkonlight {
-  color: #274532;
+html.darkonlight {
+  color: var(--lightmode-colour-green-dark);
 }
 
-body.darkonlight nav.navbar-light,
-body.darkonlight nav.bg-light li.nav-item a.nav-link,
-body.darkonlight nav div.dropdown-menu,
-body.darkonlight nav a.dropdown-item {
-  color: #274532;
+html.darkonlight nav,
+html.darkonlight nav li.nav-item a.nav-link,
+html.darkonlight nav div.dropdown-menu,
+html.darkonlight nav a.dropdown-item {
+  color: var(--lightmode-colour-green-dark);
 }
 
-body.darkonlight nav a.dropdown-item.disabled {
-  color: #91B378;
+html.darkonlight nav .btn-outline-success {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
-body.darkonlight nav div.dropdown-menu {
-  background-color: #F5F4B0;
+html.darkonlight nav .navbar-toggler {
+  color: var(--lightmode-colour-green-dark);
 }
 
-body.darkonlight nav.bg-light svg,
-body.darkonlight nav a.dropdown-item svg {
-  color: #274532;
-  stroke: #274532;
+html.darkonlight nav a.dropdown-item.disabled {
+  color: var(--lightmode-colour-green-lite);
 }
 
-body.darkonlight nav div.dropdown-menu a.dropdown-item.disabled svg {
-  color: #91B378;
-  stroke: #91B378;
+html.darkonlight nav div.dropdown-menu {
+  background-color: var(--lightmode-colour-yellow-pale);
 }
 
-body.darkonlight nav.bg-light {
-  background-color: #F5F4B0!important;
+html.darkonlight nav svg,
+html.darkonlight nav a.dropdown-item svg {
+  color: var(--lightmode-colour-green-dark);
+  stroke: var(--lightmode-colour-green-dark);
 }
 
-body.darkonlight nav li.nav-item:hover {
-  background-color: #A1C398;
+html.darkonlight nav div.dropdown-menu a.dropdown-item.disabled svg {
+  color: var(--lightmode-colour-green-lite);
+  stroke: var(--lightmode-colour-green-lite);
 }
 
-body.darkonlight nav div.dropdown-menu a:hover {
-  background-color: #A1C398;
+html.darkonlight nav {
+  background-color: var(--lightmode-colour-yellow-pale) !important;
 }
 
-body.darkonlight div.card {
-  background-color: #F5F4B0;
+html.darkonlight nav li.nav-item:hover {
+  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-body.darkonlight div.card.alert.alert-success {
-  background-color: #69B884;
+html.darkonlight nav div.dropdown-menu a:hover {
+  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-body.darkonlight div.card.alert.alert-warning {
-  color: #A6511C;
-  background-color: #FA9966;
+html.darkonlight select,
+html.darkonlight select.form-control {
+  color: var(--lightmode-colour-green-dark);
+  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-body.darkonlight main table {
-  color: #274532;
+html.darkonlight div.card {
+  background-color: var(--lightmode-colour-yellow-pale);
 }
 
-body.darkonlight main table thead tr {
-  color: #F5F4B0;
-  background-color: #274532;
+html.darkonlight div.card .btn-outline-danger,
+html.darkonlight div.card .btn-outline-success,
+html.darkonlight div.card .btn-outline-primary {
+  color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
-body.darkonlight main table tbody > tr:nth-child(2n) {
-  background-color: #B1D3B8;
+html.darkonlight table {
+  color: var(--lightmode-colour-green-dark);
+}
+
+html.darkonlight table thead {
+  color: var(--lightmode-colour-green-dark);
+  background-color: var(--lightmode-colour-green-lite);
+}
+
+html.darkonlight table tbody tr th,
+html.darkonlight table tbody tr td,
+html.darkonlight table thead th {
+  border-color: var(--lightmode-colour-green-lite-alt);
+  border-top-color: var(--lightmode-colour-green-lite-alt);
+  border-bottom-color: var(--lightmode-colour-green-lite-alt);
+}
+
+html.darkonlight table tbody > tr:nth-child(1n) {
+  background-color: var(--lightmode-colour-brown-lite-alt);
+}
+
+html.darkonlight table tbody > tr:nth-child(2n) {
+  background-color: var(--lightmode-colour-brown-lite-alt-alt);
+}
+
+html.darkonlight div.modal-content {
+  color: var(--lightmode-colour-green-dark);
+  background-color: var(--lightmode-colour-yellow-pale);
+}
+
+html.darkonlight div.modal-header,
+html.darkonlight div.modal-header button {
+  color: var(--lightmode-colour-yellow-pale);
+  background-color: var(--lightmode-colour-brown);
 }

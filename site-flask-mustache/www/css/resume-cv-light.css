@@ -1,29 +1,24 @@
-:root {
-  --svg-light-bg-colour: #F1FFF1;
-  --svg-light-shadow-colour: #000000;
+html.darkonlight div#hover_title {
+  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-body.darkonlight div#hover_title {
-  background-color: var(--light-bg-colour-alt);
+html.darkonlight div.job-container div.card-body div.card {
+  background-color: var(--lightmode-colour-yellow-pale);
 }
 
-body.darkonlight div.job-container div.card-body div.card {
-  background-color: var(--light-bg-colour);
+html.darkonlight div.job-container div.card-body div.card.header-card {
+  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-body.darkonlight div.job-container div.card-body div.card.header-card {
-  background-color: var(--light-bg-colour-alt);
-}
-
-body.darkonlight #timeline_wide_container svg #background_rect {
+html.darkonlight #timeline_wide_container svg #background_rect {
   fill: var(--svg-light-bg-colour) !important;
 }
 
-body.darkonlight div.job-container div.card-body div.card {
+html.darkonlight div.job-container div.card-body div.card {
   box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);
 }
 
-body.darkonlight div#hover_title {
+html.darkonlight div#hover_title {
   border-left: 5px solid var(--svg-light-shadow-colour);
   border-bottom: 5px solid var(--svg-light-shadow-colour);
   box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);

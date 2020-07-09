@@ -1,23 +1,8 @@
-:root {
-  --svg-dark-bg-colour: #4F1784;
-  --svg-dark-shadow-colour: #000000;
-  --svg-light-bg-colour: #F1FFF1;
-  --svg-light-shadow-colour: #000000;
-}
-
 div#hover_title {
   visibility: hidden;
   position: absolute;
   padding: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-}
-
-div.job-container {
-  width: 50%;
-}
-
-h3.card-title {
-  font-size: 2rem;
 }
 
 h4.card-subtitle {
@@ -33,11 +18,6 @@ div.job-container div.card-body div.card.header-card {
   border-radius: 5px 5px 5px 5px;
 }
 
-div.job-container div.card ul li {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 #timeline_wide_container {
   width: 95vw;
 }
@@ -45,7 +25,7 @@ div.job-container div.card ul li {
 #timeline_wide_container svg {
   width: 100%;
   height: 100%;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 1vw 1vw 1vw 1vw;
   box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
 }
 
@@ -54,67 +34,54 @@ div.job-container div.card ul li {
   cursor: pointer;
 }
 
-div.job-container.page-intro {
-  border-radius: 10px 10px 10px 10px;
-}
 
-footer.container {
-  width: 40vw;
-  border-radius: 10px 10px 10px 10px;
-}
+@media (min-width: 0px) {
+  h3.card-title {
+    font-size: 5vw;
+  }
 
+  div.job-container ul > li {
+    margin-bottom: 2vw;
+  }
 
-body.lightondark div#hover_title {
-  background-color: var(--dark-bg-colour-alt);
-}
+  div.job-container ul > li > ul {
+    margin-top: 0.25vw;
+  }
 
-body.lightondark div.job-container div.card-body div.card {
-  background-color: var(--dark-bg-colour);
-}
-
-body.lightondark div.job-container div.card-body div.card.header-card {
-  background-color: var(--dark-bg-colour-alt);
-}
-
-body.lightondark #timeline_wide_container svg #background_rect {
-  fill: var(--svg-dark-bg-colour) !important;
-}
-
-body.lightondark div.job-container div.card-body div.card {
-  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
-}
-
-body.lightondark div#hover_title {
-  border-left: 5px solid var(--svg-dark-shadow-colour);
-  border-bottom: 5px solid var(--svg-dark-shadow-colour);
-  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
+  div.job-container ul > li > ul > li {
+    margin-bottom: 0vw;
+  }
 }
 
 
-
-body.darkonlight div#hover_title {
-  background-color: var(--light-bg-colour-alt);
+@media (min-width: 576px) {
+  h3.card-title {
+    font-size: 2rem;
+  }
 }
 
-body.darkonlight div.job-container div.card-body div.card {
-  background-color: var(--light-bg-colour);
+
+@media (min-width: 768px) {
+  h3.card-title {
+    font-size: 2rem;
+  }
 }
 
-body.darkonlight div.job-container div.card-body div.card.header-card {
-  background-color: var(--light-bg-colour-alt);
+
+@media (min-width: 992px) {
+  .job-container {
+    max-width: 800px;
+  }
+
+  h3.card-title {
+    font-size: 2rem;
+  }
 }
 
-body.darkonlight #timeline_wide_container svg #background_rect {
-  fill: var(--svg-light-bg-colour) !important;
-}
 
-body.darkonlight div.job-container div.card-body div.card {
-  box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);
-}
+@media (min-width: 1200px) {
 
-body.darkonlight div#hover_title {
-  border-left: 5px solid var(--svg-light-shadow-colour);
-  border-bottom: 5px solid var(--svg-light-shadow-colour);
-  box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);
+  h3.card-title {
+    font-size: 2rem;
+  }
 }
-

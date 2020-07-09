@@ -1,19 +1,16 @@
 :root {
-  --dark-bg-colour: #480505;
-  --dark-bg-colour-alt: #397874;
-  --light-bg-colour: #F5F4B0;
-  --light-bg-colour-alt: #A1C398;
+  --colour-white: #FFFFFF;
+  --colour-gray: #7F7F7F;
+  --colour-black: #000000;
+  --svg-dark-bg-colour: #4F1784;
+  --svg-dark-shadow-colour: #000000;
+  --svg-light-bg-colour: #F1FFF1;
+  --svg-light-shadow-colour: #000000;
 }
 
 @font-face {
   font-family: "Aegean-Regular";
   src: url("/fonts/Aegean.ttf") format("truetype");
-  font-display: block;
-}
-
-html {
-  background-size: 300px 300px;
-  background-repeat: repeat;
 }
 
 body {
@@ -21,36 +18,27 @@ body {
   background-color: transparent;
 }
 
-body header nav {
-  font-family: "Aegean-Regular";
-  font-size: 125%;
+body > header nav {
+  font-family: "Aegean-Regular", sans-serif;
 }
 
-body main {
-  /*width: 62.5%;*/
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body main p {
+body > main p {
   text-align: justify;
 }
 
-body main ul,
-body main table {
+body > main ul,
+body > main table {
   text-align: left;
 }
 
-body footer {
+body > footer {
   background-color: transparent;
   position: fixed;
-  bottom: 2vw;
-  right: 2vw;
   text-align: right;
   display: block;
 }
 
-body footer button {
+body > footer button {
   display: block;
 }
 
@@ -61,68 +49,177 @@ div.dropdown-menu {
 .back-to-top {
   cursor: pointer;
   position: fixed;
-  bottom: 20px;
-  right: 20vw;
   display: none;
 }
 
-.back-to-top svg {
-  width: 40px;
-  height: 40px;
-}
-
-body nav.bg-dark svg,
-body nav a.dropdown-item svg {
+body > header nav svg,
+body > header nav a.dropdown-item svg {
   vertical-align: middle;
   margin-right: 0.25rem;
 }
 
-body nav div.dropdown-menu a.dropdown-item svg {
+body > header nav div.dropdown-menu a.dropdown-item svg {
   vertical-align: middle;
 }
 
-body div.card {
+p.aside_par {
   margin-left: auto;
   margin-right: auto;
+  font-style: italic;
 }
 
-div.card.alert {
-  font-size: 85%;
-  border: none;
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
 
-body nav .btn-outline-success {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
-}
+@media (min-width: 0px) {
+  html {
+    background-size: 150px 150px;
+    background-repeat: repeat;
+  }
 
-body div.card .btn-outline-danger,
-body div.card .btn-outline-success,
-body div.card .btn-outline-primary {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
-}
+  body > header nav {
+    font-size: 250%;
+  }
 
-body div.modal-body {
-  font-size: 80%;
+  body div.modal-body {
+    font-size: 80%;
+  }
+
+  body > header nav {
+    width: 100%;
+  }
+
+  body main {
+    margin-bottom: 20vw;
+  }
+
+  body > footer {
+    bottom: 2vw;
+    right: 2vw;
+  }
+
+  main img.img_wide {
+    width: 100%;
+  }
+
+  .back-to-top {
+    bottom: 1vw;
+    left: 5vw;
+  }
+
+  .back-to-top svg {
+    width: 5vw;
+    height: 5vw;
+  }
+
+  div.card-body {
+    font-size: 3.5vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  ul {
+    padding-inline-start: 4vw;
+  }
+
+  div.modal-body table {
+    font-size: 2.5vw;
+    width: 100%;
+  }
 }
 
 
 @media (min-width: 576px) {
+  html {
+    background-size: 300px 300px;
+    background-repeat: repeat;
+  }
+
+  body > header nav {
+    font-size: 250%;
+  }
+
+  body div.modal-body {
+    font-size: 80%;
+  }
+
+  div.card-body {
+    font-size: 2.25vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  div.modal-body table {
+    font-size: 0.75rem;
+    width: 100%;
+  }
 }
 
 
 @media (min-width: 768px) {
+  html {
+    background-size: 300px 300px;
+    background-repeat: repeat;
+  }
+
+  body > header nav {
+    font-size: 150%;
+  }
+
+  body div.modal-body {
+    font-size: 80%;
+  }
 }
 
 
 @media (min-width: 992px) {
+  html {
+    background-size: 300px 300px;
+    background-repeat: repeat;
+  }
+  
+  body > header nav {
+    font-size: 125%;
+  }
+
+  body div.modal-body {
+    font-size: 80%;
+  }
+
+  main img.img_wide {
+    max-width: 800px;
+  }
+
+  a.back-to-top {
+    opacity: 50%;
+    width: 5vw;
+    bottom: 1vw;
+    left: calc(50% + 400px);
+  }
+
+  a.back-to-top:hover {
+    opacity: 100%;
+  }
+
+  a.back-to-top svg {
+    width: 90%;
+  }
+
+  div.page_intro {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 2vw 2vw 2vw 2vw;
+    padding-bottom: 1vw;
+  }
+
+  div.card-body {
+    font-size: 1rem;
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
+
+  ul {
+    padding-inline-start: 2vw;
+  }
 }
 
 
