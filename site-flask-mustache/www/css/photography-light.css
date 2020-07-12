@@ -1,0 +1,14 @@
+html.darkonlight div#id_photo_carousel {
+  background-color: var(--lightmode-colour-green-rich);
+}
+
+html.darkonlight div.carousel-caption {
+  color: var(--lightmode-colour-green-dark);
+  background-color: var(--lightmode-colour-green-rich);
+  box-shadow: 0rem 0rem 1rem rgba(128,128,128,0.5);
+}
+
+html.darkonlight div.carousel-caption h5,
+html.darkonlight div.carousel-caption p {
+  text-shadow: 0.15rem 0.15rem rgba(128,128,128,0.5);
+}

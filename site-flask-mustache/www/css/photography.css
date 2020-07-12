@@ -1,0 +1,145 @@
+div.carousel-item img {
+  max-width: 80vw;
+}
+
+div#id_photo_carousel {
+  max-width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+#back-to-top {
+  left: 15px;
+}
+
+div#id_photo_carousel img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.carousel-caption {
+  position: fixed;
+  bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 15px 15px 15px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+div.carousel-caption h5,
+div.carousel-caption p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+div.carousel-caption h5,
+div.carousel-caption p,
+div.carousel-caption button {
+  vertical-align: middle;
+}
+
+div.detail_button_container {
+  display: flex;
+  justify-content: space-between
+}
+
+div.detail_button_container button {
+}
+
+@media (orientation: landscape) {
+  div#id_photo_carousel img {
+    width: auto;
+    height: 85vh;
+  }
+}
+
+
+@media (min-width: 0px) {
+  div.carousel-caption {
+    bottom: 150px;
+    font-size: 70%;
+    width: 85%;
+    min-width: 0px;
+    overflow: visible;
+    display: block;
+    left: 5%;
+    right: 5%;
+    margin-left: auto;    
+    margin-right: auto;
+    min-width: 200px;
+    padding: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+  }
+
+  div.carousel-caption h5 {
+    font-size: 0.95rem;
+  }
+
+  div.carousel-caption button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+@media (min-width: 576px) {
+  div.carousel-caption {
+    bottom: 15px;
+    width: 70%;
+    min-width: 200px;
+    left: 10%;
+    right: 10%;
+    font-size: 1rem;
+    word-wrap: normal;
+  }
+
+  div.carousel-caption h5 {
+    font-size: 1.25rem;
+  }
+
+  div.carousel-caption button svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  div.carousel-caption {
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    font-size: 1rem;
+    word-wrap: normal;
+  }
+
+  div.carousel-caption h5 {
+    font-size: 1.25rem;
+  }
+
+  div.carousel-caption button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (orientation: landscape) {
+    div#id_photo_carousel img {
+      width: auto;
+      height: 70vh;
+    }
+  }
+}
+
+
+@media (min-width: 992px) {
+  div.carousel-caption {
+    width: 50%;
+  }
+}
+
+
+@media (min-width: 1200px) {
+}
