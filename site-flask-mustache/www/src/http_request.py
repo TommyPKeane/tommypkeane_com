@@ -27,6 +27,8 @@ def _get_template_data_icons():
       "img_intro_collapse": _util.get_file_contents_str("./img/feather/chevrons-up.svg"),
       "img_intro_expand": _util.get_file_contents_str("./img/feather/chevrons-down.svg"),
       "icon_contact": _util.get_file_contents_str("./img/feather/phone.svg"),
+      "exif_icon": _util.get_file_contents_str("./img/feather/film.svg"),
+      "fullsize_icon": _util.get_file_contents_str("./img/feather/external-link.svg"),
       # TOMMYTOFU ICONS
       "icon_settings": _util.get_file_contents_str("./img/tommytofu/config.svg"),
       "icon_other_sites": _util.get_file_contents_str("./img/tommytofu/menu.svg"),

@@ -46,3 +46,12 @@ def get_static_font(path):
    response_obj = flask.send_from_directory("fonts", path);
    return (response_obj);
 # fed
+
+
+@app_bp.route("/photos/<path:path>", methods=["GET",])
+def get_static_photo(path):
+   """Provide the static Photography images when requested.
+   """
+   response_obj = flask.send_from_directory("photos", path);
+   return (response_obj);
+# fed

@@ -19,6 +19,7 @@ from src import (
    ep_errors,
    ep_resume,
    ep_static,
+   ep_photography,
    http_request,
 );
 
@@ -196,12 +197,14 @@ webapp.register_blueprint(ep_static.app_bp);
 
 webapp.register_blueprint(ep_cookies.app_bp);
 
+webapp.register_blueprint(ep_photography.app_bp);
+
 
 if (__name__ == "__main__"):
    webapp.run(
       host= "0.0.0.0",
       port= "80",
-      debug= False,
+      debug= True,
    );
 # fi
 
