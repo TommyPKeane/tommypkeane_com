@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-US" class="{{body_theme_class}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body>
+    {{> header_contents}}
+    <main>
+      <div id="intro_container" class="container-fluid page_intro">
+        <div class="card mt-3 mb-3">
+          <div class="card-body">
+            <h3 class="card-title">Photography</h3>
+            <h4 class="card-subtitle mt-1">Cellphone and Micro Four-Thirds Cameras</h4>
+            <p class="intro_par">Hiya!</p>
+            <p class="intro_par">On this page you can check out some of of my photography taken with digital cameras. These photos were taken with an iPhone SE, an iPad (Gen. 3), or an Olympus PEN-F with several different lenses.</p>
+            <p class="intro_par">All photos on this page are Copyright &copy; to Tommy P. Keane, and they are not available for any licensed use without explicit written approval from Tommy P. Keane (see contact info, for any requests).</p>
+          </div>
+          <a id="collapse-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
+          <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
+        </div>
+      </div>
+      <div id="id_photo_view_container" class="container-fluid mt-4">
+        <div id="id_photo_carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            {{#carouselphotos}}
+              <div class="carousel-item">
+                <div id="id_exif_modal_{{modal_id}}" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">EXIF Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h5>{{filename}}</h5>
+                        <ul class="exif_ul">
+                          {{#exif_info}}
+                            <li>{{key}}: {{val}}</li>
+                          {{/exif_info}}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <img src="{{src}}" class="d-block" alt="{{alt}}">
+                <div class="carousel-caption d-block">
+                  <div class="detail_button_container">
+                    <button title="Show EXIF info in a modal pop-up." class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#id_exif_modal_{{modal_id}}">{{{exif_icon}}}</button>
+                    <h5>{{caption_title}}</h5>
+                    <button title="Get fullsize image file (new tab)." class="btn btn-outline-warning btn-sm" onclick="getphoto('{{src_fullsize}}')">{{{fullsize_icon}}}</button>
+                  </div>
+                  <p class="mt-2">{{{caption_par}}}</p>
+                  <p class="mt-1" style="font-size: 80%; font-style: italic;">Full-Size Image: {{filesize}} <abbr title="1 MebiByte is 1,048,576 Bytes, equivalent to 1,024 KiB (where 1 KiB is 1,024 Bytes). See more here: https://en.wikipedia.org/wiki/Mebibyte">[MiB]</abbr></p>
+                </div>
+              </div>
+            {{/carouselphotos}}
+          </div>
+          <a class="carousel-control-prev" href="#id_photo_carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#id_photo_carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <div style="height: 300px;"></div>
+      </div>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
+    </main>
+    {{> footer_contents}}
+    {{#scriptfiles}}
+      <script type="text/javascript" src="{{scriptname}}"></script>
+    {{/scriptfiles}}
+  </body>
+</html>
