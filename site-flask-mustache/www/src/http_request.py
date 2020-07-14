@@ -1,3 +1,10 @@
+import copy;
+import os;
+
+import commonmark;
+import flask;
+import yaml;
+
 from . import _base;
 from . import _util;
 
@@ -62,4 +69,162 @@ def generate_html_common(
    );
 
    return (contents_str);
+# fed
+
+
+def html_response(css_lst, js_lst, title, description, author,):
+
+   def argumentless_wrapper(func,):
+
+      def inner_call(*args, **kwargs):
+         response_obj = flask.Response();
+         response_obj.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+         response_obj.headers["Pragma"] = "no-cache"
+         response_obj.headers["Expires"] = "0"
+
+         cookies_lst = [];
+
+         cookies_dct = flask.request.json;
+         if (cookies_dct is None):
+            cookies_dct = flask.request.cookies.to_dict();
+         # fi
+
+         ck_theme_lightondark_selected = None;
+         ck_theme_darkonlight_selected = None;
+         body_theme_class = flask.request.cookies.get("theme");
+
+         if (body_theme_class is None):
+            body_theme_class = "default";
+            ck_theme_lightondark_selected = "selected";
+            ck_theme_darkonlight_selected = "";
+         else:
+            ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
+            ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
+         # fi
+
+         for (index, (key, value)) in enumerate(cookies_dct.items()):
+            cookies_lst.append(
+               {
+                  "index": index,
+                  "key": key,
+                  "value": value,
+                  "lifetime": _base.TWO_WEEKS_SECONDS,
+               },
+            );
+         # rof
+
+         stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
+         stylesheets_lst.extend(css_lst);
+
+         scripts_lst = copy.deepcopy(_base.BASE_SCRIPTS);
+         scripts_lst.extend(js_lst);
+
+         template_data = dict();
+         template_data.update(
+            _get_template_data_icons()
+         );
+         template_data.update(
+            {
+               "title": title,
+               "description": description,
+               "author": author,
+            }
+         );
+         template_data.update(
+            {
+               "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
+               "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
+               "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
+            }
+         );
+         template_data.update(
+            {
+               "stylesheets": stylesheets_lst,
+               "scriptfiles": scripts_lst,
+               "cookies" : cookies_lst,
+            }
+         );
+
+         (
+           content_dct,
+           template_file,
+         ) = func(body_theme_class, *args, **kwargs);
+
+         template_data.update(content_dct);
+
+         response_str = generate_html_common(
+            template_file,
+            template_data,
+         );
+
+         response_obj.set_data(response_str);
+
+         return (response_obj);
+      # fed
+
+      inner_call.__name__ = (func.__name__);
+
+      return (inner_call);
+   # fed
+
+   return (argumentless_wrapper);
+# fed
+
+
+def parse_content_config(filename):
+
+   parser_obj = commonmark.Parser();
+   html_renderer = commonmark.HtmlRenderer();
+   ast_obj = None;
+
+   article_content_dct = dict();
+   yaml_config = None;
+
+   with open(filename, "r") as file_obj:
+
+      yaml_config = yaml.safe_load(file_obj.read());
+
+   # htiw
+
+   template_file = None;
+
+   for article in yaml_config["entries"]:
+
+      template_file = os.path.join(
+         yaml_config["src_dir"],
+         article["template"],
+      );
+
+      for content in article["content"]:
+
+         config_file = os.path.join(
+            yaml_config["src_dir"],
+            content["filename"],
+         );
+
+         with open(config_file, "r") as file_obj:
+
+            ast_obj = parser_obj.parse(
+               file_obj.read(),
+            );
+
+         # htiw
+
+         article_content_dct[content["template_key"]] = html_renderer.render(ast_obj);
+
+      # rof
+
+      if ("raw_content_key" in article):
+
+         article_content_dct[article["raw_content_key"]] = article["raw_content"];
+
+      else:
+
+         pass;
+
+      # fi
+
+   # rof
+
+   return (article_content_dct, template_file,);
 # fed
