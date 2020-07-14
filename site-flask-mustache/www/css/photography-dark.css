@@ -5,10 +5,10 @@ html.lightondark div#id_photo_carousel {
 html.lightondark div.carousel-caption {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--darkmode-colour-green-dark-dark);
-  box-shadow: 0rem 0rem 1rem rgba(128,128,128,0.5);
+  box-shadow: 0rem 0rem 1rem var(--colour-gray-transparent);
 }
 
 html.lightondark div.carousel-caption h5,
 html.lightondark div.carousel-caption p {
-  text-shadow: 0.15rem 0.15rem rgba(128,128,128,0.5);
+  text-shadow: 0.15rem 0.15rem var(--colour-gray-transparent);
 }
