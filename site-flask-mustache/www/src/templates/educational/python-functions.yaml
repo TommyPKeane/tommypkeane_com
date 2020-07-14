@@ -1,0 +1,12 @@
+src_dir: ./src/templates/educational/
+entries:
+- template: python-functions.mustache
+  content:
+  - filename: python-functions-00-intro.md
+    template_key: intro_content
+  - filename: python-functions-01-functions.md
+    template_key: functions_content
+  - filename: python-functions-02-genericfunctions.md
+    template_key: genericfunctions_content
+  raw_content_key: null
+  raw_content: null

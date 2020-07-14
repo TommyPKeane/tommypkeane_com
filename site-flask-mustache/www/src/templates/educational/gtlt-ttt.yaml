@@ -1,0 +1,8 @@
+src_dir: ./src/templates/educational/
+entries:
+- template: gtlt-ttt.mustache
+  content:
+  - filename: gtlt-ttt-00-intro.md
+    template_key: intro_content
+  raw_content_key: null
+  raw_content: null

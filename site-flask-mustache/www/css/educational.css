@@ -1,0 +1,137 @@
+div.educational_link img {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-title {
+  margin-top: 1.5vw;
+}
+
+.card-subtitle {
+  margin-bottom: 1vw;
+}
+
+div.educational_link {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a.educational_a {
+  vertical-align: top;
+  display: inline-block;
+}
+
+a.educational_a {
+  text-decoration: none;
+}
+
+a.educational_a:hover {
+  text-decoration: none;
+  font-style: 
+}
+
+div.educational_link h4 {
+  font-size: 0.90rem;
+}
+
+div.educational_link p {
+  font-size: 0.60rem;
+}
+
+
+div.article_body {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--lightmode-colour-yellow-pale);
+}
+
+div.article_body p {
+  color: var(--lightmode-colour-green-dark);
+  line-height: 1.75;
+}
+
+pre code {
+    text-align: left;
+}
+
+h1 button.btn {
+  font-size: 2rem;
+}
+
+
+@media (min-width: 0px) {
+  a.educational_a {
+    width: 87.5%;
+  }
+
+  div.article_body {
+    width: 90%;
+    font-size: 0.85rem;
+    padding: 25px 25px 25px 25px;
+  }
+
+  div.article_body pre code {
+    font-size: 0.65rem;
+  }
+}
+
+
+@media (min-width: 576px) {
+  div.article_body {
+    width: 85%;
+    font-size: 0.95rem;
+    padding: 25px 25px 25px 25px;
+  }
+
+  div.article_body pre code {
+    font-size: 0.75rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+  a.educational_a {
+    width: 30%;
+  }
+
+  div.article_body {
+    width: 75%;
+    font-size: 0.95rem;
+    padding: 25px 25px 25px 25px;
+  }
+
+  div.article_body pre code {
+    font-size: 0.75rem;
+  }
+}
+
+
+@media (min-width: 992px) {
+  a.educational_a {
+    width: 23%;
+  }
+
+  div.article_body {
+    width: 55%;
+    font-size: 0.95rem;
+    padding: 25px 25px 25px 25px;
+  }
+
+  div.article_body pre code {
+    font-size: 0.75rem;
+  }
+}
+
+
+@media (min-width: 1200px) {
+  div.article_body {
+    width: 45%;
+    font-size: 0.95rem;
+    padding: 25px 25px 25px 25px;
+  }
+
+  div.article_body pre code {
+    font-size: 0.75rem;
+  }
+}

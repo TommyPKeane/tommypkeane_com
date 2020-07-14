@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US" class="{{body_theme_class}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body>
+    {{> header_contents}}
+    <main>
+      <div id="intro_container" class="container-fluid page_intro">
+        <div class="card mt-3 mb-3">
+          <h3 class="card-title">Functions, Wrappers, and Decorators</h3>
+          <h4 class="card-subtitle">a Tutorial about Python 3.x Syntax</h4>
+          <div class="card-body">
+            {{{intro_content}}}
+          </div>
+          <a id="collapse-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
+          <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
+        </div>
+      </div>
+      <div class="containr-fluid mt-3">
+        <div class="article_body">
+          <h1>Table of Contents</h1>
+          <p style="text-align: center; font-style: italic; font-size: 0.75rem;">Click on Section Title to Expand Contents after Navigating with the Table of Contents Link</p>
+          <ul>
+            <li><a href="#Functions">Functions</a></li>
+            <li><a href="#GenericFunctions">Generic Functions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid mt-3">
+        <div id="Functions" class="article_body">
+          {{{functions_content}}}
+        </div>
+        <div id="GenericFunctions" class="article_body">
+          {{{genericfunctions_content}}}
+        </div>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">
+        {{{img_scroll_to_top}}}
+      </a>
+    </main>
+    {{> footer_contents}}
+    {{#scriptfiles}}
+      <script type="text/javascript" src="{{scriptname}}"></script>
+    {{/scriptfiles}}
+  </body>
+</html>
