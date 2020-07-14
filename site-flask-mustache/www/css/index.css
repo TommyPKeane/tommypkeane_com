@@ -1,6 +1,7 @@
 :root {
   --colour-white: #FFFFFF;
   --colour-gray: #7F7F7F;
+  --colour-gray-transparent: rgba(128, 128, 128, 0.5);
   --colour-black: #000000;
   --svg-dark-bg-colour: #4F1784;
   --svg-dark-shadow-colour: #000000;
