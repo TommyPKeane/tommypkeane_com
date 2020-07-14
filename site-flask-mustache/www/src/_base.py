@@ -3,12 +3,15 @@ TWO_WEEKS_SECONDS = 1_209_600;
 THEME_CLASSES = {
    "default": {
       "body": "darkonlight",
+      "tags": "badge-info",
    },
    "light_on_dark": {
       "body": "lightondark",
+      "tags": "badge-warning",
    },
    "dark_on_light": {
       "body": "darkonlight",
+      "tags": "badge-info",
    },
 };
 
