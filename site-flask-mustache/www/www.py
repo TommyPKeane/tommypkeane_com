@@ -17,6 +17,7 @@ from src import (
    _util,
    ep_cookies,
    ep_errors,
+   ep_educational,
    ep_resume,
    ep_static,
    ep_photography,
@@ -198,6 +199,8 @@ webapp.register_blueprint(ep_static.app_bp);
 webapp.register_blueprint(ep_cookies.app_bp);
 
 webapp.register_blueprint(ep_photography.app_bp);
+
+webapp.register_blueprint(ep_educational.app_bp);
 
 
 if (__name__ == "__main__"):
