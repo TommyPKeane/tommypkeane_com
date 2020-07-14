@@ -21,7 +21,7 @@ $("#collapse-intro").click(
       $("#expand-intro").tooltip("hide");
       $("#collapse-intro").toggle("display");
       $("#expand-intro").toggle("display");
-      $(".intro_par").toggle("display");
+      $(".page_intro .card-body").toggle("display");
       return false;
    }
 );
@@ -46,7 +46,7 @@ $("#expand-intro").click(
       $("#expand-intro").tooltip("hide");
       $("#collapse-intro").toggle("display");
       $("#expand-intro").toggle("display");
-      $(".intro_par").toggle("display");
+      $(".page_intro .card-body").toggle("display");
       return false;
    }
 );
