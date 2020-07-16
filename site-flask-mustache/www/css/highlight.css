@@ -1,0 +1,35 @@
+/* for block of numbers */
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    /*color: #cccccc;*/
+    /*border-right: 2px solid var(--lightmode-colour-green-rich);*/
+    vertical-align: top;
+
+    /* your custom style here */
+}
+
+.hljs-ln td.hljs-ln-numbers {
+    text-align: right;
+    padding-left: 0.50rem;
+    padding-right: 0rem;
+    width: 1.5rem;
+    color: var(--colour-gray);
+}
+
+.hljs-ln td.hljs-ln-code {
+    text-align: left;
+    padding-left: 10px;
+    width: auto;
+}
+
+table.hljs-ln tbody > tr:nth-child(1n),
+table.hljs-ln tbody > tr:nth-child(2n) {
+    background-color: transparent !important;
+}
