@@ -1,12 +1,3 @@
-<div class="card-header" id="id_header_genericfunctions">
-  <h1>
-    <button class="btn btn-link" data-toggle="collapse" data-target="#id_collapse_genericfunctions" aria-expanded="true" aria-controls="id_collapse_genericfunctions">
-      Generic Functions (Overloading)
-    </button>
-  </h1>
-</div>
-<div id="id_collapse_genericfunctions" class="collapse hide" aria-labelledby="id_header_genericfunctions" data-parent="#GenericFunctions">
-
 In compiled languages like C++, a function has a set number of arguments/parameters, known as being N-adic (or p-adic). A function of one variable would be monadic, for two variables its dyadic, and so on. This is known as the _adicity_ of a function.
 
 In Python, there is no concept of __Function Overloading__, due to the way the interpreter was designed. In C++, for example, you can reuse a function's name and declare then define it with different sets of arguments. As long as the arguments are of distinguishable types, you can define many different "overloads" of a function, all with the same name. This has the benefit of allowing you to use the same function call but having it operate differently depending on the data-type of the arguments.
@@ -64,20 +55,19 @@ Note that for class-member functions, the dot-operator passes the current object
 
 ```python
 class Example(object):
-
+  name = "Example";
   def __init__(self,):
     return (None);
   # fed
-
   def example_fnc(self, *unnamed_lst, **named_dct):
-    # ... code goes here ...
+    print(self.name);
+    # ... other code goes here ...
     return (None);
   # fed
-
 # ssalc
 ```
 
-Inside the body of the above function you have access to only two arguments, the unnamed_lst or the named_dct, but each of them can contain as many values as were called with the function.
+Inside the body of a generic module-function you have access to only two arguments, the `unnamed_lst` and the `named_dct`. Inside the body of a generic class-function you can have access to the `self` alias for the instance, as well as the `unnamed_lst` and `named_dct`. Each of them can contain as many values as were called with the function.
 
 
 Here's a simple example that you can use to print these collapsed containers to see what happens with the different calls below:
@@ -169,4 +159,65 @@ This also means that tools and manuals can be updated and the worker(s) will alw
 
 Arguably, this syntax (while esoteric at first) can lead to a lot of really useful, generic, simple code like the above example. In the next sections you'll also see that this can be expanded further into wrapper-functions and decorators, doing essentially the same job of calling a function from inside another function _via_ pass-through of the alias.
 
-</div>
+## WARNING
+
+Python generically supports the trailing comma syntax, such that all iterables that use commas `,` can always have an extra comma on the last item.
+
+This is super preferable for avoiding simple hair-pulling mistakes when writing lists or dictionaries or functions.
+
+Trailing commas in situations like this:
+
+```python
+def test_func(
+    name,
+    label,
+    value,
+    origin,
+  ):
+  print("name:", name)
+  # ...
+  return (None);
+# fi
+```
+
+You can comment-out any of the arguments and the syntax will always be valid. And you can add any argument anywhere in the list and the syntax will always be valid as long as you always end each line in a comma.
+
+```python
+def test_func(
+    name,
+    label,
+    # value,
+    origin,
+    new_label,
+  ):
+  print("name:", name)
+  # ...
+  return (None);
+# fi
+```
+
+The other benefit is that with `",".join(list_of_items)` you can auto-generate valid syntax if you're writing-out Python scripts for dynamic code generation and such.
+
+Often its just a preference of consistency, but there are benefits as well, and it's an easy habit to adopt to avoid simple, hair-pulling syntax errors. Trying to find an errant or missing comma can often be a nightmare in large code-bases.
+
+___HOWEVER___, there is one time that you absolutely can __not__ use a trailing comma, and that is in this situation:
+
+```python
+def bad_syntax(*args, **kwargs,):
+  # ...
+  return (None);
+# fi
+
+def valid_syntax(*args, **kwargs):
+  # ...
+  return (None);
+# fi
+```
+
+The `bad_syntax` declaration will fail because you can't possibly have any arguments after the `**kwargs` collapser for named arguments.
+
+The interpreter will always complain and this is the one situation where you should never put a trailing comma.
+
+Again, arguably, `**kwargs` functions should be relatively rare and specialized syntax that's fragile to begin with, so great care should be used in editing and documenting any functions that use the generic syntax. Which also means that there shouldn't be a lot of fussing with the arguments list such that you'd get any benefit out of a trailing comma anyways.
+
+Personally, I find it easy enough to remember to never put a trailing comma after `**kwargs`, and just use trailing-commas everywhere else all the time. It's always saved me more often than it's ever "hurt" me, when developing and maintaining code.
