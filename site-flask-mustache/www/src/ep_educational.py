@@ -16,6 +16,7 @@ educational_src_dir = "./src/templates/educational/";
 
 educational_css_lst = [
    {"cssname": "/js/highlight/styles/default.css",},
+   {"cssname": "/css/highlight.css",},
    {"cssname": "/css/educational.css",},
    {"cssname": "/css/educational-light.css",},
    {"cssname": "/css/educational-dark.css",},
@@ -23,6 +24,7 @@ educational_css_lst = [
 
 educational_js_lst = [
    {"scriptname": "/js/highlight/highlight.pack.js",},
+   {"scriptname": "/js/highlight-plugins/linenumbers/highlightjs-line-numbers.min.js",},
    {"scriptname": "/js/educational.js",},
 ];
 
@@ -98,6 +100,29 @@ def edu_py_functions(body_theme_class):
 
    yaml_content, template_file = http_request.parse_content_config(
       os.path.join(educational_src_dir, "python-functions.yaml",)
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
+
+   return (content_dct, template_file,);
+# fed
+
+
+@app_bp.route("/educational/d3.js/shapes", methods=["GET",],)
+@http_request.html_response(
+   css_lst= educational_css_lst,
+   js_lst= educational_js_lst,
+   title= "Educational - D3.js Basic Shapes",
+   description= educational_desc,
+   author= site_author,
+)
+def edu_d3js_shapes(body_theme_class):
+   """aksldjaskdj
+   """
+
+   yaml_content, template_file = http_request.parse_content_config(
+      os.path.join(educational_src_dir, "d3js-shapes.yaml",)
    );
 
    content_dct = dict();

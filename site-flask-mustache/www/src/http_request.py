@@ -181,50 +181,75 @@ def parse_content_config(filename):
    yaml_config = None;
 
    with open(filename, "r") as file_obj:
-
       yaml_config = yaml.safe_load(file_obj.read());
-
    # htiw
 
-   template_file = None;
+   article_content_dct["page_topic"] = yaml_config["page_topic"];
+   article_content_dct["page_name"] = yaml_config["page_name"];
 
-   for article in yaml_config["entries"]:
+   intro_file = os.path.join(
+      yaml_config["src_dir"],
+      yaml_config["intro"]["filename"],
+   );
 
-      template_file = os.path.join(
-         yaml_config["src_dir"],
-         article["template"],
+   with open(intro_file, "r") as file_obj:
+      ast_obj = parser_obj.parse(
+         file_obj.read(),
       );
+   # htiw
 
-      for content in article["content"]:
+   article_content_dct[
+      yaml_config["intro"]["template_key"]
+   ] = html_renderer.render(ast_obj);
 
+   article_content_dct["intro_title"] = yaml_config["intro_title"];
+   article_content_dct["intro_subtitle"] = yaml_config["intro_subtitle"];
+
+   article_content_dct["toc"] = [];
+   article_content_dct["content"] = [];
+
+   template_file = yaml_config["template"];
+
+
+   if (yaml_config["content"] is None):
+      pass;
+   else:
+      for content in yaml_config["content"]:
          config_file = os.path.join(
             yaml_config["src_dir"],
             content["filename"],
          );
 
          with open(config_file, "r") as file_obj:
-
             ast_obj = parser_obj.parse(
                file_obj.read(),
             );
-
          # htiw
 
-         article_content_dct[content["template_key"]] = html_renderer.render(ast_obj);
+         article_content_dct["content"].append(
+            {
+               "article_id": content["article_id"],
+               "article_title": content["article_title"],
+               "article": html_renderer.render(ast_obj),
+            },
+         );
 
+         article_content_dct["toc"].append(
+            {
+               "article_id": content["article_id"],
+               "article_title": content["article_title"],
+            },
+         );
       # rof
+   #fi
 
-      if ("raw_content_key" in article):
-
-         article_content_dct[article["raw_content_key"]] = article["raw_content"];
-
-      else:
-
-         pass;
-
-      # fi
-
-   # rof
+   if (yaml_config["raw_content_key"] is None):
+      pass;
+   else:
+      article_content_dct[
+         yaml_config["raw_content_key"]
+      ] = yaml_config["raw_content"];
+   # fi
 
    return (article_content_dct, template_file,);
 # fed
