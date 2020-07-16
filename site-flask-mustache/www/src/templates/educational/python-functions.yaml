@@ -10,10 +10,10 @@ intro:
 content:
 - article_id: Functions
   filename: python-functions-01-functions.md
-  article_title: Generic Functions (Overloading)
+  article_title: Functions
 - article_id: GenericFunctions
   filename: python-functions-02-genericfunctions.md
-  article_title: Generic Functions
+  article_title: Generic Functions (Overloading)
 - article_id: WrapperFunctions
   filename: python-functions-03-wrapperfunctions.md
   article_title: Wrapper Functions
