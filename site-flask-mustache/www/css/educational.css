@@ -59,6 +59,17 @@ h1 button.btn {
   font-size: 2rem;
 }
 
+div.article_body ul,
+div.article_body ol {
+  color: var(--lightmode-colour-green-dark);
+  text-align: left;
+}
+
+div.article_body ul li,
+div.article_body ol li {
+  margin-bottom: 0.5rem;
+}
+
 
 @media (min-width: 0px) {
   a.educational_a {
