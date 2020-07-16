@@ -1,8 +1,12 @@
 src_dir: ./src/templates/educational/
-entries:
-- template: gtlt-ttt.mustache
-  content:
-  - filename: gtlt-ttt-00-intro.md
-    template_key: intro_content
-  raw_content_key: null
-  raw_content: null
+template: ./src/templates/educational/gtlt-ttt.mustache
+page_topic: gtlt
+page_name: TommyTeachesTommy
+intro_title: Tommy Teaches Tommy
+intro_subtitle: a collection of Greater Trees Lesser Turtles publications
+intro:
+  filename: gtlt-ttt-00-intro.md
+  template_key: intro_content
+content: null
+raw_content_key: null
+raw_content: null

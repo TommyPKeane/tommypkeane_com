@@ -1,27 +1,31 @@
 src_dir: ./src/templates/educational/
-entries:
-- template: educational.mustache
-  content:
-  - filename: educational-00-intro.md
-    template_key: intro_content
-  raw_content_key: educational_links
-  raw_content:
-  - page_link: "/educational/ttt"
-    img_src: "/img/gtlt_logo_hammer_plain.svg"
-    img_alt: "Greater Trees Lesser Turtles"
-    card_title: "Tommy Teaches Tommy"
-    card_desc: A collection of "Greater Trees Lesser Turtles" (gtlt) publications where we document and teach ourselves about topics of interest. This collection is encyclop&aelig;dic and is made-up entirely of PDF books, manuals, and documents.
-    tags:
-    - tag_name: "gtlt"
-  - page_link: "/educational/python/functions"
-    img_src: "/img/logo-python.svg"
-    img_alt: "Python Decorators"
-    card_title: "Functions, Decorators, and Wrappers"
-    card_desc: Detailed examples, tips, tricks, and readability suggestions for Python functions, wrappers, and decorators. This page will show how to read and write generic functions and decorators for use in personal or professional Python code.
-    tags:
-    - tag_name: "python"
-    - tag_name: "functions"
-    - tag_name: "aliases"
-    - tag_name: "wrappers"
-    - tag_name: "decorators"
-    - tag_name: "functools"
+template: ./src/templates/educational/educational.mustache
+page_topic: null
+page_name: null
+intro_title: Functions, Wrappers, and Decorators
+intro_subtitle: a Tutorial about Python 3.x Syntax
+intro:
+  filename: educational-00-intro.md
+  template_key: intro_content
+content: null
+raw_content_key: educational_links
+raw_content:
+- page_link: "/educational/ttt"
+  img_src: "/img/gtlt_logo_hammer_plain.svg"
+  img_alt: "Greater Trees Lesser Turtles"
+  card_title: "Tommy Teaches Tommy"
+  card_desc: A collection of "Greater Trees Lesser Turtles" (gtlt) publications where we document and teach ourselves about topics of interest. This collection is encyclop&aelig;dic and is made-up entirely of PDF books, manuals, and documents.
+  tags:
+  - tag_name: "gtlt"
+- page_link: "/educational/python/functions"
+  img_src: "/img/logo-python.svg"
+  img_alt: "Python Decorators"
+  card_title: "Functions, Decorators, and Wrappers"
+  card_desc: Detailed examples, tips, tricks, and readability suggestions for Python functions, wrappers, and decorators. This page will show how to read and write generic functions and decorators for use in personal or professional Python code.
+  tags:
+  - tag_name: "python"
+  - tag_name: "functions"
+  - tag_name: "aliases"
+  - tag_name: "wrappers"
+  - tag_name: "decorators"
+  - tag_name: "functools"

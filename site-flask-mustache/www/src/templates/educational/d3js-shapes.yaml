@@ -1,0 +1,15 @@
+src_dir: ./src/templates/educational/
+template: ./src/templates/article.mustache
+page_topic: D3.js
+page_name: BasicShapes
+intro_title: Curves, Polygons, and Basic Shapes
+intro_subtitle: a Tutorial about D3.js Syntax for SVGs
+intro:
+  filename: d3js-shapes-00-intro.md
+  template_key: intro_content
+content:
+- article_id: svgs
+  filename: d3js-shapes-01-functions.md
+  article_title: Creating an SVG Canvas
+raw_content_key: null
+raw_content: null
