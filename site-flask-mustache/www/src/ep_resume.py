@@ -1,4 +1,5 @@
 import copy;
+import pathlib;
 
 import flask;
 
@@ -9,33 +10,14 @@ from . import (
 );
 
 
-app_bp = flask.Blueprint('resume_cv', __name__);
+base_dir = pathlib.Path("./src/templates/resume_cv/")
 
 
-def _get_resume_details():
-   """Get the template replacement data for the resume/cv job details.
-   """
-   data_dct = {
-      "job_unemployment": _util.get_file_contents_str("./resume_cv/job_unemployment.mustache"),
-      "job_software_engineer_businessintelligence": _util.get_file_contents_str("./resume_cv/job_software_engineer_businessintelligence.mustache"),
-      "job_software_engineer_satcom": _util.get_file_contents_str("./resume_cv/job_software_engineer_satcom.mustache"),
-      "job_graduate_research_assistant": _util.get_file_contents_str("./resume_cv/job_graduate_research_assistant.mustache"),
-      "job_graduate_teaching_assistant": _util.get_file_contents_str("./resume_cv/job_graduate_teaching_assistant.mustache"),
-      "job_student_phd": _util.get_file_contents_str("./resume_cv/job_student_phd.mustache"),
-      "job_student_msc": _util.get_file_contents_str("./resume_cv/job_student_msc.mustache"),
-      "job_student_bsc": _util.get_file_contents_str("./resume_cv/job_student_bsc.mustache"),
-      "job_student_hs": _util.get_file_contents_str("./resume_cv/job_student_hs.mustache"),
-      "job_coop_videosecurity": _util.get_file_contents_str("./resume_cv/job_coop_videosecurity.mustache"),
-      "job_coop_weatherdata": _util.get_file_contents_str("./resume_cv/job_coop_weatherdata.mustache"),
-      "job_coop_touchscreen_repair": _util.get_file_contents_str("./resume_cv/job_coop_touchscreen_repair.mustache"),
-      "job_coop_network_technician": _util.get_file_contents_str("./resume_cv/job_coop_network_technician.mustache"),
-      "job_cashier_grocery": _util.get_file_contents_str("./resume_cv/job_cashier_grocery.mustache"),
-      "job_cashier_electronics": _util.get_file_contents_str("./resume_cv/job_cashier_electronics.mustache"),
-   };
-   return (data_dct);
-# fed
+app_bp = flask.Blueprint("resume_cv", __name__);
 
 
+@app_bp.route("/business", methods=["GET",],)
+@app_bp.route("/professional", methods=["GET",],)
 @app_bp.route("/resume", methods=["GET",],)
 @app_bp.route("/resume.html", methods=["GET",],)
 @app_bp.route("/resume.htm", methods=["GET",],)
@@ -114,7 +96,23 @@ def resume_cv():
    response_str = http_request.generate_html_common(
       "./src/templates/resume.mustache",
       template_data,
-      partials_extra_dct= _get_resume_details(),
+      partials_extra_dct= {
+         "job_unemployment": _util.get_file_contents_str(base_dir / "job_unemployment.mustache"),
+         "job_software_engineer_businessintelligence": _util.get_file_contents_str(base_dir / "job_software_engineer_businessintelligence.mustache"),
+         "job_software_engineer_satcom": _util.get_file_contents_str(base_dir / "job_software_engineer_satcom.mustache"),
+         "job_graduate_research_assistant": _util.get_file_contents_str(base_dir / "job_graduate_research_assistant.mustache"),
+         "job_graduate_teaching_assistant": _util.get_file_contents_str(base_dir / "job_graduate_teaching_assistant.mustache"),
+         "job_student_phd": _util.get_file_contents_str(base_dir / "job_student_phd.mustache"),
+         "job_student_msc": _util.get_file_contents_str(base_dir / "job_student_msc.mustache"),
+         "job_student_bsc": _util.get_file_contents_str(base_dir / "job_student_bsc.mustache"),
+         "job_student_hs": _util.get_file_contents_str(base_dir / "job_student_hs.mustache"),
+         "job_coop_videosecurity": _util.get_file_contents_str(base_dir / "job_coop_videosecurity.mustache"),
+         "job_coop_weatherdata": _util.get_file_contents_str(base_dir / "job_coop_weatherdata.mustache"),
+         "job_coop_touchscreen_repair": _util.get_file_contents_str(base_dir / "job_coop_touchscreen_repair.mustache"),
+         "job_coop_network_technician": _util.get_file_contents_str(base_dir / "job_coop_network_technician.mustache"),
+         "job_cashier_grocery": _util.get_file_contents_str(base_dir / "job_cashier_grocery.mustache"),
+         "job_cashier_electronics": _util.get_file_contents_str(base_dir / "job_cashier_electronics.mustache"),
+      },
    );
 
    response_obj.set_data(response_str);
