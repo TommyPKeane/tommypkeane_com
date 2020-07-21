@@ -23,6 +23,16 @@ body > header nav {
   font-family: "Aegean-Regular", sans-serif;
 }
 
+body > main nav.breadcrumbs {
+  font-family: "Aegean-Regular", sans-serif;
+}
+
+body div.modal-body img {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body > main p {
   text-align: justify;
 }
@@ -48,7 +58,6 @@ body > footer button.footer_btn {
 }
 
 div.dropdown-menu {
-  left: -10%;
 }
 
 .back-to-top {

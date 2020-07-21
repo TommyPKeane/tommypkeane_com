@@ -1,7 +1,15 @@
-div.educational_link img {
-  width: 60%;
+div.educational_link img.card-img-top {
+  width: 70%;
+  border-radius: 5px 5px 5px 5px;
+  border: 2px solid var(--colour-white);
+  margin-top: 1.5rem;
+  margin-bottom: -1.5rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+div.educational_link:hover img.card-img-top {
+  background-color: var(--colour-white);
 }
 
 .card-title {
@@ -68,6 +76,11 @@ div.article_body ol {
 div.article_body ul li,
 div.article_body ol li {
   margin-bottom: 0.5rem;
+}
+
+div.article_body div.container_svg {
+  background-color: var(--colour-white);
+  margin-bottom: 1rem;
 }
 
 
