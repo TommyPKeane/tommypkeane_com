@@ -15,7 +15,7 @@ app_bp = flask.Blueprint("educational", __name__);
 educational_src_dir = "./src/templates/educational/";
 
 educational_css_lst = [
-   {"cssname": "/js/highlight/styles/default.css",},
+   {"cssname": "/js/libs/highlight/styles/default.css",},
    {"cssname": "/css/highlight.css",},
    {"cssname": "/css/educational.css",},
    {"cssname": "/css/educational-light.css",},
@@ -23,8 +23,8 @@ educational_css_lst = [
 ];
 
 educational_js_lst = [
-   {"scriptname": "/js/highlight/highlight.pack.js",},
-   {"scriptname": "/js/highlight-plugins/linenumbers/highlightjs-line-numbers.min.js",},
+   {"scriptname": "/js/libs/highlight/highlight.pack.js",},
+   {"scriptname": "/js/libs/highlight-plugins/linenumbers/highlightjs-line-numbers.min.js",},
    {"scriptname": "/js/educational.js",},
 ];
 

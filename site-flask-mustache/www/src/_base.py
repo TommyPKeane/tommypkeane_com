@@ -23,9 +23,9 @@ BASE_STYLESHEETS = [
 ];
 
 BASE_SCRIPTS = [
-   { "scriptname": "/js/jquery.min.js", },
-   { "scriptname": "/js/bootstrap.bundle.min.js", },
-   { "scriptname": "/js/d3.min.js", },
+   { "scriptname": "/js/libs/jquery/jquery.min.js", },
+   { "scriptname": "/js/libs/bootstrap/bootstrap.bundle.min.js", },
+   { "scriptname": "/js/libs/d3/d3.min.js", },
    { "scriptname": "/js/cookie.js", },
    { "scriptname": "/js/index.js", },
 ];
