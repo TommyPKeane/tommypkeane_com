@@ -1,0 +1,30 @@
+src_dir: ./src/templates/educational/
+template: ./src/templates/article.mustache
+page_topic: Python
+page_name: Classes
+intro_title: Classes and Object-Oriented Designs
+intro_subtitle: a Tutorial about Python 3.x Syntax
+intro:
+  filename: python-classes-00-intro.md
+  template_key: intro_content
+content:
+- article_id: SimpleClasses
+  filename: python-classes-01-simple.md
+  article_title: A Simple Introduction
+- article_id: MemberAccess
+  filename: python-classes-02-access.md
+  article_title: Member Access
+# - article_id: MemberAccess
+#   filename: python-classes-03-wrapperclasses.md
+#   article_title: Wrapper classes
+# - article_id: Decoratorclasses
+#   filename: python-classes-04-decoratorclasses.md
+#   article_title: Decorator classes
+- article_id: ReferenceLinks
+  filename: python-classes-05-references.md
+  article_title: Reference Links
+# - article_id: DecoratorAdvice
+#   filename: python-classes-06-notesondecorators.md
+  # article_title: Advice on using Decorators
+raw_content_key: null
+raw_content: null
