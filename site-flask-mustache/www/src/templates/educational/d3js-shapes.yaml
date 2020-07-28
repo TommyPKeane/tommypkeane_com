@@ -8,8 +8,8 @@ intro:
   filename: d3js-shapes-00-intro.md
   template_key: intro_content
 content:
-- article_id: svgs
-  filename: d3js-shapes-01-functions.md
+- article_id: SVGs
+  filename: d3js-shapes-01-svgs.md
   article_title: Creating an SVG Canvas
 raw_content_key: null
 raw_content: null
