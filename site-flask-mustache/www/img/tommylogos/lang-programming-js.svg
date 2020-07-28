@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="640"
+   height="640"
+   viewBox="0 0 169.33333 169.33334"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <text
+       id="text361"
+       y="158.24379"
+       x="17.964849"
+       style="font-style:normal;font-weight:normal;font-size:27.1684px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:0.679213"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;stroke-width:0.679213"
+         y="158.24379"
+         x="17.964849"
+         id="tspan359">JavaScript</tspan></text>
+    <g
+       transform="matrix(1.1443547,0,0,1.1443547,1.6455453,-10.352127)"
+       id="g603">
+      <text
+         id="text593"
+         y="121.37245"
+         x="3.7283905"
+         style="font-style:normal;font-weight:normal;font-size:143.317px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:3.58294"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;stroke-width:3.58294"
+           y="121.37245"
+           x="3.7283905"
+           id="tspan591">J</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:143.317px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:3.58294"
+         x="60.107704"
+         y="121.37245"
+         id="text597"><tspan
+           id="tspan595"
+           x="60.107704"
+           y="121.37245"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;stroke-width:3.58294">S</tspan></text>
+    </g>
+  </g>
+</svg>

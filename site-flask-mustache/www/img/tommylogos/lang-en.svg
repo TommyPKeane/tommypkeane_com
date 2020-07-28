@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="640"
+   height="640"
+   viewBox="0 0 169.33333 169.33334"
+   version="1.1"
+   id="svg8">
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:123.59699999999999420px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:3.08994;"
+       x="83.653755"
+       y="132.59622"
+       id="text365"><tspan
+         id="tspan363"
+         x="83.653763"
+         y="132.59622"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;text-align:center;text-anchor:middle;stroke-width:3.08994;">EN</tspan></text>
+    <text
+       id="text361"
+       y="47.335438"
+       x="3.0156488"
+       style="font-style:normal;font-weight:normal;font-size:27.16839999999999833px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:0.679213;"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;stroke-width:0.679213;"
+         y="47.335438"
+         x="3.0156488"
+         id="tspan359">LINGUISTICS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15.45509999999999984px;line-height:1.25;font-family:sans-serif;fill-opacity:1;stroke:none;stroke-width:0.386379;"
+       x="6.4389796"
+       y="148.50665"
+       id="text369"><tspan
+         id="tspan367"
+         x="6.4389796"
+         y="148.50665"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Calistoga;-inkscape-font-specification:Calistoga;stroke-width:0.386379;">ENGLISH</tspan></text>
+  </g>
+</svg>
