@@ -18,7 +18,7 @@ raw_content:
   tags:
   - tag_name: "gtlt"
 - page_link: "/educational/python/functions"
-  img_src: "/img/logo-python.svg"
+  img_src: "/img/tommylogos/lang-programming-python.svg"
   img_alt: "Python Decorators"
   card_title: "Functions, Decorators, and Wrappers"
   card_desc: Detailed examples, tips, tricks, and readability suggestions for Python functions, wrappers, and decorators. This page will show how to read and write generic functions and decorators for use in personal or professional Python code.
@@ -29,3 +29,47 @@ raw_content:
   - tag_name: "wrappers"
   - tag_name: "decorators"
   - tag_name: "functools"
+- page_link: "/educational/d3.js/shapes"
+  img_src: "/img/tommylogos/lang-programming-js-d3.svg"
+  img_alt: "D3.js Shapes"
+  card_title: "Curves, Polygons, and Basic Shapes"
+  card_desc: An introduction to drawing SVG graphics through JavaScript with the D3.js library. This is a basic introudction to the simplest shapes. This is a good first intro to D3.js, before getting into the more advanced graphing and data-plotting features.
+  tags:
+  - tag_name: "javascript"
+  - tag_name: "d3.js"
+  - tag_name: "canvas"
+  - tag_name: "svg"
+  - tag_name: "graphics"
+  - tag_name: "plots"
+- page_link: "/educational/webdev/fail2ban"
+  img_src: "/img/tommylogos/webdev.svg"
+  img_alt: "Web Development"
+  card_title: "fail2ban Configuration"
+  card_desc: A detailed look at the tricks and nuances to setup, run, and properly configure the <tt>fail2ban</tt> utility for blocking the IP Addresses of malicious actors online.
+  tags:
+  - tag_name: "webdev"
+  - tag_name: "ipaddress"
+  - tag_name: "banning"
+  - tag_name: "blocking"
+  - tag_name: "fail2ban"
+  - tag_name: "iptables"
+  - tag_name: "webserver"
+  - tag_name: "nginx"
+- page_link: "/educational/python/classes"
+  img_src: "/img/tommylogos/lang-programming-python.svg"
+  img_alt: "Python Classes"
+  card_title: "Classes and Object-Oriented Designs"
+  card_desc: Detailed examples, tips, tricks, and readability suggestions for Python classes.
+  tags:
+  - tag_name: "python"
+  - tag_name: "classes"
+  - tag_name: "aliases"
+# - page_link: "educational/linguistics/en-spelling"
+#   img_src: "/img/tommylogos/lang-en.svg"
+#   img_alt: "English Language (EN)"
+#   card_title: "Spelling (EN)"
+#   card_desc: A collection of English-language words that I consistently fail to spell correctly, or that took me a long time to remember how to spell.
+#   tags:
+#   - tag_name: "linguistics"
+#   - tag_name: "en-US"
+#   - tag_name: "en-GB"
