@@ -1,0 +1,18 @@
+src_dir: ./src/templates/educational/
+template: ./src/templates/article.mustache
+page_topic: Spelling (EN)
+page_name: SpellingEN
+intro_title: Hard to Spell Words (EN)
+intro_subtitle: a Collection of Words in English
+intro:
+  filename: linguistics-en-spelling-00-intro.md
+  template_key: intro_content
+content:
+- article_id: SpellingEN
+  filename: linguistics-en-spelling-01-words.md
+  article_title: Words Tommy Can't Spell
+- article_id: SpellingEN
+  filename: linguistics-en-spelling-02-words.md
+  article_title: Words Tommy Finally Learned to Spell
+raw_content_key: null
+raw_content: null
