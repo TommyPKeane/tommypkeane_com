@@ -79,39 +79,6 @@ html.darkonlight body > main nav.breadcrumbs {
   background-color: var(--lightmode-colour-yellow-pale) !important;
 }
 
-html.darkonlight nav.breadcrumbs {
-  width: auto;
-  min-width: 0vw;
-  max-width: 40vw;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-html.darkonlight ol.breadcrumb {
-  display: block;
-  background-color: transparent;
-  text-align: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-html.darkonlight ol.breadcrumb li {
-  font-size: 1.5rem;
-  display: inline-block;
-  background-color: transparent;
-  min-width: 0vw;
-  width: auto;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
-  content: ">>";
-}
-
 html.darkonlight div.card {
   background-color: var(--lightmode-colour-yellow-pale);
 }
