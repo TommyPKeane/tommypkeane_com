@@ -76,7 +76,7 @@
       </div>
     </div>
   </div>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-xl">
     <a class="navbar-brand" href="/">
       {{{icon_home}}} 
       tommypkeane.com
@@ -87,55 +87,78 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/resume">
+          <a class="nav-link dropdown-toggle" href="/resume">
             {{{icon_cv_resume}}}
             BUSINESS (CV)
           </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown"></div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{{icon_projects_hw}}}
+            {{{icon_other_sites}}}
             PROJECTS
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/projects/hw/pinephone">
+            <a class="dropdown-item disabled" href="/projects/hw/pinephone">
+              {{{icon_pinephone}}}
+              PinePhone (Pine64) | Coming soon...
+            </a>
+            <a class="dropdown-item disabled" href="/projects/hw/pinetime">
+              {{{icon_pinetime}}}
+              PineTime (Pine64) | Coming soon...
+            </a>
+            <a class="dropdown-item disabled" href="/projects/sw/cellularautomata">
+              {{{icon_raspberrypi}}}
+              Cellular Automata | Coming soon...
+            </a>
+            <!-- <a class="dropdown-item" href="/projects/hw/pinephone">
               {{{icon_raspberrypi}}}
               Raspberry Pi (SBC)
             </a>
             <a class="dropdown-item" href="/projects/hw/pinephone">
               {{{icon_odroid}}}
               ODroid (SBC)
+            </a> -->
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{{icon_other_sites}}}
+            ARTS & CRAFTS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/photography">
+              {{{icon_photography}}}
+               PHOTOGRAPHY
             </a>
-            <a class="dropdown-item" href="/projects/hw/pinetime">
-              {{{icon_pinetime}}}
-              PineTime (Pine64)
+            <a class="dropdown-item disabled" href="/woodworking">
+              {{{icon_photography}}}
+               WOODWORKING
             </a>
-            <a class="dropdown-item" href="/projects/hw/pinephone">
-              {{{icon_pinephone}}}
-              PinePhone (Pine64)
+            <a class="dropdown-item disabled" href="/sewing">
+              {{{icon_photography}}}
+               SEWING
             </a>
-            <a class="dropdown-item" href="/projects/sw/cellularautomata">
-              {{{icon_raspberrypi}}}
-              Cellular Automata
+            <a class="dropdown-item disabled" href="/poetry">
+              {{{icon_photography}}}
+               POETRY
+            </a>
+            <a class="dropdown-item disabled" href="/illustrations">
+              {{{icon_photography}}}
+               ILLUSTRATIONS
+            </a>
+            <a class="dropdown-item disabled" href="/3dgraphics">
+              {{{icon_photography}}}
+               3D GRAPHICS
+            </a>
+            <a class="dropdown-item disabled" href="/tommytofu">
+              {{{icon_photography}}}
+               WEB ICONS (tommytofu)
             </a>
           </div>
         </li>
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{{icon_other_sites}}}
-              ARTS & CRAFTS
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/photography">
-                {{{icon_photography}}}
-                 PHOTOGRAPHY
-              </a>
-            </div>
-          </li>
-        </ul>
         <li class="nav-item dropdown">
-          <a class="nav-link" href="/educational">
+          <a class="nav-link dropdown-toggle" href="/educational">
             {{{icon_publications}}}
             EDUCATIONAL
           </a>
