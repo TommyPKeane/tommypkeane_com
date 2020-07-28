@@ -35,6 +35,7 @@ educational_desc = (
 site_author = "Tommy P. Keane";
 
 
+@app_bp.route("/articles", methods=["GET",],)
 @app_bp.route("/educational", methods=["GET",],)
 @app_bp.route("/educational.html", methods=["GET",],)
 @app_bp.route("/educational.htm", methods=["GET",],)
@@ -108,6 +109,28 @@ def edu_py_functions(body_theme_class):
    return (content_dct, template_file,);
 # fed
 
+@app_bp.route("/educational/python/classes", methods=["GET",],)
+@http_request.html_response(
+   css_lst= educational_css_lst,
+   js_lst= educational_js_lst,
+   title= "Educational - Python Classes",
+   description= educational_desc,
+   author= site_author,
+)
+def edu_py_classes(body_theme_class):
+   """aksldjaskdj
+   """
+
+   yaml_content, template_file = http_request.parse_content_config(
+      os.path.join(educational_src_dir, "python-classes.yaml",)
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
+
+   return (content_dct, template_file,);
+# fed
+
 
 @app_bp.route("/educational/d3.js/shapes", methods=["GET",],)
 @http_request.html_response(
@@ -123,6 +146,52 @@ def edu_d3js_shapes(body_theme_class):
 
    yaml_content, template_file = http_request.parse_content_config(
       os.path.join(educational_src_dir, "d3js-shapes.yaml",)
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
+
+   return (content_dct, template_file,);
+# fed
+
+
+@app_bp.route("/educational/linguistics/en-spelling", methods=["GET",],)
+@http_request.html_response(
+   css_lst= educational_css_lst,
+   js_lst= educational_js_lst,
+   title= "Educational - English - Spelling",
+   description= educational_desc,
+   author= site_author,
+)
+def edu_lang_en_spelling(body_theme_class):
+   """aksldjaskdj
+   """
+
+   yaml_content, template_file = http_request.parse_content_config(
+      os.path.join(educational_src_dir, "linguistics-en-spelling.yaml",)
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
+
+   return (content_dct, template_file,);
+# fed
+
+
+@app_bp.route("/educational/webdev/fail2ban", methods=["GET",],)
+@http_request.html_response(
+   css_lst= educational_css_lst,
+   js_lst= educational_js_lst,
+   title= "Educational - Web Development - fail2ban",
+   description= educational_desc,
+   author= site_author,
+)
+def edu_webdev_fail2ban(body_theme_class):
+   """aksldjaskdj
+   """
+
+   yaml_content, template_file = http_request.parse_content_config(
+      os.path.join(educational_src_dir, "webdev-fail2ban.yaml",)
    );
 
    content_dct = dict();
