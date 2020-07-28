@@ -184,7 +184,7 @@ class Vector(object):
     self.val_lst = new_lst;
     return (None);
   # fed
-  def del_values(self, new_lst,):
+  def del_values(self,):
     del self.val_lst;
     return (None);
   # fed
@@ -257,19 +257,19 @@ Here's that same example but a little less verbose:
 ```python
 class Vector(object):
   val_lst = [];
-  @property.getter
+  @property
   def value(self,):
     """Access this vector's value array."""
     return (self.val_lst);
   # fed
-  @property.setter
+  @value.setter
   def value(self, new_lst,):
     """Update this vector's value array."""
     self.val_lst = new_lst;
     return (None);
   # fed
-  @property.deleter
-  def value(self, new_lst,):
+  @value.deleter
+  def value(self,):
     """Delete this vector's value array."""
     del self.val_lst;
     return (None);
@@ -277,9 +277,9 @@ class Vector(object):
 # ssalc
 ```
 
-We've made the code a little longer by adding documentation, but there's a few shortcuts you should notice. We've eliminated the need to call the `property` constructor, we don't need to create (perhaps convoluted) new names for each method, and we now have standardized `.getter`, `.setter`, and `.deleter` syntax that may arguably be easier to follow than `fset`, `fget`, and `fdel`, for anyone new to this code.
+We've made the code a little longer by adding documentation, but there's a few shortcuts you should notice. We've eliminated the need to call the `property` constructor, we don't need to create (perhaps convoluted) new names for each method, and we now have standardized `.setter` and `.deleter` syntax that may arguably be easier to follow than `fset`, `fget`, and `fdel`, for anyone new to this code.
 
-It's honestly just a matter of preference in terms of which approach you'd use for defining class `property` instances, but there's a lot of readability benefit (in this case) to the `@property.<type>` syntax. Personally, I'd go with the decorator syntax, because I do find it much more readable and easier to maintain.
+It's honestly just a matter of preference in terms of which approach you'd use for defining class `property` instances, but there's a lot of readability benefit (in this case) to the `@<property_name>.<type>` syntax. Personally, I'd go with the decorator syntax, because I do find it much more readable and easier to maintain.
 
 Be aware, though, that in terms of the naming, it's a shortcut and a _necessity_ to use the same function name for accessor-abstraction methods.
 
@@ -291,37 +291,37 @@ Here's a class with two public accessor abstractions, to clarify that point (wit
 class Point(object):
   e0 = None;
   e1 = None;
-  @property.getter
+  @property
   def x(self,):
     """Access this point's x-value (e0)."""
     return (self.e0);
   # fed
-  @property.setter
+  @x.setter
   def x(self, new_x,):
     """Update this point's x-value (e0)."""
     self.e0 = new_x;
     return (None);
   # fed
-  @property.deleter
-  def x(self, new_lst,):
-    """Delete this point's x-value (e0)."""
+  @x.deleter
+  def x(self,):
+    """Delete this point's x-value (e0) by setting it back to `None`."""
     del self.e0;
     return (None);
   # fed
-  @property.getter
+  @property
   def y(self,):
     """Access this point's y-value (e1)."""
     return (self.e1);
   # fed
-  @property.setter
+  @y.setter
   def y(self, new_y,):
     """Update this point's y-value (e1)."""
     self.e1 = new_y;
     return (None);
   # fed
-  @property.deleter
-  def y(self, new_lst,):
-    """Delete this point's y-value (e1)."""
+  @y.deleter
+  def y(self,):
+    """Delete this point's y-value (e1) by setting it back to `None`."""
     del self.e1;
     return (None);
   # fed
