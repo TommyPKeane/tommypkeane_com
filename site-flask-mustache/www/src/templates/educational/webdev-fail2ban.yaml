@@ -1,0 +1,21 @@
+src_dir: ./src/templates/educational/
+template: ./src/templates/article.mustache
+page_topic: Web Development
+page_name: fail2ban Setup
+intro_title: How to Setup fail2ban
+intro_subtitle: a Guide to Protecting your Web Server
+intro:
+  filename: webdev-fail2ban-00-intro.md
+  template_key: intro_content
+content:
+- article_id: LinuxWebServer
+  filename: webdev-fail2ban-01-linux.md
+  article_title: Linux Web-Server
+- article_id: Fail2Ban
+  filename: webdev-fail2ban-02-config.md
+  article_title: Configuring fail2ban
+- article_id: ReferenceLinks
+  filename: webdev-fail2ban-03-references.md
+  article_title: Reference Links
+raw_content_key: null
+raw_content: null
