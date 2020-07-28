@@ -1,7 +1,16 @@
-Python treats everything as an object, but the interpreter has several short-hand keywords. For functions there is only one "kind" of function, so unlike C++ module-methods and class-methods are identically formed in Python. The scope of a function is what defines its accessibility, which means that there's also no such thing as "public", "private", or "protected" functions. All scoped elements are publicly accessible through the outer scope container.
+Python treats everything as an object, but the interpreter has several short-hand keywords.
 
+This even extends to __functions__, in Python, such that you can essentially think of __functions__ as being objects that are "callable" -- referring to supporting the `()` operator _via_ the special `__call__()` method.
 
-So, as a short-hand (but the most common) syntax for creating a function, we use the `def` keyword and the colon (:) punctuation to establish a new scope (the function-body). All functions have at least one `return` statement, and if there is no explicitly written `return` statement then the interpreter will return a `None` whenever the function reaches the end of its scope.
+In other programming languages you'll often find that __functions__ and __classes__ are treated very distinctly. You'll also find that many compiled programming languages have different types of functions -- free functions, global functions, static-functions, scoped functions, class functions (methods), and so on.
+
+With Python, there is only one "kind" of function. This is unlike C++, because in Python the module-methods and class-methods share identical syntax and usability. There's no concerns about `static` functions or `static` methods, in Python, by default. These designs exist, but they're not forced, and are usually only needed for highly technical optimisations.
+
+In Python, it's only the __scope__ of a function that defines its accessibility. This means that there's also no such thing as "public", "private", or "protected" functions, in Python.
+
+__All scoped elements are publicly accessible through their (outer scope) container.__
+
+Granted, Python functions are objects, so we could create instances of the , as a short-hand (but the most common) syntax for creating a function, we use the `def` keyword and the colon (:) punctuation to establish a new scope (the function-body). All functions have at least one `return` statement, and if there is no explicitly written `return` statement then the interpreter will return a `None` whenever the function reaches the end of its scope.
 
 Here's a simple function that prints "hello" and returns nothing:
 
