@@ -60,7 +60,8 @@ div.article_body p {
 }
 
 pre code {
-    text-align: left;
+  text-align: left;
+  white-space: pre-wrap;
 }
 
 h1 button.btn {
