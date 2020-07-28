@@ -48,7 +48,7 @@ site_author = "Tommy P. Keane";
    description= "Educational pages by Tommy P. Keane, for continuous-education and infotainment purposes.",
    author= site_author,
 )
-def educational(body_theme_class):
+def educational(theme_class):
    """Provide the Settings (Customisation) Page.
    """
 
@@ -72,7 +72,7 @@ def educational(body_theme_class):
    description= "Tommy Teaches Tommy documents from the collection of Greater Trees Lesser Turtles publications by Tommy P. Keane",
    author= site_author,
 )
-def edu_gtlt_ttt(body_theme_class):
+def edu_gtlt_ttt(theme_class):
    """aksldjaskdj
    """
 
@@ -95,7 +95,7 @@ def edu_gtlt_ttt(body_theme_class):
    description= educational_desc,
    author= site_author,
 )
-def edu_py_functions(body_theme_class):
+def edu_py_functions(theme_class):
    """aksldjaskdj
    """
 
@@ -117,7 +117,7 @@ def edu_py_functions(body_theme_class):
    description= educational_desc,
    author= site_author,
 )
-def edu_py_classes(body_theme_class):
+def edu_py_classes(theme_class):
    """aksldjaskdj
    """
 
@@ -140,7 +140,7 @@ def edu_py_classes(body_theme_class):
    description= educational_desc,
    author= site_author,
 )
-def edu_d3js_shapes(body_theme_class):
+def edu_d3js_shapes(theme_class):
    """aksldjaskdj
    """
 
@@ -163,7 +163,7 @@ def edu_d3js_shapes(body_theme_class):
    description= educational_desc,
    author= site_author,
 )
-def edu_lang_en_spelling(body_theme_class):
+def edu_lang_en_spelling(theme_class):
    """aksldjaskdj
    """
 
@@ -186,7 +186,7 @@ def edu_lang_en_spelling(body_theme_class):
    description= educational_desc,
    author= site_author,
 )
-def edu_webdev_fail2ban(body_theme_class):
+def edu_webdev_fail2ban(theme_class):
    """aksldjaskdj
    """
 

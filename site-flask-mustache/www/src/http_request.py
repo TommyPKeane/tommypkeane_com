@@ -15,7 +15,6 @@ def _get_template_data_icons():
    data_dct = {
       # FEATHER ICONS
       "icon_home": _util.get_file_contents_str("./img/feather/home.svg"),
-      "icon_about_me": _util.get_file_contents_str("./img/feather/smile.svg"),
       "icon_cv_resume": _util.get_file_contents_str("./img/feather/briefcase.svg"),
       "icon_bitbucket": _util.get_file_contents_str("./img/feather/droplet.svg"),
       "icon_google_scholar": _util.get_file_contents_str("./img/feather/award.svg"),
@@ -23,12 +22,9 @@ def _get_template_data_icons():
       "icon_facebook": _util.get_file_contents_str("./img/feather/facebook.svg"),
       "icon_twitter": _util.get_file_contents_str("./img/feather/twitter.svg"),
       "icon_linkedin": _util.get_file_contents_str("./img/feather/linkedin.svg"),
-      "icon_projects_hw": _util.get_file_contents_str("./img/feather/tool.svg"),
       "icon_raspberrypi": _util.get_file_contents_str("./img/feather/cpu.svg"),
-      "icon_odroid": _util.get_file_contents_str("./img/feather/cpu.svg"),
       "icon_pinetime": _util.get_file_contents_str("./img/feather/watch.svg"),
       "icon_pinephone": _util.get_file_contents_str("./img/feather/phone.svg"),
-      "icon_projects_sw": _util.get_file_contents_str("./img/feather/tool.svg"),
       "icon_publications": _util.get_file_contents_str("./img/feather/file-text.svg"),
       "img_scroll_to_top": _util.get_file_contents_str("./img/feather/chevrons-up.svg"),
       "img_intro_collapse": _util.get_file_contents_str("./img/feather/chevrons-up.svg"),
@@ -37,16 +33,17 @@ def _get_template_data_icons():
       "exif_icon": _util.get_file_contents_str("./img/feather/film.svg"),
       "fullsize_icon": _util.get_file_contents_str("./img/feather/external-link.svg"),
       # TOMMYTOFU ICONS
+      "icon_books": _util.get_file_contents_str("./img/tommytofu/book-closed.svg"),
       "icon_settings": _util.get_file_contents_str("./img/tommytofu/config.svg"),
       "icon_other_sites": _util.get_file_contents_str("./img/tommytofu/menu.svg"),
       "icon_github": _util.get_file_contents_str("./img/tommytofu/git-octocat.svg"),
       "icon_photography": _util.get_file_contents_str("./img/tommytofu/camera-photo.svg"),
       # OTHERS
       "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
+      "ico_ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
    };
    return (data_dct);
 # fed
-
 
 
 def generate_html_common(
@@ -91,15 +88,15 @@ def html_response(css_lst, js_lst, title, description, author,):
 
          ck_theme_lightondark_selected = None;
          ck_theme_darkonlight_selected = None;
-         body_theme_class = flask.request.cookies.get("theme");
+         theme_class = flask.request.cookies.get("theme");
 
-         if (body_theme_class is None):
-            body_theme_class = "default";
+         if (theme_class is None):
+            theme_class = "default";
             ck_theme_lightondark_selected = "selected";
             ck_theme_darkonlight_selected = "";
          else:
-            ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
-            ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
+            ck_theme_lightondark_selected = ("", "selected")[int(theme_class == "light_on_dark")];
+            ck_theme_darkonlight_selected = ("", "selected")[int(theme_class == "dark_on_light")];
          # fi
 
          for (index, (key, value)) in enumerate(cookies_dct.items()):
@@ -132,7 +129,7 @@ def html_response(css_lst, js_lst, title, description, author,):
          );
          template_data.update(
             {
-               "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
+               "theme_class": _base.THEME_CLASSES[theme_class],
                "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
                "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
             }
@@ -148,7 +145,7 @@ def html_response(css_lst, js_lst, title, description, author,):
          (
            content_dct,
            template_file,
-         ) = func(body_theme_class, *args, **kwargs);
+         ) = func(theme_class, *args, **kwargs);
 
          template_data.update(content_dct);
 

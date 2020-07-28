@@ -79,15 +79,15 @@ def photography():
 
    ck_theme_lightondark_selected = None;
    ck_theme_darkonlight_selected = None;
-   body_theme_class = flask.request.cookies.get("theme");
+   theme_class = flask.request.cookies.get("theme");
 
-   if (body_theme_class is None):
-      body_theme_class = "default";
+   if (theme_class is None):
+      theme_class = "default";
       ck_theme_lightondark_selected = "selected";
       ck_theme_darkonlight_selected = "";
    else:
-      ck_theme_lightondark_selected = ("", "selected")[int(body_theme_class == "light_on_dark")];
-      ck_theme_darkonlight_selected = ("", "selected")[int(body_theme_class == "dark_on_light")];
+      ck_theme_lightondark_selected = ("", "selected")[int(theme_class == "light_on_dark")];
+      ck_theme_darkonlight_selected = ("", "selected")[int(theme_class == "dark_on_light")];
    # fi
 
    for (index, (key, value)) in enumerate(cookies_dct.items()):
@@ -122,7 +122,7 @@ def photography():
    );
    template_data.update(
       {
-         "body_theme_class": _base.THEME_CLASSES[body_theme_class]["body"],
+         "theme_class": _base.THEME_CLASSES[theme_class],
          "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
          "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
       }
