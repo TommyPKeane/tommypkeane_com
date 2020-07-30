@@ -10,7 +10,7 @@ The following sub-sections talk about how to create "protected" and "private" me
 
 ___Documentation is always the best way to convey a design contract___ in your software, but these stylistic conventions can of course be used in tandem with good documentation to make your code more readable and more "standardized".
 
-## Protected Members
+<h2 id="hProtectedMembers">Protected Members</h2>
 
 There is no such thing as a "protected" member in Python, though by convention it is suggested that protected elements be named with a single underscore as a prefix for the alias. Again, this does not actually "protect" the member from being accessed publicly. It's still accessible and modifiable through the dot operator on any class instance.
 
@@ -25,20 +25,20 @@ class Vector2D(object):
     self._y = new_array[1];
     return (None);
   # fed
-  @property.getter
+  @property
   def x(self,):
     return (self._x);
   # fed
-  @property.setter
+  @x.setter
   def x(self, x,):
     self._x = x;
     return (None);
   # fed
-  @property.getter
+  @property
   def y(self,):
     return (self._y);
   # fed
-  @property.setter
+  @y.setter
   def y(self, y,):
     self._y = y;
     return (None);
@@ -50,7 +50,7 @@ In the above design, we've created a custom class for a 2D Vector, which holds t
 
 Again, they're not _actually_ "protected", but the underscore indicates that for developer purposes they should be treated as such. It's just a syntax convention, so you can follow it or not, but it tends to add extra readability by using a single underscore.
 
-## Private Members
+<h2 id="hPrivateMembers">Private Members</h2>
 
 Now, despite the fact that all members are public by default, there is a "special" syntax that is supported by the interpreter to create "private" members.
 
@@ -126,7 +126,7 @@ exec(
   "vec.__x = "
   + "vec." + "_" + vec.__class__.__name__ + "__x;"
 );
-````
+```
 
 Note that we're using `exec`, not `eval`, because we are doing an assignment _statement_, not providing a standalone _expression_.
 
