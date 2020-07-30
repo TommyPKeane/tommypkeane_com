@@ -1,0 +1,70 @@
+html.lightondark code {
+  color: #8be9fd;
+}
+
+html.lightondark .hljs-built_in,
+html.lightondark .hljs-selector-tag,
+html.lightondark .hljs-section,
+html.lightondark .hljs-link {
+  color: #8be9fd;
+}
+
+html.lightondark .hljs-keyword {
+  color: var(--darkmode-colour-red-lite-alt);
+}
+
+html.lightondark .hljs,
+html.lightondark .hljs-subst {
+  color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--darkmode-colour-green-dark-dark);
+}
+
+html.lightondark .hljs-title {
+  color: #50fa7b;
+}
+
+html.lightondark .hljs-string,
+html.lightondark .hljs-meta,
+html.lightondark .hljs-name,
+html.lightondark .hljs-type,
+html.lightondark .hljs-attr,
+html.lightondark .hljs-symbol,
+html.lightondark .hljs-bullet,
+html.lightondark .hljs-addition,
+html.lightondark .hljs-variable,
+html.lightondark .hljs-template-tag,
+html.lightondark .hljs-template-variable {
+  color: var(--darkmode-colour-green-pale);
+}
+
+html.lightondark .hljs-comment,
+html.lightondark .hljs-quote,
+html.lightondark .hljs-deletion {
+  color: #6272a4;
+}
+
+html.lightondark .hljs-keyword,
+html.lightondark .hljs-selector-tag,
+html.lightondark .hljs-literal,
+html.lightondark .hljs-title,
+html.lightondark .hljs-section,
+html.lightondark .hljs-doctag,
+html.lightondark .hljs-type,
+html.lightondark .hljs-name,
+html.lightondark .hljs-strong {
+  font-weight: bold;
+}
+
+html.lightondark .hljs-literal,
+html.lightondark .hljs-number {
+  color: #bd93f9;
+}
+
+.hljs-ln td.hljs-ln-numbers {
+  color: var(--darkmode-colour-red-lite-alt);
+  border-right: 1px solid var(--darkmode-colour-red-lite-alt);
+}
+
+pre {
+  box-shadow: 0px 4px 8px 0px var(--colour-black);
+}
