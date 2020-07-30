@@ -8,10 +8,6 @@ div.educational_link img.card-img-top {
   margin-right: auto;
 }
 
-div.educational_link:hover img.card-img-top {
-  background-color: var(--colour-white);
-}
-
 .card-title {
   margin-top: 1.5vw;
 }
@@ -51,7 +47,6 @@ div.educational_link p {
 div.article_body {
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--lightmode-colour-yellow-pale);
 }
 
 div.article_body p {
@@ -70,7 +65,6 @@ h1 button.btn {
 
 div.article_body ul,
 div.article_body ol {
-  color: var(--lightmode-colour-green-dark);
   text-align: left;
 }
 
@@ -80,7 +74,6 @@ div.article_body ol li {
 }
 
 div.article_body div.container_svg {
-  background-color: var(--colour-white);
   margin-bottom: 1rem;
 }
 

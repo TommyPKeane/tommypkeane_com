@@ -20,8 +20,6 @@
     padding-left: 0.25rem;
     padding-right: 0.15rem;
     width: 1.5rem;
-    color: var(--colour-gray);
-    border-right: 1px solid var(--colour-white);
 }
 
 .hljs-ln td.hljs-ln-code {
@@ -38,5 +36,4 @@ table.hljs-ln tbody > tr:nth-child(2n) {
 pre {
     margin-left: -15%;
     width: 130%;
-    box-shadow: 0px 4px 10px 0px var(--colour-black);
 }

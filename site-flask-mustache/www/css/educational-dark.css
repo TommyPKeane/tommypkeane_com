@@ -1,0 +1,24 @@
+html.lightondark div.educational_link img.card-img-top {
+  border: 2px solid var(--colour-black);
+}
+
+html.lightondark div.educational_link:hover img.card-img-top {
+  background-color: var(--darkmode-colour-yellow-pale);
+}
+
+html.lightondark div.article_body {
+  background-color: var(--darkmode-colour-red-dark);
+}
+
+html.lightondark div.article_body p {
+  color: var(--darkmode-colour-yellow-pale);
+}
+
+html.lightondark div.article_body ul,
+html.lightondark div.article_body ol {
+  color: var(--lightmode-colour-yellow-pale);
+}
+
+html.lightondark div.article_body div.container_svg {
+  background-color: var(--colour-white);
+}

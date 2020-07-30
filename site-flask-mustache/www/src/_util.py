@@ -14,11 +14,9 @@ def get_file_contents_str(filename,):
 
 def generate_html(source_file, data_dct, partials_dct, partials_extra_dct= None):
    """Generate HTML from a Mustache File and Data Dictionary.
-
    Args:
       source_file (str, path-like): Path to Mustache file, including filename.
       data_dct (dict): Dictionary of template replacements.
-
    Returns:
       A string of valid HTML contents after parsing the Mustache file and
       filling in the replacement contents from the data dictionary.

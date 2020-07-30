@@ -11,6 +11,8 @@ BASE_STYLESHEETS = [
    { "cssname": "/css/index.css", },
    { "cssname": "/css/index-dark.css", },
    { "cssname": "/css/index-light.css", },
+   { "cssname": "/css/highlight-light.css", },
+   { "cssname": "/css/highlight-dark.css", },
 ];
 
 BASE_SCRIPTS = [
