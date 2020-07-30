@@ -8,23 +8,25 @@ intro:
   filename: python-classes-00-intro.md
   template_key: intro_content
 content:
+- article_id: AliasesObjects
+  filename: python-classes-01-aliasobjects.md
+  article_title: Aliases and Objects
+  subtitles: null
 - article_id: SimpleClasses
-  filename: python-classes-01-simple.md
-  article_title: A Simple Introduction
+  filename: python-classes-02-simple.md
+  article_title: Simple Examples
+  subtitles: null
 - article_id: MemberAccess
-  filename: python-classes-02-access.md
+  filename: python-classes-03-access.md
   article_title: Member Access
-# - article_id: MemberAccess
-#   filename: python-classes-03-wrapperclasses.md
-#   article_title: Wrapper classes
-# - article_id: Decoratorclasses
-#   filename: python-classes-04-decoratorclasses.md
-#   article_title: Decorator classes
+  subtitles:
+    - subtitle_id: hProtectedMembers
+      subtitle_title: Protected Members
+    - subtitle_id: hPrivateMembers
+      subtitle_title: Private Members
 - article_id: ReferenceLinks
   filename: python-classes-05-references.md
   article_title: Reference Links
-# - article_id: DecoratorAdvice
-#   filename: python-classes-06-notesondecorators.md
-  # article_title: Advice on using Decorators
+  subtitles: null
 raw_content_key: null
 raw_content: null

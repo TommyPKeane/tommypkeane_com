@@ -14,7 +14,7 @@ from . import (
 );
 
 
-app_bp = flask.Blueprint('photography', __name__);
+app_bp = flask.Blueprint("photography", __name__);
 
 
 def _get_exif_info(img_file):

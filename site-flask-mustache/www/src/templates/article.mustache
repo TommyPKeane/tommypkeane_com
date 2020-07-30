@@ -39,7 +39,13 @@
           <p style="text-align: center; font-style: italic; font-size: 0.75rem;">Click on Section Title to Expand Contents after Navigating with the Table of Contents Link</p>
           <ul>
             {{#toc}}
-              <li><a href="#{{article_id}}">{{article_title}}</a></li>
+              <li>
+                <a href="#{{article_id}}">{{article_title}}</a>
+                <ul>
+                  {{#subtitles}}
+                    <li><a href="#{{subtitle_id}}">{{subtitle_title}}</a></li>
+                  {{/subtitles}}
+                </ul>
             {{/toc}}
           </ul>
         </div>

@@ -235,6 +235,7 @@ def parse_content_config(filename):
             {
                "article_id": content["article_id"],
                "article_title": content["article_title"],
+               "subtitles": content["subtitles"],
             },
          );
       # rof

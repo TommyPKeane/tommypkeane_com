@@ -11,8 +11,10 @@ content:
 - article_id: SpellingEN
   filename: linguistics-en-spelling-01-words.md
   article_title: Words Tommy Can't Spell
+  subtitles: null
 - article_id: SpellingEN
   filename: linguistics-en-spelling-02-words.md
   article_title: Words Tommy Finally Learned to Spell
+  subtitles: null
 raw_content_key: null
 raw_content: null
