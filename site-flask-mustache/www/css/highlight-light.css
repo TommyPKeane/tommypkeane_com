@@ -6,7 +6,7 @@ html.darkonlight .hljs-built_in,
 html.darkonlight .hljs-selector-tag,
 html.darkonlight .hljs-section,
 html.darkonlight .hljs-link {
-  color: var(--lightmode-colour-blue-light);
+  color: var(--lightmode-colour-blue-lite);
 }
 
 html.darkonlight .hljs-keyword {
