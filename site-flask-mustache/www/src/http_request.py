@@ -22,6 +22,7 @@ icon_data_dct = {
    "icon_contact": _util.get_file_contents_str("./img/feather/phone.svg"),
    "exif_icon": _util.get_file_contents_str("./img/feather/film.svg"),
    "fullsize_icon": _util.get_file_contents_str("./img/feather/external-link.svg"),
+   "icon_synth": _util.get_file_contents_str("./img/feather/music.svg"),
    # TOMMYTOFU ICONS
    "icon_home": _util.get_file_contents_str("./img/tommytofu/home-cabin-a.svg"),
    "icon_cv_resume": _util.get_file_contents_str("./img/tommytofu/skull-round-a.svg"),
