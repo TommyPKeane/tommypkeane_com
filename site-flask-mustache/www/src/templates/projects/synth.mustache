@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US" class="{{theme_class}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{ico_ico_file}}" type="image/png">
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body>
+    {{> header_contents}}
+    <main>
+      <div id="audio_modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Enable Audio?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>To prevent unwanted audio, you need to press the "Enable" button to allow the Audio on this page to play when you interact with the Synthesizer.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="enable_audio();">Enable</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="intro_container" class="container-fluid page_intro">
+      </div>
+      <div id="synth_container" class="container-fluid">
+        <div id="synth">
+          <div id="synthtop">
+            <div id="display">
+              <canvas id="synthwaveform"></canvas>
+            </div>
+            <div id="controls">
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
+                {{{knob}}}
+              </div>
+            </div>
+          </div>
+          <div id="synthbottom">
+            <div id="keys">
+              {{{keys_octave_1}}}{{{keys_octave_2}}}{{{keys_octave_3}}}
+            </div>
+            <div id="keyinfo">
+              <p class="keybutton">t</p>
+              <p class="keybutton">y</p>
+              <p class="keybutton">u</p>
+              <p class="keybutton">i</p>
+              <p class="keybutton">o</p>
+              <p class="keybutton">p</p>
+              <p class="keybutton">[</p>
+              <p class="keybutton">g</p>
+              <p class="keybutton">h</p>
+              <p class="keybutton">j</p>
+              <p class="keybutton">k</p>
+              <p class="keybutton">l</p>
+              <p class="keybutton">;</p>
+              <p class="keybutton">'</p>
+              <p class="keybutton">v</p>
+              <p class="keybutton">b</p>
+              <p class="keybutton">n</p>
+              <p class="keybutton">m</p>
+              <p class="keybutton">,</p>
+              <p class="keybutton">.</p>
+              <p class="keybutton">/</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
+    </main>
+    {{> footer_contents}}
+  </body>
+</html>

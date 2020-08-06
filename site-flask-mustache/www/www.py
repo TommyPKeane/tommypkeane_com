@@ -18,6 +18,7 @@ from src import (
    ep_cookies,
    ep_errors,
    ep_educational,
+   ep_projects,
    ep_resume,
    ep_static,
    ep_photography,
@@ -110,6 +111,8 @@ def intro():
    return (response_str);
 # fed
 
+
+webapp.register_blueprint(ep_projects.app_bp);
 
 webapp.register_blueprint(ep_resume.app_bp);
 

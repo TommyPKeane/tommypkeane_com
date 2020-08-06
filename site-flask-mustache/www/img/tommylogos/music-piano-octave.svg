@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 190.5 79.375002"
+   height="150"
+   width="720">
+  <g id="layer1">
+    <rect
+       class="whitekey"
+       ry="2.322763"
+       rx="2.2951808"
+       style="stroke-width:1.95785;stroke-linecap:round"
+       id="keyC"
+       width="25.481979"
+       height="80.534294"
+       x="-0.51290268"
+       y="-0.96217364" />
+    <rect
+       class="whitekey"
+       ry="2.5163267"
+       rx="2.4864459"
+       style="stroke-width:1.95785;stroke-linecap:round"
+       id="keyD"
+       width="25.481979"
+       height="80.534294"
+       x="26.720034"
+       y="-0.96217364" />
+    <rect
+       class="whitekey"
+       ry="3.0970173"
+       rx="3.060241"
+       y="-0.96217364"
+       x="53.952972"
+       height="80.534294"
+       width="25.481979"
+       id="keyE"
+       style="stroke-width:1.95785;stroke-linecap:round" />
+    <rect
+       class="whitekey"
+       ry="2.322763"
+       rx="2.2951808"
+       y="-0.96217364"
+       x="81.185898"
+       height="80.534294"
+       width="25.481979"
+       id="keyF"
+       style="stroke-width:1.95785;stroke-linecap:round" />
+    <rect
+       class="whitekey"
+       ry="2.1291995"
+       rx="2.1039157"
+       style="stroke-width:1.95785;stroke-linecap:round"
+       id="keyG"
+       width="25.481979"
+       height="80.534294"
+       x="108.41885"
+       y="-0.96217364" />
+    <rect
+       class="whitekey"
+       ry="2.322763"
+       rx="2.2951808"
+       style="stroke-width:1.95785;stroke-linecap:round"
+       id="keyA"
+       width="25.481979"
+       height="80.534294"
+       x="135.65176"
+       y="-0.96217364" />
+    <rect
+       class="whitekey"
+       ry="2.7098901"
+       rx="2.6777108"
+       y="-0.96217364"
+       x="162.8847"
+       height="80.534294"
+       width="25.481979"
+       id="keyB"
+       style="stroke-width:1.95785;stroke-linecap:round" />
+    <rect
+       class="blackkey"
+       ry="2.1291995"
+       rx="2.1039157"
+       style="stroke-width:1.27737;stroke-linecap:round"
+       id="sharpC"
+       width="14.667762"
+       height="59.554771"
+       x="18.082245"
+       y="-0.96217364" />
+    <rect
+       class="blackkey"
+       ry="2.5163267"
+       rx="2.4864459"
+       y="-0.96217364"
+       x="46.023014"
+       height="59.554771"
+       width="14.667762"
+       id="sharpD"
+       style="stroke-width:1.27737;stroke-linecap:round" />
+    <rect
+       class="blackkey"
+       ry="1.9356358"
+       rx="1.9126506"
+       y="-0.96217364"
+       x="101.681"
+       height="59.554771"
+       width="14.667762"
+       id="sharpF"
+       style="stroke-width:1.27737;stroke-linecap:round" />
+    <rect
+       class="blackkey"
+       ry="2.1291995"
+       rx="2.1039157"
+       style="stroke-width:1.27737;stroke-linecap:round"
+       id="sharpG"
+       width="14.667762"
+       height="59.554771"
+       x="128.9512"
+       y="-0.96217364" />
+    <rect
+       class="blackkey"
+       ry="2.322763"
+       rx="2.2951808"
+       y="-0.96217364"
+       x="156.22139"
+       height="59.554771"
+       width="14.667762"
+       id="sharpA"
+       style="stroke-width:1.27737;stroke-linecap:round" />
+  </g>
+</svg>

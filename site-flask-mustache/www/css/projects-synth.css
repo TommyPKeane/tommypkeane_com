@@ -1,0 +1,98 @@
+#synth {
+  width: 70vw;
+  margin-top: 2vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vw;
+}
+
+#synthtop,
+#synthbottom {
+  display: block;
+}
+
+#synth #display {
+  display: inline-block;
+  width: 39.5%;
+  vertical-align: top;
+}
+
+#display canvas {
+  width: 100%;
+  height: 220px;
+  background-color: var(--lightmode-colour-green-dark);
+  border-radius: 10px 10px 10px 10px;
+}
+
+
+#synth #controls {
+  display: inline-block;
+  width: 57.5%;
+  vertical-align: top;
+  text-align: center;
+}
+
+#controls div {
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+}
+
+#controls div.knob {
+  width: 38px;
+  height: 30px;
+  display: inline-block;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#controls div.knob svg {
+  width: 100%;
+  height: 100%;
+}
+
+#keys svg {
+  display: inline-block;
+  margin: 0px -5px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  width: 33%;
+}
+
+#keys svg rect.blackkey {
+  fill: var(--colour-black);
+}
+
+#keys svg rect.whitekey {
+  fill: var(--colour-white);
+}
+
+#keys svg rect.blackkey.hover,
+#keys svg rect.whitekey.hover,
+#keys svg rect.blackkey:hover,
+#keys svg rect.whitekey:hover {
+  fill: var(--lightmode-colour-pink-lite);
+  /*opacity: 85%;*/
+}
+
+#keys svg rect.blackkey.active,
+#keys svg rect.whitekey.active,
+#keys svg rect.blackkey:active,
+#keys svg rect.whitekey:active {
+  fill: var(--lightmode-colour-blue-lite);
+  /*opacity: 85%;*/
+}
+
+#keyinfo {
+  text-align: center;
+}
+
+#keyinfo p.keybutton {
+  display: inline-block;
+  font-size: 1.25rem;
+  margin-left: 1.05rem;
+  margin-right: 1.05rem;
+  font-weight: bolder;
+  font-family: monospace;
+  color: var(--lightmode-colour-green-dark);
+  text-shadow: 0.01rem 0.01rem 0.2rem var(--colour-white);
+}
