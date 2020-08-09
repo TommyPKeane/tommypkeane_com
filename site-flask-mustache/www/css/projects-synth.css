@@ -13,7 +13,7 @@
 
 #synth #display {
   display: inline-block;
-  width: 39.5%;
+  width: 100%;
   vertical-align: top;
 }
 
@@ -39,8 +39,8 @@
 }
 
 #controls div.knob {
-  width: 38px;
-  height: 30px;
+  width: 58px;
+  height: 50px;
   display: inline-block;
   padding-left: 4px;
   padding-right: 4px;

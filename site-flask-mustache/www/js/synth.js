@@ -1,5 +1,11 @@
 let audio_ctx = null;
 let synth_osc = null;
+let display_elm = document.getElementById("synthwaveform");
+let display_ctx = display_elm.getContext("2d");
+let freq = 0;
+
+display_elm.width *= 3;
+display_elm.height *= 3;
 
 let tones = {
    "keyC": {
@@ -129,6 +135,49 @@ let keyboardkeys = {
 
 let keys = document.getElementById("keys").getElementsByTagName("rect");
 
+let get_sinewave_pt = function hst_get_sinewave_pt(t, f, a) {
+   let wx = display_elm.width;
+   let hy = display_elm.height;
+
+   let amp = a * hy / 2;
+
+   let wave_pt = (
+      (hy / 2) - (amp * Math.sin(2 * Math.PI * (t * f) / wx))
+   );
+   return (wave_pt);
+}
+
+let draw_sinewave = function hst_draw_sinewave(t) {
+   let wx = display_elm.width;
+   let hy = display_elm.height;
+  
+   display_ctx.beginPath();
+   display_ctx.moveTo(0, (hy / 2));
+   display_ctx.strokeStyle = "orange";
+   for(let i = 0; i < t; ++i) {
+      a = get_sinewave_pt(i, freq / 1, 0.85);
+      display_ctx.quadraticCurveTo(i, a, i, a);
+   }
+   display_ctx.stroke();
+
+   return;
+}
+
+let ti = 0;
+
+let draw_loop = setInterval(
+   function() {
+      display_ctx.clearRect(0, 0, ti, display_elm.height);
+      draw_sinewave(ti);
+      ti++;
+      if(ti > display_elm.width) {
+         ti = 0;
+      }
+   },
+   1
+);
+
+
 let key_handlers = {};
 
 let enable_audio = function hst_enable_audio() {
@@ -150,13 +199,14 @@ let start_audio = function hst_start_audio(tone_freq) {
    synth_osc.frequency.value = tone_freq;
    synth_osc.start(0);
    synth_osc.connect(audio_ctx.destination);
-   console.log(tone_freq);
+   freq = tone_freq;
    return;
 }
 
 let stop_audio = function hst_stop_audio() {
    synth_osc.disconnect(audio_ctx.destination);
    synth_osc = null;
+   freq = 0;
    return;
 }
 
