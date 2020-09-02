@@ -1,3 +1,29 @@
+# @file
+# @brief Endpoints and Blueprint for Business (Professional) Pages
+# 
+# This module provides the Flask endpoints' Blueprint to support the site pages
+# for our "Business" life -- basically anything related to professional roles,
+# availability, job searches, and our resumé or CV.
+# 
+# Currently it's just an interactive CV timeline, but future updates should be
+# able to provide a bit more related to our professional experiences and skills.
+# We generally want to be ambiguous and vague about the previous companies or
+# institutions where we've worked, because we don't want to create any perceived
+# linkages between this site and those companies. Nothing on this site has been
+# provided or built by any time, tools, or resources from our previous roles at
+# any organisation. This is solely a personal site, so even though we may "lose"
+# out on any possible personal advertisement of institute or company names for
+# places we've worked before, it seems better to just talk about our role and
+# what we did, no matter what the company was/is.
+# 
+# As such, company names should also be redacted in all the file names and any
+# associated metadata. Would be pretty dumb to try to be anonymous but then have
+# names show up in URLs and HTTP requests.
+# 
+# @author Tommy P. Keane
+# @email talk@tommypkeane.com
+# @copyright 2020, Tommy P. Keane
+
 import copy;
 import pathlib;
 

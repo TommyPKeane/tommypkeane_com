@@ -1,3 +1,14 @@
+# @file
+# @brief Endpoints and Blueprint for Project Pages
+# 
+# This module provides the Flask endpoints' Blueprint to support the site pages
+# for different research, hardware, and software projects that we want to share
+# and provide on our site.
+# 
+# @author Tommy P. Keane
+# @email talk@tommypkeane.com
+# @copyright 2020, Tommy P. Keane
+
 import copy;
 import os;
 import pathlib;

@@ -1,3 +1,21 @@
+# @file
+# @brief Endpoints and Blueprint for Photography Page
+# 
+# This module provides the Flask endpoints' Blueprint to support the Photography
+# gallery/page. The Photography page is like a personalised version of Instagram
+# or Flickr, and is meant to provide EXIF Data on the images and some other
+# possibly useful details, as well as to support access to the fullsized and
+# resized images.
+# 
+# Static endpoints are handled in the `ep_static` module, so the endpoints here
+# should only be about custom HTTP responses to support the Photography page(s).
+# If a static file is to be returned by a link, its content-type should be
+# handled in the `ep_static` module's Blueprint.
+# 
+# @author Tommy P. Keane
+# @email talk@tommypkeane.com
+# @copyright 2020, Tommy P. Keane
+
 import copy;
 import os;
 
