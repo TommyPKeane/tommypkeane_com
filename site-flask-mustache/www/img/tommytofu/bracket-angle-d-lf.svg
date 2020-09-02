@@ -5,11 +5,11 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   id="svg8"
-   version="1.1"
-   viewBox="0 0 8.4666665 8.466667"
+   width="32"
    height="32"
-   width="32">
+   viewBox="0 0 8.4666665 8.466667"
+   version="1.1"
+   id="svg8">
   <defs
      id="defs2" />
   <metadata
@@ -27,18 +27,19 @@
   <g
      id="layer1">
     <g
+       transform="rotate(90,4.2333333,4.2333335)"
        id="g1545">
       <g
-         transform="matrix(0.41899355,0,0,0.41899355,-31.241455,-31.241454)"
-         id="g1532">
+         id="g1532"
+         transform="matrix(0.41899355,0,0,0.41899355,-31.241455,-31.241454)">
         <path
-           d="M 84.654572,90.304398 94.161015,80.03925 h -1.603469 l -7.902974,4.417902 -7.927167,-4.417902 h -1.555082 z"
+           id="rect1032"
            style="fill:currentColor;stroke:none;stroke-width:0.13114;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-           id="rect1032" />
+           d="M 84.654572,90.304398 94.161015,80.03925 h -1.603469 l -7.902974,4.417902 -7.927167,-4.417902 h -1.555082 z" />
         <path
-           id="path1039"
+           d="m 84.654572,83.374313 7.902974,-4.345377 h -1.47999 l -6.422984,2.017939 -6.526208,-2.017939 h -1.416106 z"
            style="fill:currentColor;stroke:none;stroke-width:0.102045;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-           d="m 84.654572,83.374313 7.902974,-4.345377 h -1.47999 l -6.422984,2.017939 -6.526208,-2.017939 h -1.416106 z" />
+           id="path1039" />
       </g>
     </g>
   </g>

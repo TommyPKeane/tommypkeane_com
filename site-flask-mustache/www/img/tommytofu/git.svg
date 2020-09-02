@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666669"
+   version="1.1"
+   id="svg849">
+  <defs
+     id="defs843" />
+  <metadata
+     id="metadata846">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <g
+       transform="translate(0,0.34422393)"
+       id="g8553">
+      <g
+         id="g8544"
+         transform="translate(0.13378239)">
+        <rect
+           style="fill:currentColor;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:round"
+           id="rect8506"
+           width="0.77713412"
+           height="5.2081594"
+           x="6.4897475"
+           y="0.34766483"
+           rx="0.38856706"
+           ry="0.38856706" />
+        <rect
+           transform="rotate(90)"
+           style="fill:currentColor;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:round"
+           id="rect8512"
+           width="0.8453033"
+           height="2.5359099"
+           x="1.7928611"
+           y="-8.1462698"
+           rx="0.42265165"
+           ry="0.42265165" />
+      </g>
+      <path
+         id="path8496"
+         style="fill:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round"
+         d="m 6.8535156,6.4921875 a 6.0289856,6.0289856 0 0 0 -6.02929685,6.0292965 6.0289856,6.0289856 0 0 0 6.02929685,6.029297 6.0289856,6.0289856 0 0 0 0.5664063,-0.02734 v 1.328124 a 4.1739129,4.1739129 0 0 0 -0.96875,-0.115234 4.1739129,4.1739129 0 0 0 -4.1738281,4.173828 4.1739129,4.1739129 0 0 0 4.1738281,4.173828 4.1739129,4.1739129 0 0 0 4.1738281,-4.173828 4.1739129,4.1739129 0 0 0 -0.0098,-0.255859 v -5.927735 c 0,-0.153658 -0.02823,-0.299023 -0.06836,-0.439453 A 6.0289856,6.0289856 0 0 0 12.882812,12.521484 6.0289856,6.0289856 0 0 0 6.8535156,6.4921875 Z"
+         transform="scale(0.26458333)" />
+      <g
+         id="g8540"
+         transform="translate(0.34302636)">
+        <rect
+           ry="0.42265165"
+           rx="0.42265165"
+           y="2.6586151"
+           x="3.8106818"
+           height="2.5359099"
+           width="0.8453033"
+           id="rect8500"
+           style="fill:currentColor;stroke-width:0.79375;stroke-linecap:round;stroke-linejoin:round" />
+        <circle
+           r="0.66806227"
+           cy="1.7860441"
+           cx="4.2333336"
+           id="circle8504"
+           style="fill:currentColor;stroke-width:0.332425;stroke-linecap:round;stroke-linejoin:round" />
+      </g>
+    </g>
+  </g>
+</svg>
