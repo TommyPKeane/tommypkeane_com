@@ -59,6 +59,11 @@ nav li.nav-item a.nav-link {
   vertical-align: top;
 }
 
+.dropdown-item svg {
+  width: 40px;
+  height: 40px;
+}
+
 .dropdown-toggle::after {
   content: "";
   border-top: none;
@@ -266,7 +271,21 @@ p.aside_par {
     /*width: 90%;*/
   }
 
+  div.intro_logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30vw;
+  }
+
+  div.intro_subgrid {
+    width: 100%;
+    margin-top: 5vw;
+  }
+
   div.page_intro {
+    vertical-align: middle;
+    display: inline-block;
+    width: unset;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
@@ -274,10 +293,36 @@ p.aside_par {
     padding-bottom: 1vw;
   }
 
+  div.card.intro_subcard {
+    width: 25vw;
+    border-radius: 10px 10px 10px 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: 2vw;
+  }
+
+  div.card.intro_subcard.wide {
+    width: 45vw;
+  }
+
+  div.intro_subcard div.card-header a {
+    font-family: monospace;
+  }
+
+  div.intro_subcard div.card-header a svg {
+    width: 100px;
+    height: 100px;
+  }
+
   div.card-body {
     font-size: 1rem;
     padding-left: 3vw;
     padding-right: 3vw;
+  }
+
+  div.intro_subcard div.card-body {
+    font-size: 0.70rem;
   }
 
   ul {

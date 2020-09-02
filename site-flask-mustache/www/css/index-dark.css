@@ -136,3 +136,13 @@ html.lightondark div.modal-header button {
   color: var(--darkmode-colour-red-dark);
   background-color: var(--darkmode-colour-yellow-pale);
 }
+
+div.intro_subcard div.card-header,
+div.intro_subcard div.card-header a {
+  color: var(--darkmode-colour-yellow-pale);
+}
+
+div.intro_subcard div.card-header:hover a {
+  color: var(--darkmode-colour-yellow);
+  text-decoration: none;
+}
