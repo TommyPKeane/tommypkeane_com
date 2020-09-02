@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US" class="{{theme_class}}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{title}}</title>
+    <link rel="icon" href="{{ico_ico_file}}" type="image/png">
+    <link rel="icon" href="{{ico_png_file}}" type="image/png">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    {{#stylesheets}}
+      <link rel="stylesheet" type="text/css" href="{{cssname}}">
+    {{/stylesheets}}
+  </head>
+  <body>
+    {{> header_contents}}
+    <main>
+      <div class="container-fluid">
+        {{#articles}}
+          <div class="card" style="width: 30%; margin: auto auto auto auto; vertical-align: top; display: inline-block;">
+            <a class="" href="{{page_link}}">
+              <img class="card-img-top" src="{{img_src}}" alt="{{img_alt}}">
+            </a>
+            <div class="card-body">
+              <a class="" href="{{page_link}}">
+                <h3 class="card-title">{{card_title}}</h3>
+              </a>
+              <p>{{{card_desc}}}</p>
+            </div>
+          </div>
+        {{/articles}}
+      </div>
+    </main>
+    {{> footer_contents}}
+  </body>
+</html>

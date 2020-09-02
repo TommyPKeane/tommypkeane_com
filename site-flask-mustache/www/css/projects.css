@@ -1,0 +1,39 @@
+article {
+  width: 45%;
+  margin: 2vw auto 2vw auto;
+  padding-bottom: 2rem;
+  color: var(--lightmode-colour-green-dark);
+  background-color: var(--lightmode-colour-yellow-pale);
+}
+
+article p {
+  text-align: justify;
+  margin: auto auto 1rem auto;
+  padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+article ul,
+article ol {
+  text-align: left;
+  margin: 1rem auto 1rem auto;
+  padding: 0rem 3.5rem 0rem 3.5rem;
+}
+
+article ul li,
+article ol li {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+article aside {
+  text-align: left;
+  font-size: 70%;
+  margin: 1rem auto 1rem auto;
+  padding: 0rem 5rem 0rem 5rem;
+  font-style: italic;
+}
+
+article aside p {
+  margin: 0rem auto 0rem auto;
+  padding: 0rem 0rem 0rem 0rem;
+}
