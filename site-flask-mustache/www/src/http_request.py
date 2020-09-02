@@ -1,3 +1,30 @@
+# @file
+# @brief HTTP Request Utility Methods (and Decorators)
+# 
+# This module provides the functions to be used for wrapping and simplifying
+# the common code for making custom HTTP responses with the Flask application.
+# All Flask endpoints need to respond with a valid plaintext string or a fully
+# formed HTTP response. This module is meant to compartmentalise a lot of the
+# redundant code and configuration setup that would otherwise be duplicated in
+# all our site's endpoints. So, things like headers, footers, styling, scripts,
+# and images/files are embedded here in the functions and wrappers/decorators.
+# 
+# The current design relies on the `.update()` method of the `dict` class to
+# allow for custom overrides through function argument dictionaries.
+# 
+# TODO:
+# - `html_response` is still lacking certain overrides that could let it be
+# used everywhere.
+# - Caching could be enhanced and updated in these methods.
+# - An Object-Oriented template instead of just using the base `dict` instances
+# could be a nicer approach here, and allow for a more generic function by
+# relying on base-class methods where derived classes for custom endpoints do
+# proper overrides. This would also be more "pythonic".
+# 
+# @author Tommy P. Keane
+# @email talk@tommypkeane.com
+# @copyright 2020, Tommy P. Keane
+
 import copy;
 import os;
 
@@ -6,45 +33,14 @@ import flask;
 import yaml;
 
 from . import _base;
+from . import _images;
 from . import _util;
-
-icon_data_dct = {
-   # FEATHER ICONS
-   "icon_bitbucket": _util.get_file_contents_str("./img/feather/droplet.svg"),
-   "icon_google_scholar": _util.get_file_contents_str("./img/feather/award.svg"),
-   "icon_instagram": _util.get_file_contents_str("./img/feather/instagram.svg"),
-   "icon_facebook": _util.get_file_contents_str("./img/feather/facebook.svg"),
-   "icon_twitter": _util.get_file_contents_str("./img/feather/twitter.svg"),
-   "icon_linkedin": _util.get_file_contents_str("./img/feather/linkedin.svg"),
-   "fullsize_icon": _util.get_file_contents_str("./img/feather/external-link.svg"),
-   "icon_synth": _util.get_file_contents_str("./img/feather/music.svg"),
-   # TOMMYTOFU ICONS
-   "icon_contact": _util.get_file_contents_str("./img/tommytofu/help-01.svg"),
-   "icon_cellular_automata": _util.get_file_contents_str("./img/tommytofu/cellular-automata-glider-0.svg"),
-   "icon_raspberrypi": _util.get_file_contents_str("./img/tommytofu/circuit-board.svg"),
-   "icon_pinetime": _util.get_file_contents_str("./img/tommytofu/watch.svg"),
-   "icon_pinephone": _util.get_file_contents_str("./img/tommytofu/phone.svg"),
-   "exif_icon": _util.get_file_contents_str("./img/tommytofu/camera-photo.svg"),
-   "icon_home": _util.get_file_contents_str("./img/tommytofu/home-cabin-a.svg"),
-   "icon_cv_resume": _util.get_file_contents_str("./img/tommytofu/skull-round-a.svg"),
-   "icon_books": _util.get_file_contents_str("./img/tommytofu/book-closed.svg"),
-   "icon_settings": _util.get_file_contents_str("./img/tommytofu/config.svg"),
-   "icon_other_sites": _util.get_file_contents_str("./img/tommytofu/menu.svg"),
-   "icon_github": _util.get_file_contents_str("./img/tommytofu/git-octocat.svg"),
-   "icon_photography": _util.get_file_contents_str("./img/tommytofu/camera-photo.svg"),
-   "img_scroll_to_top": _util.get_file_contents_str("./img/tommytofu/bracket-angle-d-up.svg"),
-   "img_intro_collapse": _util.get_file_contents_str("./img/tommytofu/bracket-angle-d-up.svg"),
-   "img_intro_expand": _util.get_file_contents_str("./img/tommytofu/bracket-angle-d-dn.svg"),
-   # OTHERS
-   "ico_png_file": "/img/tommypkeane-com_ico_circle-t.png",
-   "ico_ico_file": "/img/tommypkeane-com_ico_circle-t.ico",
-};
 
 
 def _get_template_data_icons():
    """Get the template replacement data for the common site navbar.
    """
-   return (icon_data_dct);
+   return (_images.icon_data_dct);
 # fed
 
 
