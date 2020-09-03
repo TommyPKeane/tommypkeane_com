@@ -11,20 +11,26 @@ content:
 - article_id: Functions
   filename: python-functions-01-functions.md
   article_title: Functions
+  subtitles: []
 - article_id: GenericFunctions
   filename: python-functions-02-genericfunctions.md
   article_title: Generic Functions (Overloading)
+  subtitles: []
 - article_id: WrapperFunctions
   filename: python-functions-03-wrapperfunctions.md
   article_title: Wrapper Functions
+  subtitles: []
 - article_id: DecoratorFunctions
   filename: python-functions-04-decoratorfunctions.md
   article_title: Decorator Functions
+  subtitles: []
 - article_id: CommonDecorators
   filename: python-functions-05-commondecorators.md
   article_title: Common Decorators
+  subtitles: []
 - article_id: DecoratorAdvice
   filename: python-functions-06-notesondecorators.md
   article_title: Advice on using Decorators
+  subtitles: []
 raw_content_key: null
 raw_content: null

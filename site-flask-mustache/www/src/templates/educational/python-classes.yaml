@@ -11,11 +11,11 @@ content:
 - article_id: AliasesObjects
   filename: python-classes-01-aliasobjects.md
   article_title: Aliases and Objects
-  subtitles: null
+  subtitles: []
 - article_id: SimpleClasses
   filename: python-classes-02-simple.md
   article_title: Simple Examples
-  subtitles: null
+  subtitles: []
 - article_id: MemberAccess
   filename: python-classes-03-access.md
   article_title: Member Access
@@ -27,6 +27,6 @@ content:
 - article_id: ReferenceLinks
   filename: python-classes-05-references.md
   article_title: Reference Links
-  subtitles: null
+  subtitles: []
 raw_content_key: null
 raw_content: null
