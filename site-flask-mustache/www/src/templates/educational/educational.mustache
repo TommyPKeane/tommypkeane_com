@@ -1,19 +1,4 @@
-<!doctype html>
-<html lang="en-US" class="{{theme_class}}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
-    <link rel="icon" href="{{ico_ico_file}}" type="image/png">
-    <link rel="icon" href="{{ico_png_file}}" type="image/png">
-    <meta name="description" content="{{description}}">
-    <meta name="author" content="{{author}}">
-    {{#stylesheets}}
-      <link rel="stylesheet" type="text/css" href="{{cssname}}">
-    {{/stylesheets}}
-  </head>
-  <body>
-    {{> header_contents}}
+{{> page_head}}
     <main>
       <div id="intro_container" class="container-fluid page_intro">
         <div class="card mt-3 mb-3">
@@ -33,11 +18,6 @@
               <div class="card-body">
                 <h4 class="card-title">{{card_title}}</h4>
                 <p>{{{card_desc}}}</p>
-                <div class="container-fluid">
-                  {{#tags}}
-                    <span class="badge badge-pill {{pill_style}}">{{tag_name}}</span>
-                  {{/tags}}
-                </div>
               </div>
             </div>
           </a>
@@ -45,6 +25,4 @@
       </div>
       <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
     </main>
-    {{> footer_contents}}
-  </body>
-</html>
+{{> page_foot}}
