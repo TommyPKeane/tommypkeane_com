@@ -14,7 +14,7 @@ class NameTag(object):
   def __str__(self,):
     return (str(self.name));
   # fed
-# class
+# ssalc
 ```
 
 Super simple.
@@ -55,7 +55,7 @@ class NameTag(object):
     self.name = myname;
     return (None);
   # fed
-# class
+# ssalc
 ```
 
 What happens if we made the same objects and printed them all the same?
@@ -106,7 +106,7 @@ class NameTag(object):
       + "\")"
     );
   # fed
-# class
+# ssalc
 ```
 
 So now, let's just print just the objects, to see what `__repr__()` provides:
