@@ -1,24 +1,28 @@
-html.darkonlight div#hover_title {
+div#hover_title {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight div.job-container div.card-body div.card {
+div.job-container div.card-body div.card {
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-html.darkonlight div.job-container div.card-body div.card.header-card {
+div.job-container div.card-body div.card.header-card {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight #timeline_wide_container svg #background_rect {
+#timeline_wide_container svg {
+  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
+}
+
+#timeline_wide_container svg #background_rect {
   fill: var(--svg-light-bg-colour) !important;
 }
 
-html.darkonlight div.job-container div.card-body div.card {
+div.job-container div.card-body div.card {
   box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);
 }
 
-html.darkonlight div#hover_title {
+div#hover_title {
   border-left: 5px solid var(--svg-light-shadow-colour);
   border-bottom: 5px solid var(--svg-light-shadow-colour);
   box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);

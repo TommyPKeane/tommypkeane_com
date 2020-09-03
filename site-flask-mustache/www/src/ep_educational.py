@@ -15,11 +15,15 @@ app_bp = flask.Blueprint("educational", __name__);
 educational_src_dir = "./src/templates/educational/";
 
 educational_css_lst = [
-   {"cssname": "/js/libs/highlight/styles/default.css",},
-   {"cssname": "/css/highlight.css",},
-   {"cssname": "/css/educational.css",},
-   {"cssname": "/css/educational-light.css",},
-   {"cssname": "/css/educational-dark.css",},
+   { "cssname": "/js/libs/highlight/styles/default.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/highlight.css",                    "mode": _base.MODE_ANY, },
+   { "cssname": "/css/highlight-lite.css",               "mode": _base.MODE_LITE, },
+   { "cssname": "/css/highlight-dark.css",               "mode": _base.MODE_DARK, },
+   { "cssname": "/css/educational.css",                  "mode": _base.MODE_ANY, },
+   { "cssname": "/css/educational-lite.css",             "mode": _base.MODE_LITE, },
+   { "cssname": "/css/educational-dark.css",             "mode": _base.MODE_DARK, },
+   { "cssname": "/css/educational-cpnk.css",             "mode": _base.MODE_CPNK, },
+   { "cssname": "/css/educational-vapr.css",             "mode": _base.MODE_VAPR, },
 ];
 
 educational_js_lst = [

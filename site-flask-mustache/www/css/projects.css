@@ -2,8 +2,6 @@ article {
   width: 45%;
   margin: 2vw auto 2vw auto;
   padding-bottom: 2rem;
-  color: var(--lightmode-colour-green-dark);
-  background-color: var(--lightmode-colour-yellow-pale);
 }
 
 article p {

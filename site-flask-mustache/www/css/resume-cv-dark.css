@@ -1,61 +1,65 @@
-html.lightondark div#hover_title {
+div#hover_title {
   background-color: var(--darkmode-colour-blue-green-pale);
 }
 
-html.lightondark div.job-container div.card-body div.card {
+div.job-container div.card-body div.card {
   background-color: var(--darkmode-colour-red-dark);
 }
 
-html.lightondark div.job-container div.card-body div.card.header-card {
+div.job-container div.card-body div.card.header-card {
   background-color: var(--darkmode-colour-blue-green-pale);
 }
 
-html.lightondark #timeline_wide_container svg #background_rect {
-  fill: var(--svg-dark-bg-colour) !important;
-}
-
-html.lightondark div.job-container div.card-body div.card {
+#timeline_wide_container svg {
   box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
 }
 
-html.lightondark div#hover_title {
+#timeline_wide_container svg #background_rect {
+  fill: var(--svg-dark-bg-colour) !important;
+}
+
+div.job-container div.card-body div.card {
+  box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
+}
+
+div#hover_title {
   border-left: 5px solid var(--svg-dark-shadow-colour);
   border-bottom: 5px solid var(--svg-dark-shadow-colour);
   box-shadow: 4px 4px 15px var(--svg-dark-shadow-colour);
 }
 
-html.lightondark #timeline_wide_container svg #block_grocery {
+#timeline_wide_container svg #block_grocery {
   fill: #FFCEFE !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_electronics {
+#timeline_wide_container svg #block_electronics {
   fill: #7F8EDF !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_touchscreen {
+#timeline_wide_container svg #block_touchscreen {
   fill: #DFDF98 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_networking {
+#timeline_wide_container svg #block_networking {
   fill: #96D096 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_weather {
+#timeline_wide_container svg #block_weather {
   fill: #36D096 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_grad_teaching {
+#timeline_wide_container svg #block_grad_teaching {
   fill: #D69096 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_phd {
+#timeline_wide_container svg #block_phd {
   fill: #F6C0C6 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_sw_bi {
+#timeline_wide_container svg #block_sw_bi {
   fill: #F6D076 !important;
 }
 
-html.lightondark #timeline_wide_container svg #block_unemployment {
+#timeline_wide_container svg #block_unemployment {
   fill: #A6E0F6 !important;
 }

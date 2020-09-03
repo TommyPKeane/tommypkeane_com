@@ -1,70 +1,76 @@
-html.lightondark code {
+p code {
+  color: var(--darkmode-colour-green-pale);
+}
+
+pre {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px var(--colour-black);
+  margin-bottom: calc(1rem + 5px);
+}
+
+pre code .hljs-ln {
+  color: var(--darkmode-colour-yellow-pale-pale);
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link {
   color: #8be9fd;
 }
 
-html.lightondark .hljs-built_in,
-html.lightondark .hljs-selector-tag,
-html.lightondark .hljs-section,
-html.lightondark .hljs-link {
-  color: #8be9fd;
+.hljs-keyword {
+  color: var(--darkmode-colour-green-pale);
 }
 
-html.lightondark .hljs-keyword {
-  color: var(--darkmode-colour-red-lite-alt);
-}
-
-html.lightondark .hljs,
-html.lightondark .hljs-subst {
+.hljs,
+.hljs-subst {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--darkmode-colour-green-dark-dark);
 }
 
-html.lightondark .hljs-title {
-  color: #50fa7b;
+.hljs-title {
+  color: var(--darkmode-colour-blue-green-pale-pale);
 }
 
-html.lightondark .hljs-string,
-html.lightondark .hljs-meta,
-html.lightondark .hljs-name,
-html.lightondark .hljs-type,
-html.lightondark .hljs-attr,
-html.lightondark .hljs-symbol,
-html.lightondark .hljs-bullet,
-html.lightondark .hljs-addition,
-html.lightondark .hljs-variable,
-html.lightondark .hljs-template-tag,
-html.lightondark .hljs-template-variable {
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-attr,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
   color: var(--darkmode-colour-green-pale);
 }
 
-html.lightondark .hljs-comment,
-html.lightondark .hljs-quote,
-html.lightondark .hljs-deletion {
-  color: #6272a4;
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: var(--darkmode-colour-blue-dark-pale);
 }
 
-html.lightondark .hljs-keyword,
-html.lightondark .hljs-selector-tag,
-html.lightondark .hljs-literal,
-html.lightondark .hljs-title,
-html.lightondark .hljs-section,
-html.lightondark .hljs-doctag,
-html.lightondark .hljs-type,
-html.lightondark .hljs-name,
-html.lightondark .hljs-strong {
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
   font-weight: bold;
 }
 
-html.lightondark .hljs-literal,
-html.lightondark .hljs-number {
-  color: #bd93f9;
+.hljs-literal,
+.hljs-number {
+  color: var(--darkmode-colour-pink-pale);
 }
 
 .hljs-ln td.hljs-ln-numbers {
-  color: var(--darkmode-colour-red-lite-alt);
-  border-right: 1px solid var(--darkmode-colour-red-lite-alt);
-}
-
-pre {
-  box-shadow: 0px 4px 8px 0px var(--colour-black);
+  color: var(--colour-gray-transparent);
+  border-right: 1px solid var(--colour-gray-transparent);
 }

@@ -52,6 +52,8 @@ def generate_html_common(
    """Create an HTML Response String with common Header and Footer contents.
    """
    partials_dct = {
+      "page_head": _util.get_file_contents_str("./src/templates/page_head.mustache"),
+      "page_foot": _util.get_file_contents_str("./src/templates/page_foot.mustache"),
       "header_contents": _util.get_file_contents_str("./src/templates/header_contents.mustache"),
       "footer_contents": _util.get_file_contents_str("./src/templates/footer_contents.mustache"),
    };
@@ -86,16 +88,24 @@ def html_response(css_lst, js_lst, title, description, author,):
 
          ck_theme_lightondark_selected = None;
          ck_theme_darkonlight_selected = None;
+         ck_theme_vaporwave_selected = None;
+         ck_theme_seapunk_selected = None;
          theme_class = flask.request.cookies.get("theme");
 
          if (theme_class is None):
             theme_class = "default";
             ck_theme_lightondark_selected = "selected";
             ck_theme_darkonlight_selected = "";
+            ck_theme_vaporwave_selected = "";
+            ck_theme_seapunk_selected = "";
          else:
-            ck_theme_lightondark_selected = ("", "selected")[int(theme_class == "light_on_dark")];
-            ck_theme_darkonlight_selected = ("", "selected")[int(theme_class == "dark_on_light")];
+            ck_theme_lightondark_selected = ("selected" if (theme_class == "light_on_dark") else "");
+            ck_theme_darkonlight_selected = ("selected" if (theme_class == "dark_on_light") else "");
+            ck_theme_vaporwave_selected = ("selected" if (theme_class == "vaporwave") else "");
+            ck_theme_seapunk_selected = ("selected" if (theme_class == "seapunk") else "");
          # fi
+
+         crnt_theme_mode = _base.THEME_CLASSES[theme_class];
 
          for (index, (key, value)) in enumerate(cookies_dct.items()):
             cookies_lst.append(
@@ -108,8 +118,16 @@ def html_response(css_lst, js_lst, title, description, author,):
             );
          # rof
 
-         stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
-         stylesheets_lst.extend(css_lst);
+         tmp_stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
+         tmp_stylesheets_lst.extend(css_lst);
+
+         stylesheets_lst = [];
+
+         for css_dct in tmp_stylesheets_lst:
+            if (css_dct["mode"] in (_base.MODE_ANY, crnt_theme_mode,)):
+               stylesheets_lst.append(css_dct);
+            # fi
+         # rof
 
          scripts_lst = copy.deepcopy(_base.BASE_SCRIPTS);
          scripts_lst.extend(js_lst);

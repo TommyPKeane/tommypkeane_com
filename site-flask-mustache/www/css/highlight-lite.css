@@ -1,0 +1,60 @@
+code {
+  color: var(--lightmode-colour-teal-dark);
+}
+
+pre {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px var(--colour-black);
+  margin-bottom: calc(1rem + 5px);
+}
+
+.hljs-built_in,
+.hljs-selector-tag,
+.hljs-section,
+.hljs-link {
+  color: var(--lightmode-colour-blue-lite);
+}
+
+.hljs-keyword {
+  color: var(--lightmode-colour-pink);
+}
+
+.hljs,
+.hljs-subst {
+  color: var(--lightmode-colour-yellow-pale);
+  background-color: var(--lightmode-colour-yellow-pale-alt);
+}
+
+.hljs-title {
+  color: var(--lightmode-colour-green-rich);
+}
+
+.hljs-string,
+.hljs-meta,
+.hljs-name,
+.hljs-type,
+.hljs-attr,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: var(--lightmode-colour-brown);
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion {
+  color: var(--lightmode-colour-green-lite-alt);
+}
+
+.hljs-literal,
+.hljs-number {
+  color: var(--lightmode-colour-pink-dark);
+}
+
+.hljs-ln td.hljs-ln-numbers {
+  color: var(--colour-gray);
+  border-right: 1px solid var(--colour-white);
+}

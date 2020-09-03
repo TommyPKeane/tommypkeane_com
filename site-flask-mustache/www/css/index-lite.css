@@ -1,122 +1,119 @@
-html.darkonlight {
+html {
   background-image: url("/img/plants_pineapple_00_plain.svg");
-}
-
-html.darkonlight {
   color: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight nav,
-html.darkonlight nav li.nav-item a.nav-link,
-html.darkonlight nav div.dropdown-menu,
-html.darkonlight nav a.dropdown-item {
+nav,
+nav li.nav-item a.nav-link,
+nav div.dropdown-menu,
+nav a.dropdown-item {
   color: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight nav .btn-outline-success {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+nav .btn-outline-success {
+  color: var(--colour-white);
+  border-color: var(--colour-white);
 }
 
-html.darkonlight nav .navbar-toggler {
+nav .navbar-toggler {
   color: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight nav a.dropdown-item.disabled {
+nav a.dropdown-item.disabled {
   color: var(--lightmode-colour-green-lite);
 }
 
-html.darkonlight nav div.dropdown-menu {
+nav div.dropdown-menu {
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-html.darkonlight nav svg,
-html.darkonlight nav a.dropdown-item svg {
+nav svg,
+nav a.dropdown-item svg {
   color: var(--lightmode-colour-green-dark);
   stroke: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight nav div.dropdown-menu a.dropdown-item.disabled svg {
+nav div.dropdown-menu a.dropdown-item.disabled svg {
   color: var(--lightmode-colour-green-lite);
   stroke: var(--lightmode-colour-green-lite);
 }
 
-html.darkonlight nav {
+nav {
   background-color: var(--lightmode-colour-yellow-pale) !important;
 }
 
-html.darkonlight nav li.nav-item:hover {
+nav li.nav-item:hover {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight nav div.dropdown-menu a:hover {
+nav div.dropdown-menu a:hover {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight select,
-html.darkonlight select.form-control {
+select,
+select.form-control {
   color: var(--lightmode-colour-green-dark);
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight body > main nav.breadcrumbs {
+body > main nav.breadcrumbs {
   color: var(--lightmode-colour-green-dark);
   background-color: var(--lightmode-colour-yellow-pale) !important;
 }
 
-html.darkonlight div.card {
+div.card {
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-html.darkonlight div.card .btn-outline-danger,
-html.darkonlight div.card .btn-outline-success,
-html.darkonlight div.card .btn-outline-primary {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+div.card .btn-outline-danger,
+div.card .btn-outline-success,
+div.card .btn-outline-primary {
+  color: var(--colour-white);
+  border-color: var(--colour-white);
 }
 
-html.darkonlight table {
+table {
   color: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight table thead {
+table thead {
   color: var(--lightmode-colour-green-dark);
   background-color: var(--lightmode-colour-green-lite);
 }
 
-html.darkonlight table tbody tr th,
-html.darkonlight table tbody tr td,
-html.darkonlight table thead th {
+table tbody tr th,
+table tbody tr td,
+table thead th {
   border-color: var(--lightmode-colour-green-lite-alt);
   border-top-color: var(--lightmode-colour-green-lite-alt);
   border-bottom-color: var(--lightmode-colour-green-lite-alt);
 }
 
-html.darkonlight table tbody > tr:nth-child(1n) {
+table tbody > tr:nth-child(1n) {
   background-color: var(--lightmode-colour-brown-lite-alt);
 }
 
-html.darkonlight table tbody > tr:nth-child(2n) {
+table tbody > tr:nth-child(2n) {
   background-color: var(--lightmode-colour-brown-lite-alt-alt);
 }
 
-html.darkonlight div.modal-content {
+div.modal-content {
   color: var(--lightmode-colour-green-dark);
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-html.darkonlight div.modal-header,
-html.darkonlight div.modal-header button {
+div.modal-header,
+div.modal-header button {
   color: var(--lightmode-colour-yellow-pale);
   background-color: var(--lightmode-colour-brown);
 }
 
-html.darkonlight div.intro_subcard div.card-header,
-html.darkonlight div.intro_subcard div.card-header a {
+div.intro_subcard div.card-header,
+div.intro_subcard div.card-header a {
   color: var(--lightmode-colour-green-dark);
 }
 
-html.darkonlight div.intro_subcard div.card-header:hover a {
+div.intro_subcard div.card-header:hover a {
   color: var(--lightmode-colour-green-lite);
   text-decoration: none;
 }

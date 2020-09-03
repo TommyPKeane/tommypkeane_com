@@ -1,22 +1,22 @@
 div.educational_link img.card-img-top {
-  border: 2px solid var(--colour-black);
+  border-color: var(--colour-white);
 }
 
 div.educational_link:hover img.card-img-top {
-  background-color: var(--darkmode-colour-yellow-pale);
+  background-color: var(--colour-white);
 }
 
 div.article_body {
-  background-color: var(--darkmode-colour-red-dark);
+  background-color: var(--lightmode-colour-yellow-pale);
 }
 
 div.article_body p {
-  color: var(--darkmode-colour-yellow-pale-pale);
+  color: var(--lightmode-colour-green-dark);
 }
 
 div.article_body ul,
 div.article_body ol {
-  color: var(--lightmode-colour-yellow-pale);
+  color: var(--lightmode-colour-green-dark);
 }
 
 div.article_body div.container_svg {

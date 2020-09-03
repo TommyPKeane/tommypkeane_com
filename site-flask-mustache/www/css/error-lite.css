@@ -1,0 +1,3 @@
+div#id_404_svg_container svg #id_rect_bg {
+  fill: var(--colour-white);
+}

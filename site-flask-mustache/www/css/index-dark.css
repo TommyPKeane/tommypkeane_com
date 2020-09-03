@@ -1,141 +1,141 @@
-html.lightondark {
+html {
   background-image: url("/img/plants_palm-leaf_00.png");
 }
 
-html.lightondark body,
-html.lightondark body header,
-html.lightondark body header nav li.nav-item a.nav-link,
-html.lightondark body header nav div.dropdown-menu,
-html.lightondark body header nav a.dropdown-item {
+body,
+body header,
+body header nav li.nav-item a.nav-link,
+body header nav div.dropdown-menu,
+body header nav a.dropdown-item {
   color: var(--darkmode-colour-yellow-pale-pale);
 }
 
-html.lightondark nav .btn-outline-success {
+nav .btn-outline-success {
   color: var(--colour-white);
   border-color: var(--colour-white);
 }
 
-html.lightondark nav .navbar-toggler {
+nav .navbar-toggler {
   color: var(--darkmode-colour-yellow-pale);
 }
 
-html.lightondark a {
+a {
   color: var(--darkmode-colour-yellow-pale);
   text-decoration: none;
   font-weight: bolder;
 }
 
-html.lightondark a:hover {
+a:hover {
   color: var(--darkmode-colour-green-pale);
 }
 
-html.lightondark nav {
+nav {
   background-color: var(--darkmode-colour-red-dark) !important;
 }
 
-html.lightondark nav li.nav-item:hover {
+nav li.nav-item:hover {
   background-color: var(--darkmode-colour-red-lite-alt);
 }
 
-html.lightondark nav a.dropdown-item.disabled {
+nav a.dropdown-item.disabled {
   color: var(--darkmode-colour-green-pale);
 }
 
-html.lightondark nav div.dropdown-menu {
+nav div.dropdown-menu {
   background-color: var(--darkmode-colour-red-dark-dark);
   box-shadow: -5px 5px 5px var(--colour-black);
 }
 
-html.lightondark nav div.dropdown-menu a:hover {
+nav div.dropdown-menu a:hover {
   background-color: var(--darkmode-colour-red-lite-alt);
 }
 
-html.lightondark nav.bg-dark svg,
-html.lightondark nav a.dropdown-item svg {
+nav.bg-dark svg,
+nav a.dropdown-item svg {
   color: var(--darkmode-colour-yellow-pale);
   stroke: var(--darkmode-colour-yellow-pale);
 }
 
-html.lightondark nav div.dropdown-menu a.dropdown-item.disabled svg {
+nav div.dropdown-menu a.dropdown-item.disabled svg {
   color: var(--darkmode-colour-green-pale);
   stroke: var(--darkmode-colour-green-pale);
 }
 
-html.lightondark div.card {
+div.card {
   background-color: var(--darkmode-colour-red-dark-dark);
   box-shadow: -5px 5px 15px var(--colour-black);
 }
 
-html.lightondark div.card .btn-outline-danger,
-html.lightondark div.card .btn-outline-success,
-html.lightondark div.card .btn-outline-primary {
+div.card .btn-outline-danger,
+div.card .btn-outline-success,
+div.card .btn-outline-primary {
   color: var(--colour-white);
   border-color: var(--colour-white);
 }
 
-html.lightondark select,
-html.lightondark select.form-control {
+select,
+select.form-control {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--darkmode-colour-red-dark);
 }
 
-html.lightondark div.card.alert.alert-success {
+div.card.alert.alert-success {
   color: var(--darkmode-colour-green-pale-pale);
   background-color: var(--darkmode-colour-blue-green-pale);
 }
 
-html.lightondark div.card.alert.alert-warning {
+div.card.alert.alert-warning {
   color: var(--darkmode-colour-pink-pale);
   background-color: var(--darkmode-colour-red-dark);
 }
 
-html.lightondark nav input[type=search] {
+nav input[type=search] {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--darkmode-colour-red-lite);
 }
 
-html.lightondark table {
+table {
   color: var(--darkmode-colour-yellow-pale);
 }
 
-html.lightondark table thead {
+table thead {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--colour-black);
 }
 
-html.lightondark table tbody tr th,
-html.lightondark table tbody tr td,
-html.lightondark table thead th {
+table tbody tr th,
+table tbody tr td,
+table thead th {
   border-color: var(--darkmode-colour-red-dark);
   border-top-color: var(--darkmode-colour-red-dark);
   border-bottom-color: var(--darkmode-colour-red-dark);
 }
 
-html.lightondark table tbody > tr:nth-child(1n) {
+table tbody > tr:nth-child(1n) {
   background-color: var(--darkmode-colour-green-dark-dark);
 }
 
-html.lightondark table tbody > tr:nth-child(2n) {
+table tbody > tr:nth-child(2n) {
   background-color: var(--darkmode-colour-red-dark-dark);
 }
 
-html.lightondark div.modal-content {
+div.modal-content {
   color: var(--darkmode-colour-yellow-pale);
   background-color: var(--darkmode-colour-red-dark);
 }
 
-html.lightondark div.modal-header,
-html.lightondark div.modal-header button {
+div.modal-header,
+div.modal-header button {
   color: var(--darkmode-colour-red-dark);
   background-color: var(--darkmode-colour-yellow-pale);
 }
 
-html.lightondark div.intro_subcard div.card-header,
-html.lightondark div.intro_subcard div.card-header a {
+div.intro_subcard div.card-header,
+div.intro_subcard div.card-header a {
   color: var(--darkmode-colour-yellow-pale);
 }
 
-html.lightondark div.intro_subcard div.card-header:hover a {
+div.intro_subcard div.card-header:hover a {
   color: var(--darkmode-colour-yellow);
   text-decoration: none;
 }

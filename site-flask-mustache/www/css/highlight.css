@@ -6,13 +6,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     text-align: center;
-    /*color: #cccccc;*/
-    /*border-right: 2px solid var(--lightmode-colour-green-rich);*/
     vertical-align: top;
-
-    /* your custom style here */
 }
 
 .hljs-ln td.hljs-ln-numbers {

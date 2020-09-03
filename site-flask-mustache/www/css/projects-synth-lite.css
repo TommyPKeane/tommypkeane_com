@@ -1,0 +1,32 @@
+#display canvas {
+  background-color: var(--lightmode-colour-green-dark);
+}
+
+#keys svg rect.blackkey {
+  fill: var(--colour-black);
+}
+
+#keys svg rect.whitekey {
+  fill: var(--colour-white);
+}
+
+#keys svg rect.blackkey.hover,
+#keys svg rect.whitekey.hover,
+#keys svg rect.blackkey:hover,
+#keys svg rect.whitekey:hover {
+  fill: var(--lightmode-colour-pink-lite);
+  /*opacity: 85%;*/
+}
+
+#keys svg rect.blackkey.active,
+#keys svg rect.whitekey.active,
+#keys svg rect.blackkey:active,
+#keys svg rect.whitekey:active {
+  fill: var(--lightmode-colour-blue-lite);
+  /*opacity: 85%;*/
+}
+
+#keyinfo p.keybutton {
+  color: var(--lightmode-colour-green-dark);
+  text-shadow: 0.01rem 0.01rem 0.2rem var(--colour-white);
+}

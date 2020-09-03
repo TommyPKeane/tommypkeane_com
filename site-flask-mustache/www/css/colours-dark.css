@@ -1,0 +1,18 @@
+:root {
+  --darkmode-colour-green-dark-dark: #051805;
+  --darkmode-colour-red-dark-dark: #280505;
+  --darkmode-colour-red-dark: #480505;
+  --darkmode-colour-red-lite: #801A10;
+  --darkmode-colour-red-lite-alt: #804A40;
+  --darkmode-colour-green-pale: #91B378;
+  --darkmode-colour-green-pale-pale: #91E398;
+  --darkmode-colour-blue-dark-pale: #236682;
+  --darkmode-colour-blue-green-pale: #397874;
+  --darkmode-colour-blue-green-pale-pale: #79D8D4;
+  --darkmode-colour-yellow: #FCFC3E;
+  --darkmode-colour-yellow-pale: #F0F070;
+  --darkmode-colour-yellow-pale-pale: #FCFCC0;
+  --darkmode-colour-pink-pale: #F6C1FC;
+  --darkmode-colour-purple-pale: #bd93f9;
+  --darkmode-colour-gray: #4F4F4F;
+}
