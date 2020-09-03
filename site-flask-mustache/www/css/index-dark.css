@@ -1,18 +1,3 @@
-:root {
-  --darkmode-colour-green-dark-dark: #051805;
-  --darkmode-colour-red-dark-dark: #280505;
-  --darkmode-colour-red-dark: #480505;
-  --darkmode-colour-red-lite: #801A10;
-  --darkmode-colour-red-lite-alt: #804A40;
-  --darkmode-colour-green-pale: #91B378;
-  --darkmode-colour-blue-dark-pale: #236682;
-  --darkmode-colour-blue-green-pale: #397874;
-  --darkmode-colour-yellow: #FCFC3E;
-  --darkmode-colour-yellow-pale: #F5DEC0;
-  --darkmode-colour-gray: #4F4F4F;
-}
-
-
 html.lightondark {
   background-image: url("/img/plants_palm-leaf_00.png");
 }
@@ -22,12 +7,12 @@ html.lightondark body header,
 html.lightondark body header nav li.nav-item a.nav-link,
 html.lightondark body header nav div.dropdown-menu,
 html.lightondark body header nav a.dropdown-item {
-  color: var(--darkmode-colour-yellow-pale);
+  color: var(--darkmode-colour-yellow-pale-pale);
 }
 
 html.lightondark nav .btn-outline-success {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  color: var(--colour-white);
+  border-color: var(--colour-white);
 }
 
 html.lightondark nav .navbar-toggler {
@@ -35,7 +20,13 @@ html.lightondark nav .navbar-toggler {
 }
 
 html.lightondark a {
-  color: var(--darkmode-colour-yellow);
+  color: var(--darkmode-colour-yellow-pale);
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+html.lightondark a:hover {
+  color: var(--darkmode-colour-green-pale);
 }
 
 html.lightondark nav {
@@ -51,7 +42,8 @@ html.lightondark nav a.dropdown-item.disabled {
 }
 
 html.lightondark nav div.dropdown-menu {
-  background-color: var(--darkmode-colour-red-dark);
+  background-color: var(--darkmode-colour-red-dark-dark);
+  box-shadow: -5px 5px 5px var(--colour-black);
 }
 
 html.lightondark nav div.dropdown-menu a:hover {
@@ -70,14 +62,15 @@ html.lightondark nav div.dropdown-menu a.dropdown-item.disabled svg {
 }
 
 html.lightondark div.card {
-  background-color: var(--darkmode-colour-red-dark);
+  background-color: var(--darkmode-colour-red-dark-dark);
+  box-shadow: -5px 5px 15px var(--colour-black);
 }
 
 html.lightondark div.card .btn-outline-danger,
 html.lightondark div.card .btn-outline-success,
 html.lightondark div.card .btn-outline-primary {
-  color: #FFFFFF;
-  border-color: #FFFFFF;
+  color: var(--colour-white);
+  border-color: var(--colour-white);
 }
 
 html.lightondark select,
@@ -87,12 +80,12 @@ html.lightondark select.form-control {
 }
 
 html.lightondark div.card.alert.alert-success {
-  color: #91E398;
-  background-color: #397874;
+  color: var(--darkmode-colour-green-pale-pale);
+  background-color: var(--darkmode-colour-blue-green-pale);
 }
 
 html.lightondark div.card.alert.alert-warning {
-  color: #F6C1FC;
+  color: var(--darkmode-colour-pink-pale);
   background-color: var(--darkmode-colour-red-dark);
 }
 
@@ -137,12 +130,12 @@ html.lightondark div.modal-header button {
   background-color: var(--darkmode-colour-yellow-pale);
 }
 
-div.intro_subcard div.card-header,
-div.intro_subcard div.card-header a {
+html.lightondark div.intro_subcard div.card-header,
+html.lightondark div.intro_subcard div.card-header a {
   color: var(--darkmode-colour-yellow-pale);
 }
 
-div.intro_subcard div.card-header:hover a {
+html.lightondark div.intro_subcard div.card-header:hover a {
   color: var(--darkmode-colour-yellow);
   text-decoration: none;
 }

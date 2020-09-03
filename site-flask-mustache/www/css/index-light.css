@@ -1,23 +1,3 @@
-:root {
-  --lightmode-colour-green-dark: #274532;
-  --lightmode-colour-green-lite: #91B378;
-  --lightmode-colour-green-lite-alt: #A1C398;
-  --lightmode-colour-green-lite-alt-alt: #B1D3B8;
-  --lightmode-colour-green-rich: #69B884;
-  --lightmode-colour-yellow-pale: #F5F4B0;
-  --lightmode-colour-yellow-pale-alt: #FEFED0;
-  --lightmode-colour-blue-lite: #8BE9FD;
-  --lightmode-colour-teal-dark: #2BAEAC;
-  --lightmode-colour-teal: #3BCECC;
-  --lightmode-colour-pink: #FF79C6;
-  --lightmode-colour-pink-lite: #FFA9D6;
-  --lightmode-colour-pink-dark: #FF39A6;
-  --lightmode-colour-brown: #A6511C;
-  --lightmode-colour-brown-lite: #FA9966;
-  --lightmode-colour-brown-lite-alt: #FAC966;
-  --lightmode-colour-brown-lite-alt-alt: #FCD986;
-}
-
 html.darkonlight {
   background-image: url("/img/plants_pineapple_00_plain.svg");
 }
@@ -131,12 +111,12 @@ html.darkonlight div.modal-header button {
   background-color: var(--lightmode-colour-brown);
 }
 
-div.intro_subcard div.card-header,
-div.intro_subcard div.card-header a {
+html.darkonlight div.intro_subcard div.card-header,
+html.darkonlight div.intro_subcard div.card-header a {
   color: var(--lightmode-colour-green-dark);
 }
 
-div.intro_subcard div.card-header:hover a {
+html.darkonlight div.intro_subcard div.card-header:hover a {
   color: var(--lightmode-colour-green-lite);
   text-decoration: none;
 }
