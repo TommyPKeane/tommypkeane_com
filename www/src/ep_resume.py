@@ -36,112 +36,71 @@ from . import (
 );
 
 
-base_dir = pathlib.Path("./src/templates/resume_cv/")
+main_dir = pathlib.Path("./src/templates");
+content_dir = (main_dir / "resume_cv");
 
 
 app_bp = flask.Blueprint("resume_cv", __name__);
+
+site_author = "Tommy P. Keane";
+
+resume_css_lst = [
+   { "cssname": "/css/resume-cv.css",        "mode": _base.MODE_ANY },
+   { "cssname": "/css/resume-cv-dark.css",   "mode": _base.MODE_DARK },
+   { "cssname": "/css/resume-cv-lite.css",   "mode": _base.MODE_LITE },
+   { "cssname": "/css/resume-cv-vapr.css",   "mode": _base.MODE_VAPR },
+   { "cssname": "/css/resume-cv-cpnk.css",   "mode": _base.MODE_CPNK },
+];
+
+resume_js_lst = [
+   { "scriptname": "/js/cvtimeline.js", },
+];
 
 
 @app_bp.route("/business", methods=["GET",],)
 @app_bp.route("/professional", methods=["GET",],)
 @app_bp.route("/resume", methods=["GET",],)
+@app_bp.route("/business/", methods=["GET",],)
+@app_bp.route("/professional/", methods=["GET",],)
+@app_bp.route("/resume/", methods=["GET",],)
 @app_bp.route("/resume.html", methods=["GET",],)
 @app_bp.route("/resume.htm", methods=["GET",],)
-def resume_cv():
-   """Provide the Settings (Customisation) Page.
+@http_request.html_response(
+   css_lst= resume_css_lst,
+   js_lst= resume_js_lst,
+   title= "Resumé / CV (www.tommypkeane.com)",
+   description= "History and Details of Professional Experience of Tommy P. Keane, Data Scientist and Software Engineer.",
+   author= site_author,
+   partials_dct= {
+      "job_unemployment": _util.get_file_contents_str(content_dir / "job_unemployment.mustache"),
+      "job_software_engineer_businessintelligence": _util.get_file_contents_str(content_dir / "job_software_engineer_businessintelligence.mustache"),
+      "job_software_engineer_satcom": _util.get_file_contents_str(content_dir / "job_software_engineer_satcom.mustache"),
+      "job_graduate_research_assistant": _util.get_file_contents_str(content_dir / "job_graduate_research_assistant.mustache"),
+      "job_graduate_teaching_assistant": _util.get_file_contents_str(content_dir / "job_graduate_teaching_assistant.mustache"),
+      "job_student_phd": _util.get_file_contents_str(content_dir / "job_student_phd.mustache"),
+      "job_student_msc": _util.get_file_contents_str(content_dir / "job_student_msc.mustache"),
+      "job_student_bsc": _util.get_file_contents_str(content_dir / "job_student_bsc.mustache"),
+      "job_student_hs": _util.get_file_contents_str(content_dir / "job_student_hs.mustache"),
+      "job_coop_videosecurity": _util.get_file_contents_str(content_dir / "job_coop_videosecurity.mustache"),
+      "job_coop_weatherdata": _util.get_file_contents_str(content_dir / "job_coop_weatherdata.mustache"),
+      "job_coop_touchscreen_repair": _util.get_file_contents_str(content_dir / "job_coop_touchscreen_repair.mustache"),
+      "job_coop_network_technician": _util.get_file_contents_str(content_dir / "job_coop_network_technician.mustache"),
+      "job_cashier_grocery": _util.get_file_contents_str(content_dir / "job_cashier_grocery.mustache"),
+      "job_cashier_electronics": _util.get_file_contents_str(content_dir / "job_cashier_electronics.mustache"),
+   },
+)
+def ep_resume_cv(theme_class):
+   """Provide the response for the Business/Resumé endpoint.
    """
-   response_obj = flask.Response();
-   response_obj.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-   response_obj.headers["Pragma"] = "no-cache"
-   response_obj.headers["Expires"] = "0"
-
-   cookies_lst = [];
-
-   cookies_dct = flask.request.json;
-   if (cookies_dct is None):
-      cookies_dct = flask.request.cookies.to_dict();
-   # fi
-
-   ck_theme_lightondark_selected = None;
-   ck_theme_darkonlight_selected = None;
-   theme_class = flask.request.cookies.get("theme");
-
-   if (theme_class is None):
-      theme_class = "default";
-      ck_theme_lightondark_selected = "selected";
-      ck_theme_darkonlight_selected = "";
-   else:
-      ck_theme_lightondark_selected = ("", "selected")[int(theme_class == "light_on_dark")];
-      ck_theme_darkonlight_selected = ("", "selected")[int(theme_class == "dark_on_light")];
-   # fi
-
-   for (index, (key, value)) in enumerate(cookies_dct.items()):
-      cookies_lst.append(
-         {
-            "index": index,
-            "key": key,
-            "value": value,
-            "lifetime": _base.TWO_WEEKS_SECONDS,
-         },
-      );
-   # rof
-
-   stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
-   stylesheets_lst.append({"cssname": "/css/resume-cv.css",});
-   stylesheets_lst.append({"cssname": "/css/resume-cv-light.css",});
-   stylesheets_lst.append({"cssname": "/css/resume-cv-dark.css",});
-
-   scripts_lst = copy.deepcopy(_base.BASE_SCRIPTS);
-   scripts_lst.append({"scriptname": "/js/cvtimeline.js",});
-
-   template_data = dict();
-   template_data.update(http_request._get_template_data_icons());
-   template_data.update(
-      {
-         "title": "Resumé / CV (www.tommypkeane.com)",
-         "description": "History and Details of Professional Experience of Tommy P. Keane.",
-         "author": "Tommy P. Keane",
-      }
-   );
-   template_data.update(
-      {
-         "theme_class": _base.THEME_CLASSES[theme_class],
-         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
-         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
-      }
-   );
-   template_data.update(
+   content_dct = dict();
+   content_dct.update(
       {
          "resume_cv_timeline": _util.get_file_contents_str("./img/cv_timeline_plain.svg"),
-         "stylesheets": stylesheets_lst,
-         "scriptfiles": scripts_lst,
-         "cookies" : cookies_lst,
       }
    );
 
-   response_str = http_request.generate_html_common(
-      "./src/templates/resume.mustache",
-      template_data,
-      partials_extra_dct= {
-         "job_unemployment": _util.get_file_contents_str(base_dir / "job_unemployment.mustache"),
-         "job_software_engineer_businessintelligence": _util.get_file_contents_str(base_dir / "job_software_engineer_businessintelligence.mustache"),
-         "job_software_engineer_satcom": _util.get_file_contents_str(base_dir / "job_software_engineer_satcom.mustache"),
-         "job_graduate_research_assistant": _util.get_file_contents_str(base_dir / "job_graduate_research_assistant.mustache"),
-         "job_graduate_teaching_assistant": _util.get_file_contents_str(base_dir / "job_graduate_teaching_assistant.mustache"),
-         "job_student_phd": _util.get_file_contents_str(base_dir / "job_student_phd.mustache"),
-         "job_student_msc": _util.get_file_contents_str(base_dir / "job_student_msc.mustache"),
-         "job_student_bsc": _util.get_file_contents_str(base_dir / "job_student_bsc.mustache"),
-         "job_student_hs": _util.get_file_contents_str(base_dir / "job_student_hs.mustache"),
-         "job_coop_videosecurity": _util.get_file_contents_str(base_dir / "job_coop_videosecurity.mustache"),
-         "job_coop_weatherdata": _util.get_file_contents_str(base_dir / "job_coop_weatherdata.mustache"),
-         "job_coop_touchscreen_repair": _util.get_file_contents_str(base_dir / "job_coop_touchscreen_repair.mustache"),
-         "job_coop_network_technician": _util.get_file_contents_str(base_dir / "job_coop_network_technician.mustache"),
-         "job_cashier_grocery": _util.get_file_contents_str(base_dir / "job_cashier_grocery.mustache"),
-         "job_cashier_electronics": _util.get_file_contents_str(base_dir / "job_cashier_electronics.mustache"),
-      },
-   );
 
-   response_obj.set_data(response_str);
+   template_file = (main_dir / "resume.mustache");
 
-   return (response_obj);
+   return (content_dct, template_file,);
 # fed
