@@ -29,12 +29,12 @@ let hide_title = function hst_hide_title(clicked_elm_id) {
    return;
 }
 
-let reveal_title = function hst_reveal_title(clicked_elm_id) {
+let reveal_title = function hst_reveal_title(hovered_elm_id) {
    let hovered_block = document.getElementById(
-      block_to_details_map[clicked_elm_id]
+      block_to_details_map[hovered_elm_id]
    );
    let title_hover_div = document.getElementById("hover_title");
-   title_hover_div.innerHTML = hovered_block.getElementsByClassName("card-title")[0].innerHTML;
+   title_hover_div.innerHTML = hovered_block.getElementsByClassName("billet-title")[0].innerHTML;
    title_hover_div.style.visibility = "visible";
    return;
 }
@@ -47,11 +47,11 @@ let hide_info = function hst_hide_info(clicked_elm_id) {
    return;
 }
 
-let reveal_info = function hst_reveal_info(clicked_elm_id) {
+let reveal_info = function hst_reveal_info(hovered_elm_id) {
    hide_jobs();
    hide_title();
    let selected_block = document.getElementById(
-      block_to_details_map[clicked_elm_id]
+      block_to_details_map[hovered_elm_id]
    );
    selected_block.style.display = "block";
    $("body,html").animate(

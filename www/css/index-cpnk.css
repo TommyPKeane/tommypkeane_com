@@ -61,17 +61,13 @@ body > main nav.breadcrumbs {
   background-color: var(--lightmode-colour-yellow-pale) !important;
 }
 
-hr {
-  background-color: var(--lightmode-colour-green-dark);
-}
-
-.billet {
+div.card {
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-.billet .btn-outline-danger,
-.billet .btn-outline-success,
-.billet .btn-outline-primary {
+div.card .btn-outline-danger,
+div.card .btn-outline-success,
+div.card .btn-outline-primary {
   color: var(--colour-white);
   border-color: var(--colour-white);
 }
@@ -112,12 +108,12 @@ div.modal-header button {
   background-color: var(--lightmode-colour-brown);
 }
 
-div.intro_subcard .billet-header,
-div.intro_subcard .billet-header a {
+div.intro_subcard div.card-header,
+div.intro_subcard div.card-header a {
   color: var(--lightmode-colour-green-dark);
 }
 
-div.intro_subcard .billet-header:hover a {
+div.intro_subcard div.card-header:hover a {
   color: var(--lightmode-colour-green-lite);
   text-decoration: none;
 }

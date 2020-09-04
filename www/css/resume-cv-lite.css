@@ -2,11 +2,11 @@ div#hover_title {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
-div.job-container div.card-body div.card {
+div.job-container .billet-body .billet {
   background-color: var(--lightmode-colour-yellow-pale);
 }
 
-div.job-container div.card-body div.card.header-card {
+div.job-container .billet-body .billet.header-billet {
   background-color: var(--lightmode-colour-green-lite-alt);
 }
 
@@ -18,7 +18,7 @@ div.job-container div.card-body div.card.header-card {
   fill: var(--svg-light-bg-colour) !important;
 }
 
-div.job-container div.card-body div.card {
+div.job-container .billet-body .billet {
   box-shadow: 4px 4px 15px var(--svg-light-shadow-colour);
 }
 

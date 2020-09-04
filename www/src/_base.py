@@ -28,6 +28,7 @@ THEME_CLASSES = {
 
 BASE_STYLESHEETS = [
    { "cssname": "/css/bootstrap.min.css",    "mode": MODE_ANY, },
+   { "cssname": "/css/mise-en-place.css",    "mode": MODE_ANY, },
    { "cssname": "/css/colours.css",          "mode": MODE_ANY, },
    { "cssname": "/css/colours-lite.css",     "mode": MODE_LITE, },
    { "cssname": "/css/colours-dark.css",     "mode": MODE_DARK, },

@@ -1,6 +1,34 @@
 @font-face {
-  font-family: "Aegean-Regular";
-  src: url("/fonts/Aegean.ttf") format("truetype");
+  font-family: "Righteous";
+  src: url("/fonts/Righteous/Righteous-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "VT323";
+  src: url("/fonts/VT323/VT323-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "KumbhSans";
+  src: url("/fonts/Kumbh_Sans/KumbhSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "KumbhSans";
+  src: url("/fonts/Kumbh_Sans/KumbhSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "KumbhSans";
+  src: url("/fonts/Kumbh_Sans/KumbhSans-Light.ttf") format("truetype");
+  font-weight: lighter;
+}
+
+tt {
+  font-family: "VT323", monospace;
+  font-size: 140%;
 }
 
 body {
@@ -9,14 +37,14 @@ body {
 }
 
 body > header nav {
-  font-family: "Aegean-Regular", sans-serif;
+  font-family: "Righteous", sans-serif;
 }
 
 body > main nav.breadcrumbs {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-family: "Aegean-Regular", sans-serif;
+  font-family: "Righteous", sans-serif;
 }
 
 nav ol.breadcrumb {
@@ -163,12 +191,6 @@ ul.side_by_side {
     height: 30px;
   }
 
-  div.card-body {
-    font-size: 3.5vw;
-    padding-left: 5vw;
-    padding-right: 5vw;
-  }
-
   ul {
     padding-inline-start: 4vw;
   }
@@ -196,12 +218,6 @@ ul.side_by_side {
 
   body div.modal-body {
     font-size: 80%;
-  }
-
-  div.card-body {
-    font-size: 2.25vw;
-    padding-left: 5vw;
-    padding-right: 5vw;
   }
 
   div.modal-body table {
@@ -285,38 +301,6 @@ ul.side_by_side {
     margin-right: auto;
     border-radius: 2vw 2vw 2vw 2vw;
     padding-bottom: 1vw;
-  }
-
-  div.card.intro_subcard {
-    width: 25vw;
-    border-radius: 10px 10px 10px 10px;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: auto;
-    margin-right: 2vw;
-  }
-
-  div.card.intro_subcard.wide {
-    width: 45vw;
-  }
-
-  div.intro_subcard div.card-header a {
-    font-family: monospace;
-  }
-
-  div.intro_subcard div.card-header a svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  div.card-body {
-    font-size: 1rem;
-    padding-left: 3vw;
-    padding-right: 3vw;
-  }
-
-  div.intro_subcard div.card-body {
-    font-size: 0.70rem;
   }
 
   ul {

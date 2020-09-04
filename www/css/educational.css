@@ -1,4 +1,4 @@
-div.educational_link img.card-img-top {
+div.educational_link img.billet-img-top {
   width: 70%;
   border-radius: 5px 5px 5px 5px;
   border-width: 2px;
@@ -9,11 +9,11 @@ div.educational_link img.card-img-top {
   margin-right: auto;
 }
 
-.card-title {
+.billet-title {
   margin-top: 1.5vw;
 }
 
-.card-subtitle {
+.billet-subtitle {
   margin-bottom: 1vw;
 }
 
@@ -94,12 +94,12 @@ div.article_body div.container_svg {
     font-size: 0.65rem;
   }
 
-  div.educational_link img.card-img-top {
+  div.educational_link img.billet-img-top {
     display: inline-block;
     width: 30%;
   }
 
-  div.educational_link div.card-body {
+  div.educational_link div.billet-body {
     display: inline-block;
     width: 60%;
   }
@@ -117,12 +117,12 @@ div.article_body div.container_svg {
     font-size: 0.75rem;
   }
 
-  div.educational_link img.card-img-top {
+  div.educational_link img.billet-img-top {
     display: inline-block;
     width: 30%;
   }
 
-  div.educational_link div.card-body {
+  div.educational_link div.billet-body {
     display: inline-block;
     width: 67.5%;
   }
@@ -144,12 +144,12 @@ div.article_body div.container_svg {
     font-size: 0.75rem;
   }
 
-  div.educational_link img.card-img-top {
+  div.educational_link img.billet-img-top {
     display: inline-block;
     width: 30%;
   }
 
-  div.educational_link div.card-body {
+  div.educational_link div.billet-body {
     display: inline-block;
     width: 67.5%;
   }

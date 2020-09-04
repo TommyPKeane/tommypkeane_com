@@ -5,16 +5,16 @@ div#hover_title {
   border-radius: 5px 5px 5px 5px;
 }
 
-h4.card-subtitle {
+h4.billet-subtitle {
   font-size: 0.85rem;
   font-style: italic;
 }
 
-div.job-container div.card-body div.card {
+div.job-container div.billet-body div.billet {
   border-radius: 15px 15px 15px 15px;
 }
 
-div.job-container div.card-body div.card.header-card {
+div.job-container div.billet-body div.billet.header-billet {
   border-radius: 5px 5px 5px 5px;
 }
 
@@ -36,7 +36,7 @@ div.job-container div.card-body div.card.header-card {
 
 @media (min-width: 0px)
 {
-  h3.card-title {
+  h3.billet-title {
     font-size: 5vw;
   }
 
@@ -56,7 +56,7 @@ div.job-container div.card-body div.card.header-card {
 
 @media (min-width: 576px)
 {
-  h3.card-title {
+  h3.billet-title {
     font-size: 2rem;
   }
 }
@@ -64,7 +64,7 @@ div.job-container div.card-body div.card.header-card {
 
 @media (min-width: 768px) 
 {
-  h3.card-title {
+  h3.billet-title {
     font-size: 2rem;
   }
 }
@@ -76,7 +76,7 @@ div.job-container div.card-body div.card.header-card {
     max-width: 800px;
   }
 
-  h3.card-title {
+  h3.billet-title {
     font-size: 2rem;
   }
 }
@@ -84,7 +84,7 @@ div.job-container div.card-body div.card.header-card {
 
 @media (min-width: 1200px)
 {
-  h3.card-title {
+  h3.billet-title {
     font-size: 2rem;
   }
 }

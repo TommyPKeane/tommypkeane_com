@@ -61,14 +61,24 @@ nav div.dropdown-menu a.dropdown-item.disabled svg {
   stroke: var(--darkmode-colour-green-pale);
 }
 
-div.card {
+hr {
+  background-color: var(--darkmode-colour-yellow-pale-pale);
+}
+
+.billet {
+  color: var(--colour-black);
   background-color: var(--darkmode-colour-red-dark-dark);
   box-shadow: -5px 5px 15px var(--colour-black);
 }
 
-div.card .btn-outline-danger,
-div.card .btn-outline-success,
-div.card .btn-outline-primary {
+.billet-header,
+.billet-body {
+  color: var(--darkmode-colour-yellow-pale-pale);
+}
+
+.billet .btn-outline-danger,
+.billet .btn-outline-success,
+.billet .btn-outline-primary {
   color: var(--colour-white);
   border-color: var(--colour-white);
 }
@@ -79,12 +89,12 @@ select.form-control {
   background-color: var(--darkmode-colour-red-dark);
 }
 
-div.card.alert.alert-success {
+.billet.alert.alert-success {
   color: var(--darkmode-colour-green-pale-pale);
   background-color: var(--darkmode-colour-blue-green-pale);
 }
 
-div.card.alert.alert-warning {
+.billet.alert.alert-warning {
   color: var(--darkmode-colour-pink-pale);
   background-color: var(--darkmode-colour-red-dark);
 }
@@ -130,12 +140,12 @@ div.modal-header button {
   background-color: var(--darkmode-colour-yellow-pale);
 }
 
-div.intro_subcard div.card-header,
-div.intro_subcard div.card-header a {
+div.intro_subbillet .billet-header,
+div.intro_subbillet .billet-header a {
   color: var(--darkmode-colour-yellow-pale);
 }
 
-div.intro_subcard div.card-header:hover a {
+div.intro_subbillet .billet-header:hover a {
   color: var(--darkmode-colour-yellow);
   text-decoration: none;
 }
