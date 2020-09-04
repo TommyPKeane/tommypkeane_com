@@ -5,7 +5,7 @@ def get_file_contents_str(filename,):
    """Get the SVG XML as a string, for raw injection into document.
    """
    contents_str = None;
-   with open(filename, "r") as file_obj:
+   with open(filename, "r", encoding="utf-8") as file_obj:
       contents_str = file_obj.read();
    # htiw
    return (contents_str);
@@ -32,7 +32,7 @@ def generate_html(source_file, data_dct, partials_dct, partials_extra_dct= None)
 
    raw_str = None;
 
-   with open(source_file, "r") as file_obj:
+   with open(source_file, "r", encoding="utf-8") as file_obj:
       raw_str = file_obj.read();
    # htiw
 
