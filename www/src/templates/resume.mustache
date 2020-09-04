@@ -1,32 +1,17 @@
-<!doctype html>
-<html lang="en-US" class="{{theme_class}}">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
-    <link rel="icon" href="{{ico_ico_file}}" type="image/png">
-    <link rel="icon" href="{{ico_png_file}}" type="image/png">
-    <meta name="description" content="{{description}}">
-    <meta name="author" content="{{author}}">
-    {{#stylesheets}}
-      <link rel="stylesheet" type="text/css" href="{{cssname}}">
-    {{/stylesheets}}
-  </head>
-  <body>
+{{> page_head}}
     <div id="hover_title">No Selection</div>
-    {{> header_contents}}
     <main>
       <div id="intro_container" class="container-fluid page_intro">
-        <div class="card mt-3 mb-3">
-          <h3 class="card-title mt-3">Curriculum Vit&aelig; (CV)</h3>
-          <h4 class="card-subtitle">Employment History</h4>
-          <h4 class="card-subtitle mt-1 mb-2">Academic Career</h4>
-          <div class="card-body">
-            <p class="intro_par">Hiya!</p>
-            <p class="intro_par">Welcome to the interactive <i>curriculum vit&aelig;</i> of this, here, <b>tommy p. keane</b>.</p>
-            <p class="intro_par">If you're looking for my actual PDF resum&eacute;, you can contact me per the info at the bottom of this page. All company and institution names have been redacted for privacy and de-affiliation reasons, except for the probably already public information that I attended the Rochester Institute of Technology (RIT). This site is not affiliated with any other organization, I'm just sharing my personal experiences.</p>
-            <p class="intro_par aside_par">Note: Most of my professional experiences were with teams or businesses, and even in graduate independent-research I had peers, friends, and professors for support. This content is written from only my personal point-of-view about my personal skillset and experiential history -- like a resum&eacute;. But, to be clear: many, many people who are not mentioned here have helped, taught, and supported me.</p>
-            <p class="intro_par">To explore, just click the boxes on the timeline indicating each job or degree-program. On browsers with a mouse you can hover over each block to see its title.</p>
+        <div class="billet mt-3 mb-3">
+          <h3 class="billet-title mt-3">Curriculum Vit&aelig; (CV)</h3>
+          <h4 class="billet-subtitle">Employment History</h4>
+          <h4 class="billet-subtitle mt-1 mb-2">Academic Career</h4>
+          <div class="billet-body">
+            <p>Hiya!</p>
+            <p>Welcome to the interactive <i>curriculum vit&aelig;</i> of this, here, <b>tommy p. keane</b>.</p>
+            <p>If you're looking for my actual PDF resum&eacute;, you can contact me per the info at the bottom of this page. All company and institution names have been redacted for privacy and de-affiliation reasons, except for the probably already public information that I attended the Rochester Institute of Technology (RIT). This site is not affiliated with any other organization, I'm just sharing my personal experiences.</p>
+            <p class="aside_par">Note: Most of my professional experiences were with teams or businesses, and even in graduate independent-research I had peers, friends, and professors for support. This content is written from only my personal point-of-view about my personal skillset and experiential history -- like a resum&eacute;. But, to be clear: many, many people who are not mentioned here have helped, taught, and supported me.</p>
+            <p>To explore, just click the boxes on the timeline indicating each job or degree-program. On browsers with a mouse you can hover over each block to see its title.</p>
           </div>
           <a id="collapse-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
           <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
@@ -52,6 +37,4 @@
       {{> job_cashier_grocery}}
       <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">{{{img_scroll_to_top}}}</a>
     </main>
-    {{> footer_contents}}
-  </body>
-</html>
+{{> page_foot}}
