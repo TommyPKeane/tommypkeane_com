@@ -15,6 +15,7 @@ import pystache;
 from src import (
    _base,
    _util,
+   ep_main,
    ep_cookies,
    ep_errors,
    ep_educational,
@@ -28,89 +29,7 @@ from src import (
 
 webapp = flask.Flask(__name__);
 
-
-@webapp.route("/", methods=["GET",],)
-@webapp.route("/index", methods=["GET",],)
-@webapp.route("/index.html", methods=["GET",],)
-@webapp.route("/index.htm", methods=["GET",],)
-def intro():
-   """Provide the Main Landing Page Response
-   """
-   response_obj = flask.Response();
-   response_obj.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-   response_obj.headers["Pragma"] = "no-cache"
-   response_obj.headers["Expires"] = "0"
-
-   cookies_lst = [];
-
-   cookies_dct = flask.request.json;
-   if (cookies_dct is None):
-      cookies_dct = flask.request.cookies.to_dict();
-   # fi
-
-   ck_theme_lightondark_selected = None;
-   ck_theme_darkonlight_selected = None;
-   theme_class = flask.request.cookies.get("theme");
-
-   if (theme_class is None):
-      theme_class = "default";
-      ck_theme_lightondark_selected = "selected";
-      ck_theme_darkonlight_selected = "";
-   else:
-      ck_theme_lightondark_selected = ("", "selected")[int(theme_class == "light_on_dark")];
-      ck_theme_darkonlight_selected = ("", "selected")[int(theme_class == "dark_on_light")];
-   # fi
-
-   for (index, (key, value)) in enumerate(cookies_dct.items()):
-      cookies_lst.append(
-         {
-            "index": index,
-            "key": key,
-            "value": value,
-            "lifetime": _base.TWO_WEEKS_SECONDS,
-         },
-      );
-   # rof
-
-   stylesheets_lst = copy.deepcopy(_base.BASE_STYLESHEETS);
-   # stylesheets_lst.append(...);
-
-   scripts_lst = copy.deepcopy(_base.BASE_SCRIPTS);
-
-   template_data = dict();
-   template_data.update(
-      http_request._get_template_data_icons()
-   );
-   template_data.update(
-      {
-         "title": "Tommy P. Keane - Professional Website",
-         "description": "Landing Page for www.tommypkeane.com, website of Tommy P. Keane, Data-Scientist and Software-Engineer.",
-         "author": "Tommy P. Keane",
-      }
-   );
-   template_data.update(
-      {
-         "theme_class": _base.THEME_CLASSES[theme_class],
-         "ck_theme_lightondark_selected": ck_theme_lightondark_selected,
-         "ck_theme_darkonlight_selected": ck_theme_darkonlight_selected,
-      }
-   );
-   template_data.update(
-      {
-         "stylesheets": stylesheets_lst,
-         "scriptfiles": scripts_lst,
-         "cookies" : cookies_lst,
-      }
-   );
-
-   response_str = http_request.generate_html_common(
-      "./src/templates/index.mustache",
-      template_data,
-   );
-   
-   return (response_str);
-# fed
-
+webapp.register_blueprint(ep_main.app_bp);
 
 webapp.register_blueprint(ep_projects.app_bp);
 
