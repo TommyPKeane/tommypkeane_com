@@ -1,0 +1,121 @@
+.padded-container {
+  width: 100%;
+  margin-top: 2vw;
+  margin-right: auto;
+  margin-bottom: 2vw;
+  margin-left: auto;
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.billet {
+  color: inherit;
+  display: block;
+  position: relative;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  box-shadow: -3px 3px 7px currentColor;
+  text-align: center;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  line-height: 1.75;
+}
+
+.billet-header {
+  font-family: "Righteous", sans-serif;
+}
+
+.billet-header a {
+  font-family: "VT323", monospace;
+}
+
+.billet-header a svg {
+  width: 125px;
+  height: 125px;
+}
+
+.billet-body {
+  font-size: 1.25rem;
+  width: auto;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  text-align: justify;
+  font-family: "KumbhSans", sans-serif;
+}
+
+.billet.inline {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.billet.narrow {
+  width: 27.5%;
+}
+
+.billet.wide {
+  width: 60%;
+}
+
+.billet.wide .billet-body {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.billet-grid .billet:hover {
+  box-shadow: -10px 10px 10px currentColor;
+}
+
+.billet-grid .billet-body {
+  font-size: 0.95rem;
+}
+
+hr {
+  width: 60%;
+  border-width: 0.25rem;
+  border-radius: 1rem;
+  margin-top: 5vw;
+  margin-right: auto;
+  margin-bottom: 5vw;
+  margin-left: auto;
+  box-shadow: -0.15rem 0.15rem 0.25rem var(--colour-black);
+}
+
+
+@media (min-width: 0px)
+{
+}
+
+@media (min-width: 576px)
+{
+}
+
+@media (min-width: 768px)
+{
+}
+
+@media (min-width: 992px)
+{
+}
+
+@media (min-width: 1200px)
+{
+}
