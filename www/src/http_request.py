@@ -69,7 +69,7 @@ def generate_html_common(
 # fed
 
 
-def html_response(css_lst, js_lst, title, description, author,):
+def html_response(css_lst, js_lst, title, description, author, partials_dct= None,):
 
    def argumentless_wrapper(func,):
 
@@ -168,6 +168,7 @@ def html_response(css_lst, js_lst, title, description, author,):
          response_str = generate_html_common(
             template_file,
             template_data,
+            partials_dct,
          );
 
          response_obj.set_data(response_str);
