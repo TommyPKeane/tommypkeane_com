@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="music-piano-octave.svg"
+   width="350"
+   height="150"
+   viewBox="0 0 92.604164 79.375002"
+   version="1.1"
+   id="svg8">
+  <metadata
+     id="metadata6151">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6149" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg8"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:cy="64.85511"
+     inkscape:cx="178.28674"
+     inkscape:zoom="1.9255643"
+     showgrid="false"
+     id="namedview6147"
+     inkscape:window-height="829"
+     inkscape:window-width="1440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <rect
+     class="whitekey"
+     ry="2.279187"
+     rx="2.2521222"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9"
+     id="keyC"
+     width="25.003927"
+     height="79.023438"
+     x="-46.365982"
+     y="0.17578316" />
+  <rect
+     class="whitekey"
+     ry="2.4691193"
+     rx="2.4397991"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9"
+     id="keyD"
+     width="25.003927"
+     height="79.023438"
+     x="-19.643946"
+     y="0.17578316" />
+  <rect
+     class="whitekey"
+     ry="3.0389159"
+     rx="3.0028296"
+     y="0.17578316"
+     x="7.0780916"
+     height="79.023438"
+     width="25.003927"
+     id="keyE"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9" />
+  <rect
+     class="whitekey"
+     ry="2.279187"
+     rx="2.2521222"
+     y="0.17578316"
+     x="33.800114"
+     height="79.023438"
+     width="25.003927"
+     id="keyF"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9" />
+  <rect
+     class="whitekey"
+     ry="2.0892549"
+     rx="2.0644453"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9"
+     id="keyG"
+     width="25.003927"
+     height="79.023438"
+     x="60.522171"
+     y="0.17578316" />
+  <rect
+     class="whitekey"
+     ry="2.279187"
+     rx="2.2521222"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9"
+     id="keyA"
+     width="25.003927"
+     height="79.023438"
+     x="87.244179"
+     y="0.17578316" />
+  <rect
+     class="whitekey"
+     ry="2.6590514"
+     rx="2.6274757"
+     y="0.17578316"
+     x="113.96622"
+     height="79.023438"
+     width="25.003927"
+     id="keyB"
+     style="stroke-width:1.92112;stroke-linecap:round;fill:#f9f9f9" />
+  <rect
+     class="blackkey"
+     ry="2.0892549"
+     rx="2.0644453"
+     style="stroke-width:1.25341;stroke-linecap:round"
+     id="sharpC"
+     width="14.392589"
+     height="58.4375"
+     x="-28.119686"
+     y="0.17578316" />
+  <rect
+     class="blackkey"
+     ry="2.4691193"
+     rx="2.4397991"
+     y="0.17578316"
+     x="-0.70309746"
+     height="58.4375"
+     width="14.392589"
+     id="sharpD"
+     style="stroke-width:1.25341;stroke-linecap:round" />
+  <rect
+     class="blackkey"
+     ry="1.8993224"
+     rx="1.8767685"
+     y="0.17578316"
+     x="53.910721"
+     height="58.4375"
+     width="14.392589"
+     id="sharpF"
+     style="stroke-width:1.25341;stroke-linecap:round" />
+  <rect
+     class="blackkey"
+     ry="2.0892549"
+     rx="2.0644453"
+     style="stroke-width:1.25341;stroke-linecap:round"
+     id="sharpG"
+     width="14.392589"
+     height="58.4375"
+     x="80.669319"
+     y="0.17578316" />
+  <rect
+     class="blackkey"
+     ry="2.279187"
+     rx="2.2521222"
+     y="0.17578316"
+     x="107.42791"
+     height="58.4375"
+     width="14.392589"
+     id="sharpA"
+     style="stroke-width:1.25341;stroke-linecap:round" />
+</svg>
