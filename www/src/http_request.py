@@ -55,6 +55,8 @@ def generate_html_common(
       "page_head": _util.get_file_contents_str("./src/templates/page_head.mustache"),
       "page_foot": _util.get_file_contents_str("./src/templates/page_foot.mustache"),
       "header_contents": _util.get_file_contents_str("./src/templates/header_contents.mustache"),
+      "header_modal_help": _util.get_file_contents_str("./src/templates/header-modal-help.mustache"),
+      "header_modal_settings": _util.get_file_contents_str("./src/templates/header-modal-settings.mustache"),
       "footer_contents": _util.get_file_contents_str("./src/templates/footer_contents.mustache"),
    };
 
