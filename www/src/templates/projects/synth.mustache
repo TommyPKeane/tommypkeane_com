@@ -28,7 +28,7 @@
               <p>To prevent unwanted audio, you need to press the "Enable" button to allow the Audio on this page to play when you interact with the Synthesizer.</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" onclick="enable_audio();">Enable</button>
+              <button id="audio_enable_btn" type="button" class="btn btn-primary" onclick="audo_enable_fnc();">Enable</button>
             </div>
           </div>
         </div>
@@ -40,51 +40,25 @@
           <div id="synthtop">
             <div id="display">
               <canvas id="synthwaveform"></canvas>
+              <div id="freq_note_container">
+                <h1 id="note_display"></h1>
+                <canvas id="freq_spectrum"></canvas>
+              </div>
             </div>
             <div id="controls">
-              <!-- <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
-                {{{knob}}}
+              <div class="ctrl_pair">
+                <p id="volume_name" class="title">volume</p>
+                <input type="range" id="volume_ctrl" min="0" max="1" value="0.50" step="0.01">
+                <p id="volume_pcnt" class="numeric">50%</p>
               </div>
-              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
-                {{{knob}}}
-              </div>
-              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
-                {{{knob}}}
-              </div>
-              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
-                {{{knob}}}
-              </div>
-              <div id="{{knob_id}}" class="knob" data-knob-value="{{knob_value}}">
-                {{{knob}}}
-              </div> -->
             </div>
           </div>
           <div id="synthbottom">
             <div id="keys">
               {{{keys_octave_1}}}{{{keys_octave_2}}}{{{keys_octave_3}}}
             </div>
-            <div id="keyinfo">
-              <p class="keybutton">t</p>
-              <p class="keybutton">y</p>
-              <p class="keybutton">u</p>
-              <p class="keybutton">i</p>
-              <p class="keybutton">o</p>
-              <p class="keybutton">p</p>
-              <p class="keybutton">[</p>
-              <p class="keybutton">g</p>
-              <p class="keybutton">h</p>
-              <p class="keybutton">j</p>
-              <p class="keybutton">k</p>
-              <p class="keybutton">l</p>
-              <p class="keybutton">;</p>
-              <p class="keybutton">'</p>
-              <p class="keybutton">v</p>
-              <p class="keybutton">b</p>
-              <p class="keybutton">n</p>
-              <p class="keybutton">m</p>
-              <p class="keybutton">,</p>
-              <p class="keybutton">.</p>
-              <p class="keybutton">/</p>
+            <div id="computer_keys_container">
+              {{{computer_keyboard}}}
             </div>
           </div>
         </div>

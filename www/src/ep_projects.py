@@ -10,7 +10,6 @@
 # @copyright 2020, Tommy P. Keane
 
 import copy;
-import os;
 import pathlib;
 
 import commonmark;
@@ -28,17 +27,17 @@ app_bp = flask.Blueprint("projects", __name__);
 projects_src_dir = pathlib.Path("./src/templates/projects/");
 
 projects_css_lst = [
-   {"cssname": "/js/libs/highlight/styles/default.css",},
-   {"cssname": "/css/highlight.css",},
-   {"cssname": "/css/projects.css",},
-   # {"cssname": "/css/projects-light.css",},
-   # {"cssname": "/css/projects-dark.css",},
+   { "cssname": "/js/libs/highlight/styles/default.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/highlight.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/projects.css", "mode": _base.MODE_ANY, },
+   # { "cssname": "/css/projects-lite.css", "mode": _base.MODE_LITE, },
+   # { "cssname": "/css/projects-dark.css", "mode": _base.MODE_DARK, },
 ];
 
 projects_js_lst = [
-   {"scriptname": "/js/libs/highlight/highlight.pack.js",},
-   {"scriptname": "/js/libs/highlight-plugins/linenumbers/highlightjs-line-numbers.min.js",},
-   {"scriptname": "/js/projects.js",},
+   { "scriptname": "/js/libs/highlight/highlight.pack.js", },
+   { "scriptname": "/js/libs/highlight-plugins/linenumbers/highlightjs-line-numbers.min.js", },
+   { "scriptname": "/js/projects.js", },
 ];
 
 projects_desc = (
@@ -47,8 +46,10 @@ projects_desc = (
 
 site_author = "Tommy P. Keane";
 
-keys_svg = _util.get_file_contents_str("./img/tommylogos/music-piano-octave.svg");
-# knob_svg = _util.get_file_contents_str("./img/tommytofu/knob.svg");
+synth_img_path = pathlib.Path("./img/projects-synth/");
+
+keys_svg = _util.get_file_contents_str(synth_img_path / "music-piano-octave-plain.svg");
+computer_keyboard_svg = _util.get_file_contents_str(synth_img_path / "computer-keyboard-plain.svg");
 
 
 @app_bp.route("/projects", methods=["GET",],)
@@ -69,10 +70,18 @@ def page_projects(theme_class):
 # fed
 
 
-synth_css = projects_css_lst;
-synth_css.append({"cssname": "/css/projects-synth.css",});
+synth_css = copy.deepcopy(projects_css_lst);
+synth_css.extend(
+   [
+      { "cssname": "/css/projects-synth.css", "mode": _base.MODE_ANY, },
+      { "cssname": "/css/projects-synth-lite.css", "mode": _base.MODE_LITE, },
+      { "cssname": "/css/projects-synth-dark.css", "mode": _base.MODE_DARK, },
+      { "cssname": "/css/projects-synth-vapr.css", "mode": _base.MODE_VAPR, },
+      { "cssname": "/css/projects-synth-cpnk.css", "mode": _base.MODE_CPNK, },
+   ]
+);
 
-synth_js = projects_js_lst;
+synth_js = copy.deepcopy(projects_js_lst);
 synth_js.append({"scriptname": "/js/synth.js",});
 
 @app_bp.route("/projects/synth", methods=["GET",],)
@@ -80,7 +89,7 @@ synth_js.append({"scriptname": "/js/synth.js",});
 @app_bp.route("/projects/synth.htm", methods=["GET",],)
 @http_request.html_response(
    css_lst= synth_css,
-   js_lst= projects_js_lst,
+   js_lst= synth_js,
    title= "Synthesizer (www.tommypkeane.com)",
    description= "An interactive online Synthesizer developed by Tommy P. Keane, using the Web Audio API.",
    author= site_author,
@@ -94,6 +103,7 @@ def page_synth(theme_class):
       "keys_octave_1": keys_svg,
       "keys_octave_2": keys_svg,
       "keys_octave_3": keys_svg,
+      "computer_keyboard": computer_keyboard_svg,
    };
 
    template_file = (projects_src_dir / "synth.mustache");
@@ -101,18 +111,22 @@ def page_synth(theme_class):
    return (content_dct, template_file,);
 # fed
 
-pinephone_css = projects_css_lst;
-pinephone_css.append({"cssname": "/css/projects-pinephone.css",});
+pinephone_css = copy.deepcopy(projects_css_lst);
+pinephone_css.append(
+   { "cssname": "/css/projects-pinephone.css", "mode": _base.MODE_ANY, }
+);
 
-pinephone_js = projects_js_lst;
-pinephone_js.append({"scriptname": "/js/pinephone.js",});
+pinephone_js = copy.deepcopy(projects_js_lst);
+pinephone_js.append(
+   { "scriptname": "/js/pinephone.js", }
+);
 
 @app_bp.route("/projects/hw/pinephone", methods=["GET",],)
 @app_bp.route("/projects/hw/pinephone.html", methods=["GET",],)
 @app_bp.route("/projects/hw/pinephone.htm", methods=["GET",],)
 @http_request.html_response(
    css_lst= pinephone_css,
-   js_lst= projects_js_lst,
+   js_lst= pinephone_js,
    title= "Pine64: PinePhone (www.tommypkeane.com)",
    description= "Index page for articles written by Tommy P. Keane about using and developing-for the Pine64 PinePhone.",
    author= site_author,
@@ -150,7 +164,7 @@ def page_pinephone(theme_class):
 @app_bp.route("/projects/hw/pinephone/hardware.htm", methods=["GET",],)
 @http_request.html_response(
    css_lst= pinephone_css,
-   js_lst= projects_js_lst,
+   js_lst= pinephone_js,
    title= "Pine64: PinePhone (www.tommypkeane.com)",
    description= "Article written by Tommy P. Keane, detailing the Hardware configuration and features of the Pine64 PinePhone.",
    author= site_author,
@@ -185,7 +199,7 @@ def page_pinephone_hardware(theme_class):
 @app_bp.route("/projects/hw/pinephone/os-manjaro-phosh.htm", methods=["GET",],)
 @http_request.html_response(
    css_lst= pinephone_css,
-   js_lst= projects_js_lst,
+   js_lst= pinephone_js,
    title= "PinePhone: Manjaro Phosh (www.tommypkeane.com)",
    description= "Article written by Tommy P. Keane, detailing the Hardware configuration and features of the Pine64 PinePhone running the Majaro ARM Phosh Linux-variant.",
    author= site_author,
