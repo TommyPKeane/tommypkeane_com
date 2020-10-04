@@ -50,6 +50,8 @@ synth_img_path = pathlib.Path("./img/projects-synth/");
 
 keys_svg = _util.get_file_contents_str(synth_img_path / "music-piano-octave-plain.svg");
 computer_keyboard_svg = _util.get_file_contents_str(synth_img_path / "computer-keyboard-plain.svg");
+skull_open_svg = _util.get_file_contents_str(synth_img_path / "objet_spooky_skeleton-skull_side-maw-open-00_plain.svg");
+skull_clsd_svg = _util.get_file_contents_str(synth_img_path / "objet_spooky_skeleton-skull_side-maw-clsd-00_plain.svg");
 
 
 @app_bp.route("/projects", methods=["GET",],)
@@ -74,10 +76,10 @@ synth_css = copy.deepcopy(projects_css_lst);
 synth_css.extend(
    [
       { "cssname": "/css/projects-synth.css", "mode": _base.MODE_ANY, },
-      { "cssname": "/css/projects-synth-lite.css", "mode": _base.MODE_LITE, },
-      { "cssname": "/css/projects-synth-dark.css", "mode": _base.MODE_DARK, },
-      { "cssname": "/css/projects-synth-vapr.css", "mode": _base.MODE_VAPR, },
-      { "cssname": "/css/projects-synth-cpnk.css", "mode": _base.MODE_CPNK, },
+      # { "cssname": "/css/projects-synth-lite.css", "mode": _base.MODE_LITE, },
+      # { "cssname": "/css/projects-synth-dark.css", "mode": _base.MODE_DARK, },
+      # { "cssname": "/css/projects-synth-vapr.css", "mode": _base.MODE_VAPR, },
+      # { "cssname": "/css/projects-synth-cpnk.css", "mode": _base.MODE_CPNK, },
    ]
 );
 
@@ -104,6 +106,8 @@ def page_synth(theme_class):
       "keys_octave_2": keys_svg,
       "keys_octave_3": keys_svg,
       "computer_keyboard": computer_keyboard_svg,
+      "skull_open": skull_open_svg,
+      "skull_clsd": skull_clsd_svg,
    };
 
    template_file = (projects_src_dir / "synth.mustache");

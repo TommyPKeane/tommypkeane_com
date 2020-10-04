@@ -38,14 +38,20 @@
       <div id="synth_container" class="container-fluid">
         <div id="synth">
           <div id="synthtop">
+            <div id="display_src">
+              {{{skull_open}}}
+              {{{skull_clsd}}}
+            </div>
             <div id="display">
               <canvas id="synthwaveform"></canvas>
-              <div id="freq_note_container">
+            </div>
+          </div>
+          <div id="synthmid">
+            <div id="controls">
+              <!-- <div id="freq_note_container">
                 <h1 id="note_display"></h1>
                 <canvas id="freq_spectrum"></canvas>
-              </div>
-            </div>
-            <div id="controls">
+              </div> -->
               <div class="ctrl_pair">
                 <p id="volume_name" class="title">volume</p>
                 <input type="range" id="volume_ctrl" min="0" max="1" value="0.50" step="0.01">

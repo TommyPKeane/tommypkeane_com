@@ -240,6 +240,14 @@ let draw_loop = setInterval(
       if(ti > display_elm.width) {
          ti = 0;
       }
+      if (synth_osc != null) {
+         let rate = (Math.round(100 * (synth_osc.frequency.value - tones["keyC"][3]) / tones["keyB"][5], 0));
+         rate = (rate % 2) ? rate : (rate + 1);
+         if (!(ti % (100 - rate))) {
+            document.querySelector("#skull_clsd").style.display = ["inline-block", "none"][ti % 2];
+            document.querySelector("#skull_open").style.display = ["none", "inline-block"][ti % 2];
+         }
+      }
    },
    1
 );
@@ -268,6 +276,8 @@ let stop_audio = function hst_stop_audio() {
    synth_osc = null;
    freq = 0;
    $("#note_display").html("");
+   document.querySelector("#skull_clsd").style.display = "inline-block";
+   document.querySelector("#skull_open").style.display = "none";
    return;
 }
 
@@ -344,6 +354,8 @@ let pageload = function hst_pageload() {
    //    audo_enable_fnc,
    //    false,
    // );
+   document.querySelector("#skull_clsd").style.display = "inline-block";
+   document.querySelector("#skull_open").style.display = "none";
    return;
 }
 
