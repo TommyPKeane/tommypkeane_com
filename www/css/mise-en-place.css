@@ -58,6 +58,21 @@
   margin-left: 1rem;
   text-align: justify;
   font-family: "KumbhSans", sans-serif;
+  background-color: var(--colour-text-bg);
+  color: var(--colour-text);
+}
+
+.billet-body hr {
+  width: 60%;
+  border-width: 0.25rem;
+  border-radius: 1rem;
+  margin-top: 0rem;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  margin-left: auto;
+  border-color: var(--colour-text-bg-pale);
+  box-shadow: -0.15rem 0.15rem 0.25rem var(--colour-text-bg-shdw);
+
 }
 
 .billet.inline {
@@ -68,11 +83,11 @@
 }
 
 .billet.narrow {
-  width: 27.5%;
+  width: 35%;
 }
 
 .billet.wide {
-  width: 60%;
+  width: 57.5%;
 }
 
 .billet.wide .billet-body {
@@ -88,6 +103,48 @@
   font-size: 0.95rem;
 }
 
+.hoverable {
+  border-bottom: 1px dashed;
+}
+
+.hoverable:hover {
+  cursor: pointer;
+}
+
+.aria_hover {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  max-width: 300px;
+}
+
+.aria_hover p {
+  font-size: 0.67rem;
+  padding: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  box-shadow: -2px 2px 15px var(--colour-tooltip-bg-shdw);
+  color: var(--colour-tooltip-text);
+  background: var(--colour-tooltip-bg);
+  margin: 1em 0em 1em 0em;
+  position: relative;
+}
+
+.aria_hover p:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50px;
+  border-width: 15px 15px 0px 15px;
+  border-style: solid;
+  border-color: var(--colour-tooltip-bg) transparent;
+  display: block;
+  width: 0px;
+}
+
+.aria_hover p a {
+  color: var(--colour-tooltip-text-link);
+}
+
 hr {
   width: 60%;
   border-width: 0.25rem;
@@ -97,8 +154,43 @@ hr {
   margin-bottom: 5vw;
   margin-left: auto;
   box-shadow: -0.15rem 0.15rem 0.25rem var(--colour-black);
+  border-color: var(--colour-text);
 }
 
+
+body > footer.pg_info {
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  display: block;
+}
+
+footer.pg_info {
+  display: block;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+footer.pg_info p {
+  font-family: "KumbhSans", sans-serif;
+  font-weight: normal;
+  line-height: 1.75;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--main-footer-bg-colour);
+  color: var(--main-footer-txt-colour);
+  box-shadow: -3px 3px 7px var(--main-footer-shdw-colour);
+  border-radius: 0.55rem;
+  width: 60%;
+}
+
+footer.pg_info p tt {
+  font-size: 120%;
+}
 
 @media (min-width: 0px)
 {

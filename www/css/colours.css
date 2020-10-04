@@ -2,9 +2,7 @@
   --colour-white: #FFFFFF;
   --colour-gray: #7F7F7F;
   --colour-gray-transparent: #78787878;
+  --colour-grey: #7F7F7F;
+  --colour-grey-transparent: #78787878;
   --colour-black: #000000;
-  --svg-dark-bg-colour: #4F1784;
-  --svg-dark-shadow-colour: #000000;
-  --svg-light-bg-colour: #F1FFF1;
-  --svg-light-shadow-colour: #000000;
 }

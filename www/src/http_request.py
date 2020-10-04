@@ -26,6 +26,7 @@
 # @copyright 2020, Tommy P. Keane
 
 import copy;
+import datetime;
 import os;
 
 import commonmark;
@@ -59,6 +60,19 @@ def generate_html_common(
       "header_modal_settings": _util.get_file_contents_str("./src/templates/header-modal-settings.mustache"),
       "footer_contents": _util.get_file_contents_str("./src/templates/footer_contents.mustache"),
    };
+
+   data_dct.update(
+      {
+         "ep_last_modified_date": datetime.datetime.fromtimestamp(
+               os.path.getmtime(source_file),
+               datetime.timezone.utc,
+            ).isoformat(),
+         "ep_last_modified_author": "tommy",
+         "site_repo_url": "https://github.com/TommyPKeane/tommypkeane_com",
+         "site_repo_title": "tommypkeane_com/www",
+         "tommy": "<b>tommy</b>",
+      },
+   );
 
    contents_str = _util.generate_html(
       source_file,

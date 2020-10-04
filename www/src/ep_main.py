@@ -19,7 +19,7 @@ main_css_lst = [
 ];
 
 main_js_lst = [
-   # {"scriptname": "/js/libs/highlight/highlight.pack.js",},
+   {"scriptname": "/js/mise-en-place.js",},
 ];
 
 main_desc = (
@@ -45,6 +45,26 @@ def ep_intro(theme_class,):
    """
    content_dct = dict();
    template_file = (main_src_pth / "index.mustache");
+
+   return (content_dct, template_file,);
+# fed
+
+@app_bp.route("/", methods=["GET",],)
+@app_bp.route("/about", methods=["GET",],)
+@app_bp.route("/about.html", methods=["GET",],)
+@app_bp.route("/about.htm", methods=["GET",],)
+@http_request.html_response(
+   css_lst= main_css_lst,
+   js_lst= main_js_lst,
+   title= "Tommy P. Keane - Professional Website",
+   description= main_desc,
+   author= site_author,
+)
+def ep_about(theme_class,):
+   """Provide the Main Landing Page Response
+   """
+   content_dct = dict();
+   template_file = (main_src_pth / "about.mustache");
 
    return (content_dct, template_file,);
 # fed
