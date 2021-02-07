@@ -1,4 +1,11 @@
-*.tar.gz
-**/__pycache__
+# Project Binary Directories
 data/
 photos/
+
+# Local Development
+.direnv/
+**/__pycache__
+
+# Binary Files
+*.tar.gz
+.DS_Store
