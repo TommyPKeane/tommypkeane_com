@@ -30,6 +30,7 @@ def get_static_js(path):
 # fed
 
 
+
 @app_bp.route("/css/<path:path>", methods=["GET",])
 def get_static_css(path):
    """Provide the static CSS files when requested.
@@ -53,5 +54,14 @@ def get_static_photo(path):
    """Provide the static Photography images when requested.
    """
    response_obj = flask.send_from_directory("photos", path);
+   return (response_obj);
+# fed
+
+
+@app_bp.route("/3d/<path:path>", methods=["GET",])
+def get_static_3d(path):
+   """Provide the static Photography images when requested.
+   """
+   response_obj = flask.send_from_directory("3d", path);
    return (response_obj);
 # fed

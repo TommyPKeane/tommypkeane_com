@@ -1,6 +1,6 @@
 # @file
 # @brief HTTP Request Utility Methods (and Decorators)
-# 
+#
 # This module provides the functions to be used for wrapping and simplifying
 # the common code for making custom HTTP responses with the Flask application.
 # All Flask endpoints need to respond with a valid plaintext string or a fully
@@ -8,10 +8,10 @@
 # redundant code and configuration setup that would otherwise be duplicated in
 # all our site's endpoints. So, things like headers, footers, styling, scripts,
 # and images/files are embedded here in the functions and wrappers/decorators.
-# 
+#
 # The current design relies on the `.update()` method of the `dict` class to
 # allow for custom overrides through function argument dictionaries.
-# 
+#
 # TODO:
 # - `html_response` is still lacking certain overrides that could let it be
 # used everywhere.
@@ -20,7 +20,7 @@
 # could be a nicer approach here, and allow for a more generic function by
 # relying on base-class methods where derived classes for custom endpoints do
 # proper overrides. This would also be more "pythonic".
-# 
+#
 # @author Tommy P. Keane
 # @email talk@tommypkeane.com
 # @copyright 2020, Tommy P. Keane
@@ -85,7 +85,14 @@ def generate_html_common(
 # fed
 
 
-def html_response(css_lst, js_lst, title, description, author, partials_dct= None,):
+def html_response(
+   css_lst,
+   js_lst,
+   title,
+   description,
+   author,
+   partials_dct= None,
+):
 
    def argumentless_wrapper(func,):
 
@@ -169,7 +176,8 @@ def html_response(css_lst, js_lst, title, description, author, partials_dct= Non
          template_data.update(
             {
                "stylesheets": stylesheets_lst,
-               "scriptfiles": scripts_lst,
+               "scriptfiles": [script_obj for script_obj in scripts_lst if "scriptname" in script_obj],
+               "modulefiles": [module_obj for module_obj in scripts_lst if "module" in module_obj],
                "cookies" : cookies_lst,
             }
          );
