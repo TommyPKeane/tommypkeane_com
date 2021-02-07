@@ -15,15 +15,13 @@
   <body>
     {{> header_contents}}
     <main>
-      <div class="container-fluid">
+      <div class="billet-grid">
         {{#articles}}
-          <div class="card" style="width: 30%; margin: auto auto auto auto; vertical-align: top; display: inline-block;">
-            <a class="" href="{{page_link}}">
-              <img class="card-img-top" src="{{img_src}}" alt="{{img_alt}}">
-            </a>
-            <div class="card-body">
+          <div class="billet inline centered">
+            <div class="billet-header">
               <a class="" href="{{page_link}}">
-                <h3 class="card-title">{{card_title}}</h3>
+                {{{img_src}}}
+                <h3 class="billet-title">{{card_title}}</h3>
               </a>
               <p>{{{card_desc}}}</p>
             </div>

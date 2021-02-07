@@ -1,0 +1,57 @@
+{{> page_head}}
+    <main>
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">projects</a></li>
+          <li class="breadcrumb-item"><a href="/">{{page_topic}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{page_name}}</li>
+        </ol>
+      </nav>
+      <div id="intro_container" class="container-fluid page_intro">
+        <div class="card mt-3 mb-3">
+          <h3 class="card-title">{{intro_title}}</h3>
+          <h4 class="card-subtitle">{{intro_subtitle}}</h4>
+          <div class="card-body">
+            {{{intro_content}}}
+          </div>
+          <a id="collapse-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
+          <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
+        </div>
+      </div>
+      <div class="containr-fluid mt-3">
+        <div class="article_body">
+          <h1>Table of Contents</h1>
+          <p style="text-align: center; font-style: italic; font-size: 0.75rem;">Click on Section Title to Expand Contents after Navigating with the Table of Contents Link</p>
+          <ul>
+            {{#toc}}
+              <li>
+                <a href="#{{article_id}}">{{article_title}}</a>
+                <ul>
+                  {{#subtitles}}
+                    <li><a href="#{{subtitle_id}}">{{subtitle_title}}</a></li>
+                  {{/subtitles}}
+                </ul>
+            {{/toc}}
+          </ul>
+        </div>
+      </div>
+      <div class="container-fluid mt-3">
+        {{#content}}
+          <div id="{{article_id}}" class="article_body">
+            <div class="card-header" id="id_header_{{article_id}}">
+              <h1>
+                <button class="btn btn-link" data-toggle="collapse" data-target="#id_collapse_{{article_id}}" aria-expanded="true" aria-controls="id_collapse_{{article_id}}">
+                  {{article_title}}
+                </button>
+              </h1>
+            </div>
+            <div id="id_collapse_{{article_id}}" class="mt-3 collapse hide" aria-labelledby="id_header_{{article_id}}" data-parent="#{{article_id}}">
+              {{{article}}}
+            </div>
+          </div>
+        {{/content}}
+      <a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-trigger="hover focus" data-placement="left" data-html="true">
+        {{{img_scroll_to_top}}}
+      </a>
+    </main>
+{{> page_foot}}

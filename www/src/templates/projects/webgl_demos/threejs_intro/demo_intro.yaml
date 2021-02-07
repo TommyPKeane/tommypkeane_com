@@ -1,0 +1,20 @@
+src_dir: ./src/templates/projects/webgl_demos/threejs_intro
+template: ./src/templates/projects/webgl_demos/threejs_intro/demo_intro.mustache
+page_topic: WebGL
+page_name: Three.js Introduction
+intro_title: "WebGL: Three.js Introduction"
+intro_subtitle: "a Tutorial for getting started with WebGL using Three.js"
+intro:
+  filename: demo_intro-00-intro.md
+  template_key: intro_content
+content:
+- article_id: PageSetup
+  filename: demo_intro-01-page-setup.md
+  article_title: Basic Page Setup
+  subtitles:
+    - subtitle_id: hScalableCanvas
+      subtitle_title: Scalable Canvas and DOM Elements
+  #   - subtitle_id: hPrivateMembers
+  #     subtitle_title: Private Members
+raw_content_key: null
+raw_content: null

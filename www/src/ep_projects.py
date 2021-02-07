@@ -1,10 +1,10 @@
 # @file
 # @brief Endpoints and Blueprint for Project Pages
-# 
+#
 # This module provides the Flask endpoints' Blueprint to support the site pages
 # for different research, hardware, and software projects that we want to share
 # and provide on our site.
-# 
+#
 # @author Tommy P. Keane
 # @email talk@tommypkeane.com
 # @copyright 2020, Tommy P. Keane
@@ -18,6 +18,7 @@ import flask;
 from . import (
    _base,
    _util,
+   _images,
    http_request,
 );
 
@@ -25,6 +26,9 @@ from . import (
 app_bp = flask.Blueprint("projects", __name__);
 
 projects_src_dir = pathlib.Path("./src/templates/projects/");
+
+author_name = "tommypkeane"
+author_name_display = "Tommy P. Keane"
 
 projects_css_lst = [
    { "cssname": "/js/libs/highlight/styles/default.css", "mode": _base.MODE_ANY, },
@@ -93,7 +97,10 @@ synth_js.append({"scriptname": "/js/synth.js",});
    css_lst= synth_css,
    js_lst= synth_js,
    title= "Synthesizer (www.tommypkeane.com)",
-   description= "An interactive online Synthesizer developed by Tommy P. Keane, using the Web Audio API.",
+   description= (
+      f"An interactive online Synthesizer developed by {author_name_display},"
+      " using the Web Audio API."
+   ),
    author= site_author,
 )
 def page_synth(theme_class):
@@ -110,7 +117,7 @@ def page_synth(theme_class):
       "skull_clsd": skull_clsd_svg,
    };
 
-   template_file = (projects_src_dir / "synth.mustache");
+   template_file = (projects_src_dir / "musics" / "synth.mustache");
 
    return (content_dct, template_file,);
 # fed
@@ -132,7 +139,10 @@ pinephone_js.append(
    css_lst= pinephone_css,
    js_lst= pinephone_js,
    title= "Pine64: PinePhone (www.tommypkeane.com)",
-   description= "Index page for articles written by Tommy P. Keane about using and developing-for the Pine64 PinePhone.",
+   description= (
+      f"Index page for articles written by {author_name_display}"
+      " about using and developing-for the Pine64 PinePhone."
+   ),
    author= site_author,
 )
 def page_pinephone(theme_class):
@@ -143,17 +153,20 @@ def page_pinephone(theme_class):
       "articles": [
          {
             "page_link": "/projects/hw/pinephone/hardware",
-            "img_src": "",
+            "img_src": _images.icon_data_dct["icon_raspberrypi"],
             "img_alt": "PinePhone Hardware",
             "card_title": "Hardware",
             "card_desc": "An article with details about the PinePhone hardware that we have access to.",
          },
          {
             "page_link": "/projects/hw/pinephone/os-manjaro-phosh",
-            "img_src": "",
+            "img_src": _images.icon_data_dct["icon_pinephone"],
             "img_alt": "Manjaro",
             "card_title": "OS: Manjaro (Phosh)",
-            "card_desc": "An article about setting-up and configuring the Phosh variant of Manjaro-ARM as the Operating System for the PinePhone.",
+            "card_desc": (
+               "An article about setting-up and configuring the Phosh variant of Manjaro-ARM"
+               " as the Operating System for the PinePhone."
+            ),
          },
       ],
    };
@@ -170,7 +183,10 @@ def page_pinephone(theme_class):
    css_lst= pinephone_css,
    js_lst= pinephone_js,
    title= "Pine64: PinePhone (www.tommypkeane.com)",
-   description= "Article written by Tommy P. Keane, detailing the Hardware configuration and features of the Pine64 PinePhone.",
+   description= (
+      f"Article written by {author_name_display},"
+      " detailing the Hardware configuration and features of the Pine64 PinePhone."
+   ),
    author= site_author,
 )
 def page_pinephone_hardware(theme_class):
@@ -205,7 +221,11 @@ def page_pinephone_hardware(theme_class):
    css_lst= pinephone_css,
    js_lst= pinephone_js,
    title= "PinePhone: Manjaro Phosh (www.tommypkeane.com)",
-   description= "Article written by Tommy P. Keane, detailing the Hardware configuration and features of the Pine64 PinePhone running the Majaro ARM Phosh Linux-variant.",
+   description= (
+      f"Article written by {author_name_display},"
+      " detailing the Hardware configuration and features of"
+      " the Pine64 PinePhone running the Majaro ARM Phosh Linux-variant."
+   ),
    author= site_author,
 )
 def page_pinephone_os_manjaro_phosh(theme_class):
@@ -229,6 +249,72 @@ def page_pinephone_os_manjaro_phosh(theme_class):
    };
 
    template_file = (projects_src_dir / "pinephone" / "base.mustache");
+
+   return (content_dct, template_file,);
+# fed
+
+
+
+webgl_css = [
+   { "cssname": "/js/libs/highlight/styles/default.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/highlight-dark.css", "mode": _base.MODE_DARK, },
+   { "cssname": "/css/highlight-lite.css", "mode": _base.MODE_LITE, },
+   { "cssname": "/css/highlight.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/projects.css", "mode": _base.MODE_ANY, },
+   { "cssname": "/css/webgl.css", "mode": _base.MODE_ANY, },
+   # { "cssname": "/css/projects-lite.css", "mode": _base.MODE_LITE, },
+   # { "cssname": "/css/projects-dark.css", "mode": _base.MODE_DARK, },
+];
+
+webgl_js = [
+   {"scriptname": "/js/libs/threejs/three.min.js"},
+   {"scriptname": "/js/libs/threejs/js/loaders/GLTFLoader.js"},
+];
+
+
+@app_bp.route("/projects/webgl/threejs/intro", methods=["GET",],)
+@app_bp.route("/projects/webgl/threejs/intro.html", methods=["GET",],)
+@app_bp.route("/projects/webgl/threejs/intro.htm", methods=["GET",],)
+@http_request.html_response(
+   css_lst= webgl_css,
+   js_lst= webgl_js + [
+      {"module": "/js/threejs-demo-intro.js"},
+   ],
+   title= "WebGL: ThreeJS Intro (www.tommypkeane.com)",
+   description= (
+      f"Example Demo with Three.js written by {author_name_display},"
+      " to show how to setup and use WebGL interactively in a webpage."
+   ),
+   author= site_author,
+)
+def page_webgl_demos_threejs_intro(theme_class):
+   """Provide the Settings (Customisation) Page.
+   """
+
+   yaml_content, template_file = http_request.parse_content_config(
+      projects_src_dir / "webgl_demos" / "threejs_intro" / "demo_intro.yaml"
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
+
+   # content_file = (projects_src_dir / "webgl_demos" / "threejs_intro" / "demo_intro.md")
+
+   # parser_obj = commonmark.Parser();
+   # html_renderer = commonmark.HtmlRenderer();
+   # ast_obj = None;
+
+   # with open(content_file, "r") as file_obj:
+   #    ast_obj = parser_obj.parse(
+   #       file_obj.read(),
+   #    );
+   # # htiw
+
+   # content_dct = {
+   #    "main_contents": html_renderer.render(ast_obj),
+   # };
+
+   # template_file = (projects_src_dir / "webgl_demos" / "threejs_intro" / "demo_intro.mustache");
 
    return (content_dct, template_file,);
 # fed
