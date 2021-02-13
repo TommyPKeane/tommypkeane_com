@@ -16,6 +16,9 @@
   margin-right: auto;
 }
 
+.collapsable {
+}
+
 .billet {
   color: inherit;
   display: block;
@@ -35,6 +38,11 @@
   border-bottom-left-radius: 0.75rem;
   border-top-left-radius: 0.75rem;
   line-height: 1.75;
+}
+
+.intro {
+  width: 65vw;
+  text-align: center;
 }
 
 .billet-header {
@@ -110,6 +118,126 @@
   cursor: pointer;
 }
 
+.bouton {
+  border-radius: 0.25rem 0.25rem 0.25rem 0.25rem;
+}
+
+.bouton:hover {
+  background-color: var(--colour-button-bg);
+  box-shadow: 0.25rem 0.25rem var(--colour-button-shdw);
+}
+
+.fill {
+  width: 100%;
+  display: block;
+}
+
+.article {
+  color: inherit;
+  display: block;
+  position: relative;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 0.75rem;
+  box-shadow: -3px 3px 7px currentColor;
+  text-align: center;
+  border-top-right-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  line-height: 1.75;
+}
+
+.article-header {
+  font-family: "Righteous", sans-serif;
+}
+
+.article-body {
+  display: block;
+  font-size: 1.25rem;
+  width: auto;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  text-align: justify;
+  font-family: "KumbhSans", sans-serif;
+  background-color: var(--colour-text-bg);
+  color: var(--colour-text);
+}
+
+.floaty {
+  z-index: 100000;
+  display: none;
+  position: fixed;
+  top: 0vw;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--colour-grey-transparent);
+}
+
+.floaty-content {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 40vw;
+  height: 60vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transform: translate3d(-20vw, -30vh, 0px);
+  margin-top: auto;
+  margin-left: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+  font-family: "KumbhSans", sans-serif;
+  background-color: var(--colour-text-bg);
+  box-shadow: 0rem 1rem 2rem var(--colour-tooltip-bg-shdw);
+  border-radius: 3rem 3rem 3rem 3rem;
+  color: var(--colour-text);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.floaty-header {
+  width: 90%;
+  margin-top: 1.15rem;
+  margin-left: 1.15rem;
+  margin-bottom: 1.15rem;
+  margin-right: 1.15rem;
+}
+
+.floaty-title {
+  font-family: "Righteous", sans-serif;
+  font-size: 3rem;
+  margin: auto;
+  line-height: 1.0;
+}
+
+.floaty-body {
+  font-size: 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+  width: 85%;
+  height: 60%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-bottom: 1.15rem;
+  margin-right: auto;
+}
+
+.floaty-body p {
+  width: 100%;
+  display: block;
+  text-align: justify;
+  line-height: 1.45;
+}
+
 .aria_hover {
   display: none;
   visibility: hidden;
@@ -144,6 +272,12 @@
   color: var(--colour-tooltip-text-link);
 }
 
+.nota {
+  text-align: center;
+  font-style: italic;
+  font-size: 0.75rem;
+}
+
 hr {
   width: 60%;
   border-width: 0.25rem;
@@ -156,13 +290,6 @@ hr {
   border-color: var(--colour-text);
 }
 
-
-body > footer.pg_info {
-  position: relative;
-  background-color: transparent;
-  text-align: center;
-  display: block;
-}
 
 footer.pg_info {
   display: block;
@@ -191,22 +318,86 @@ footer.pg_info p tt {
   font-size: 120%;
 }
 
+body > footer.pg_info {
+  position: relative;
+  background-color: transparent;
+  text-align: center;
+  display: block;
+}
+
+footer .bouton {
+  display: block;
+  width: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
 @media (min-width: 0px)
 {
+  .comfy {
+    width: 95%;
+  }
+
+  .article {
+    width: 95%;
+  }
+
+  .floaty-content {
+    width: 90vw;
+    height: 70vh;
+    transform: translate3d(-45vw, -35vh, 0px);
+  }
 }
 
 @media (min-width: 576px)
 {
+  .comfy {
+    width: 85%;
+  }
+
+  .article {
+    width: 85%;
+  }
+
+  .floaty-content {
+    width: 80vw;
+    height: 70vh;
+    transform: translate3d(-40vw, -35vh, 0px);
+  }
 }
 
 @media (min-width: 768px)
 {
+  .comfy {
+    width: 65%;
+  }
+
+  .article {
+    width: 65%;
+  }
+
+  .floaty-content {
+    width: 60vw;
+    height: 70vh;
+    transform: translate3d(-30vw, -35vh, 0px);
+  }
 }
 
 @media (min-width: 992px)
 {
+  .floaty-content {
+    width: 40vw;
+    height: 70vh;
+    transform: translate3d(-20vw, -35vh, 0px);
+  }
 }
 
 @media (min-width: 1200px)
 {
+  .floaty-content {
+    width: 35vw;
+    height: 70vh;
+    transform: translate3d(-17.5vw, -35vh, 0px);
+  }
 }

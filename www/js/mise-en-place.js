@@ -1,6 +1,39 @@
-let pg_mouse_x = 0;
-let pg_mouse_y = 0;
-let mouse_pos_style = document.createElement("style");
+document.querySelectorAll(".popup-launch").forEach(
+   function hst_popup_launch_attach(elm) {
+      elm.addEventListener(
+         "mouseup",
+         function hst_popup_launch(event_obj) {
+            const dialog_elm = document.getElementById(elm.dataset.popupId); // data-popup-id
+            dialog_elm.style.display = "block";
+            dialog_elm.setAttribute("aria-hidden", false);
+            return;
+         },
+         false
+      );
+      return;
+   }
+);
+
+document.querySelectorAll(".floaty").forEach(
+   function hst_popup_close_attach(elm) {
+      elm.addEventListener(
+         "click",
+         function hst_popup_close(event_obj) {
+            if (event_obj.target.classList.contains("floaty")) {
+               elm.style.display = "none";
+               elm.setAttribute("aria-hidden", true);
+            }
+            return;
+         },
+         false
+      );
+      return;
+   }
+);
+
+var pg_mouse_x = 0;
+var pg_mouse_y = 0;
+var mouse_pos_style = document.createElement("style");
 mouse_pos_style.setAttribute("id", "hover_style")
 
 document.addEventListener(
@@ -16,7 +49,7 @@ document.addEventListener(
 document.querySelectorAll(".hoverable").forEach(
    function hst_hoverable_func(elm) {
       elm.addEventListener(
-         "click",
+         "mouseover",
          function hst_hoverable_click_func(event_obj) {
             let ref_id = elm.getAttribute("aria-describedby");
             let ref_obj = document.getElementById(ref_id);
@@ -34,7 +67,7 @@ document.querySelectorAll(".hoverable").forEach(
                   `.aria_hover#${ref_id} {\n`
                   + "display: block;\n"
                   + "visibility: visible;\n"
-                  + `top: ${pg_mouse_y - ref_obj.offsetHeight - 20}px;\n`
+                  + `top: ${pg_mouse_y - ref_obj.offsetHeight - 10}px;\n`
                   + `left:
                      ${(pg_mouse_x < (window.innerWidth / 2))
                      ? (pg_mouse_x - (ref_obj.offsetWidth / 4))
@@ -52,12 +85,11 @@ document.querySelectorAll(".hoverable").forEach(
 );
 
 document.addEventListener(
-   "click",
+   "mouseout",
    function hst_close_hovers_func(event_obj) {
       if (event_obj.target.className !== "hoverable") {
          let body_elm = document.getElementsByTagName("body")[0];
          let blocks_arr = body_elm.getElementsByTagName("style");
-         
          for (block of blocks_arr) {
             block.remove();
          }
@@ -66,3 +98,85 @@ document.addEventListener(
    },
    false
 );
+
+
+document.querySelectorAll(".collapser").mouseover(
+   function () {
+      document.querySelectorAll(".collapser").tooltip("show");
+      return;
+   }
+);
+
+document.querySelectorAll(".collapser").mouseout(
+   function () {
+      document.querySelectorAll(".collapser").tooltip("hide");
+      return;
+   }
+);
+
+// $(".collapser").click(
+//    function () {
+//       $(".collapser").tooltip("hide");
+//       $("#expand-intro").tooltip("hide");
+//       $("#expand-intro").toggle("display");
+//       $(".intro .billet-body").toggle("display");
+//       return false;
+//    }
+// );
+
+// $("#expand-intro").mouseover(
+//    function () {
+//       $("#expand-intro").tooltip("show");
+//       return;
+//    }
+// );
+
+// $("#expand-intro").mouseout(
+//    function () {
+//       $("#expand-intro").tooltip("hide");
+//       return;
+//    }
+// );
+
+// $("#expand-intro").click(
+//    function () {
+//       $(".collapser").tooltip("hide");
+//       $("#expand-intro").tooltip("hide");
+//       $(".collapser").toggle("display");
+//       $("#expand-intro").toggle("display");
+//       $(".intro .billet-body").toggle("display");
+//       return false;
+//    }
+// );
+
+// $(function () {
+//   $('[data-toggle="tooltip"]').tooltip()
+// })
+
+// $(document).ready(
+//    function hst_ready_func() {
+//       for (let elm of document.getElementsByClassName("spinner-border")) {
+//          elm.style.display = "none";
+//       }
+//       $(window).scroll(
+//          function hst_window_scroll_func() {
+//             if ($(this).scrollTop() > 300) {
+//                 $("#back-to-top").fadeIn();
+//             } else {
+//                 $("#back-to-top").fadeOut();
+//             }
+//          }
+//       );
+//       $("#back-to-top").click(
+//          function () {
+//             $("body,html").animate(
+//                {
+//                   "scrollTop": 0
+//                },
+//                400
+//             );
+//             return false;
+//          }
+//       );
+//    }
+// );
