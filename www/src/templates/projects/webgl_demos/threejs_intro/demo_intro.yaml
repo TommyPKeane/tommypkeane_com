@@ -1,5 +1,8 @@
 src_dir: ./src/templates/projects/webgl_demos/threejs_intro
 template: ./src/templates/projects/webgl_demos/threejs_intro/demo_intro.mustache
+bc_base_href: /projects/webgl/threejs
+bc_topic_href: /projects/webgl/threejs/intro
+page_bc_base: Projects
 page_topic: WebGL
 page_name: Three.js Introduction
 intro_title: "WebGL: Three.js Introduction"
