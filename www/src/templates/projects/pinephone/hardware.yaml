@@ -1,0 +1,19 @@
+src_dir: ./src/templates/projects/pinephone/
+template: ./src/templates/article.mustache
+bc_base_href: /projects/hw/pinephone
+bc_topic_href: /projects/hw/pinephone
+page_bc_base: Projects
+page_topic: Pinephone
+page_name: Hardware
+intro_title: Pinephone Hardware
+intro_subtitle: Notes and Details about the Pinephone Hardware
+intro:
+  filename: hardware-00-intro.md
+  template_key: intro_content
+content:
+- article_id: hwCPU
+  filename: hardware-00-cpu.md
+  article_title: CPU (with GPU)
+  subtitles: []
+raw_content_key: null
+raw_content: null

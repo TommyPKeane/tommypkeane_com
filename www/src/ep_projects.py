@@ -193,23 +193,30 @@ def page_pinephone_hardware(theme_class):
    """Provide the Settings (Customisation) Page.
    """
 
-   content_file = (projects_src_dir / "pinephone" / "hardware.md")
+   # content_file = (projects_src_dir / "pinephone" / "hardware.md")
 
-   parser_obj = commonmark.Parser();
-   html_renderer = commonmark.HtmlRenderer();
-   ast_obj = None;
+   # parser_obj = commonmark.Parser();
+   # html_renderer = commonmark.HtmlRenderer();
+   # ast_obj = None;
 
-   with open(content_file, "r") as file_obj:
-      ast_obj = parser_obj.parse(
-         file_obj.read(),
-      );
-   # htiw
+   # with open(content_file, "r") as file_obj:
+   #    ast_obj = parser_obj.parse(
+   #       file_obj.read(),
+   #    );
+   # # htiw
 
-   content_dct = {
-      "main_contents": html_renderer.render(ast_obj),
-   };
+   # content_dct = {
+   #    "main_contents": html_renderer.render(ast_obj),
+   # };
 
-   template_file = (projects_src_dir / "pinephone" / "base.mustache");
+   # template_file = (projects_src_dir / "pinephone" / "base.mustache");
+
+   yaml_content, template_file = http_request.parse_content_config(
+      projects_src_dir / "pinephone" / "hardware.yaml"
+   );
+
+   content_dct = dict();
+   content_dct.update(yaml_content);
 
    return (content_dct, template_file,);
 # fed
