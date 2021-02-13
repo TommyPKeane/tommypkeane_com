@@ -222,8 +222,11 @@ def parse_content_config(filename):
       yaml_config = yaml.safe_load(file_obj.read());
    # htiw
 
-   article_content_dct["page_topic"] = yaml_config["page_topic"];
-   article_content_dct["page_name"] = yaml_config["page_name"];
+   article_content_dct["bc_base_href"] = yaml_config.get("bc_base_href", "");
+   article_content_dct["bc_topic_href"] = yaml_config.get("bc_topic_href", "");
+   article_content_dct["page_bc_base"] = yaml_config.get("page_bc_base", "");
+   article_content_dct["page_topic"] = yaml_config.get("page_topic", "");
+   article_content_dct["page_name"] = yaml_config.get("page_name", "");
 
    intro_file = os.path.join(
       yaml_config["src_dir"],

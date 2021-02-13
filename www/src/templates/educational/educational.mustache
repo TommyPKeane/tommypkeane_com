@@ -1,22 +1,22 @@
 {{> page_head}}
     <main>
-      <div id="intro_container" class="container-fluid page_intro">
-        <div class="card mt-3 mb-3">
-          <h3 class="card-title">Educational Pages</h3>
-          <div class="card-body">
-            {{{intro_content}}}
-          </div>
-          <a id="collapse-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
-          <a id="expand-intro" href="#" class="btn btn-outline-success btn-lg" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
+      <div id="intro_container" class="collapsable billet intro">
+        <div class="billet-header">
+          <h3>Educational Pages</h3>
         </div>
+        <div class="billet-body">
+          {{{intro_content}}}
+        </div>
+        <a id="collapse-intro" href="#" class="bouton fill" role="button" title="Click to collapse." data-toggle="tooltip" data-placement="bottom">{{{img_intro_collapse}}}</a>
+        <a id="expand-intro" href="#" class="bouton fill" role="button" title="Click to expand." data-toggle="tooltip" data-placement="bottom">{{{img_intro_expand}}}</a>
       </div>
-      <div class="container-fluid">
+      <div class="">
         {{#educational_links}}
           <a class="educational_a" href="{{page_link}}">
-            <div class="card educational_link">
-              <img class="card-img-top" src="{{img_src}}" alt="{{img_alt}}">
-              <div class="card-body">
-                <h4 class="card-title">{{card_title}}</h4>
+            <div class="billet educational_link">
+              <img class="billet-img-top" src="{{img_src}}" alt="{{img_alt}}">
+              <div class="billet-body">
+                <h4 class="billet-title">{{card_title}}</h4>
                 <p>{{{card_desc}}}</p>
               </div>
             </div>
