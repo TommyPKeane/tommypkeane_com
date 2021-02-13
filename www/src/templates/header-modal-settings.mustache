@@ -1,61 +1,56 @@
-<div id="id_settings_overlay" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Site Settings and Cookies</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>For the <tt>www</tt> subdomain of <tt>tommypkeane.com</tt>, this site does <i>not</i> use cookies unless you have manually chosen to set them, by clicking the <b>Set Cookies</b> button below. In accordance with the EU's <a href="https://gdpr.eu/">GDPR</a>, you are providing manual consent for this site to store the cookies <i>within</i> your webbrowser and use them in HTTP requests, <i>only</i> if you click the <b>Set Cookies</b> button.</p>
-        <div class="billet">
-          <div class="billet-body">
-            <h5 class="billet-title">Site Theme</h5>
-            <div class="form-group">
-              <label for="id_theme_choice">Choose a Theme</label>
-              <select name="theme" id="id_theme_choice" class="form-control">
-                <option {{ck_theme_lightondark_selected}} value="light_on_dark">Dark Mode (Bright Text, Dark Backgrounds)</option>
-                <option {{ck_theme_darkonlight_selected}} value="dark_on_light">Lite Mode (Dark Text, Bright Backgrounds)</option>
-                <option {{ck_theme_vaporwave_selected}} value="vaporwave">Vaporwave Mode 🌩💜🏎</option>
-                <option {{ck_theme_seapunk_selected}} value="seapunk">Seapunk Mode 🐬🌊🐬</option>
-              </select>
-            </div>
+<div id="id_settings_overlay" class="floaty" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="floaty-content">
+    <div class="floaty-header">
+      <h5 class="floaty-title">Settings // Cookies</h5>
+    </div>
+    <div class="floaty-body">
+      <p>For the <tt>www</tt> subdomain of <tt>tommypkeane.com</tt>, this site does <i>not</i> use cookies unless you have manually chosen to set them, by clicking the <b>Set Cookies</b> button below. In accordance with the EU's <a href="https://gdpr.eu/">GDPR</a>, you are providing manual consent for this site to store the cookies <i>within</i> your webbrowser and use them in HTTP requests, <i>only</i> if you click the <b>Set Cookies</b> button.</p>
+      <div class="billet">
+        <div class="billet-body">
+          <h5 class="billet-title">Site Theme</h5>
+          <div class="form-group">
+            <label for="id_theme_choice">Choose a Theme</label>
+            <select name="theme" id="id_theme_choice" class="form-control">
+              <option {{ck_theme_lightondark_selected}} value="light_on_dark">Dark Mode (Bright Text, Dark Backgrounds)</option>
+              <option {{ck_theme_darkonlight_selected}} value="dark_on_light">Lite Mode (Dark Text, Bright Backgrounds)</option>
+              <option {{ck_theme_vaporwave_selected}} value="vaporwave">Vaporwave Mode 🌩💜🏎</option>
+              <option {{ck_theme_seapunk_selected}} value="seapunk">Seapunk Mode 🐬🌊🐬</option>
+            </select>
           </div>
         </div>
-        <p class="mt-3">If you no longer want cookies, and/or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button to have them removed immediately. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain. If the table below is empty, then you have not consented or set any cookies for this site.</p>
-        <h4>Current Cookies</h4>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Key (Name)</th>
-              <th scope="col">Value</th>
-              <th scope="col">Lifetime [sec]</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#cookies}}
-            <tr>
-              <th scope="row">{{index}}</th>
-              <td>{{key}}</td>
-              <td>{{value}}</td>
-              <td>{{lifetime}}</td>
-            </tr>
-            {{/cookies}}
-          </tbody>
-        </table>
       </div>
-      <div class="modal-footer">
-        <button id="id_button_set_cookies" type="button" class="btn btn-outline-success" onclick="cookie_submit();">
-          <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Set Cookies
-        </button>
-        <button id="id_button_erase_cookies" type="button" class="btn btn-outline-danger" onclick="cookie_erase();">
-          <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-          Erase Cookies
-        </button>
-      </div>
+      <p class="mt-3">If you no longer want cookies, and/or if you want to revoke your consent to storing cookies, you can click the <b>Erase Cookies</b> button to have them removed immediately. The erase button will only remove the cookies that have been set by this site, under the <tt>www</tt> subdomain. If the table below is empty, then you have not consented or set any cookies for this site.</p>
+      <h4>Current Cookies</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Key (Name)</th>
+            <th scope="col">Value</th>
+            <th scope="col">Lifetime [sec]</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#cookies}}
+          <tr>
+            <th scope="row">{{index}}</th>
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+            <td>{{lifetime}}</td>
+          </tr>
+          {{/cookies}}
+        </tbody>
+      </table>
+    </div>
+    <div class="floaty-footer">
+      <button id="id_button_set_cookies" type="button" class="btn btn-outline-success" onclick="cookie_submit();">
+        <span id="id_button_spin_set_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Set Cookies
+      </button>
+      <button id="id_button_erase_cookies" type="button" class="btn btn-outline-danger" onclick="cookie_erase();">
+        <span id="id_button_spin_erase_cookies" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Erase Cookies
+      </button>
     </div>
   </div>
 </div>

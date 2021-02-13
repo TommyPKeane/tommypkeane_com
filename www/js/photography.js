@@ -3,18 +3,17 @@ let getphoto = function hst_getphoto(url_str) {
    return;
 }
 
-$(document).ready(
-   function hst_ready_func() {
-      $('.carousel').carousel(
-         {
-            "interval": false,
-            "keyboard": true,
-            "wrap": true,
-            "touch": true
-         }
-      )
-      $(".carousel-item")[0].className += " active";
-
-      return;
-   }
-);
+// $(document).ready(
+//    function hst_ready_func() {
+//       $('.carousel').carousel(
+//          {
+//             "interval": false,
+//             "keyboard": true,
+//             "wrap": true,
+//             "touch": true
+//          }
+//       )
+//       document.querySelectorAll(".carousel-item")[0].className += " active";
+//       return;
+//    }
+// );

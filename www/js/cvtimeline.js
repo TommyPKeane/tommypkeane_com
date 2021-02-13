@@ -74,7 +74,7 @@ let drag_factor = 2;
 $(document).mousemove(
    function(e) {
       $mouseX = e.pageX;
-      $mouseY = e.pageY;    
+      $mouseY = e.pageY;
    }
 );
 
