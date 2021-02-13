@@ -1,3 +1,48 @@
+:root {
+  --colour-white: #FFFFFF;
+  --colour-gray: #7F7F7F;
+  --colour-gray-transparent: #78787878;
+  --colour-black: #000000;
+  --svg-dark-bg-colour: #4F1784;
+  --svg-dark-shadow-colour: #000000;
+  --svg-light-bg-colour: #F1FFF1;
+  --svg-light-shadow-colour: #000000;
+
+  --lightmode-colour-green-dark: #274532;
+  --lightmode-colour-green-lite: #91B378;
+  --lightmode-colour-green-lite-alt: #A1C398;
+  --lightmode-colour-green-lite-alt-alt: #B1D3B8;
+  --lightmode-colour-green-rich: #69B884;
+  --lightmode-colour-yellow-pale: #F5F4B0;
+  --lightmode-colour-yellow-pale-alt: #FEFED0;
+  --lightmode-colour-blue-lite: #8BE9FD;
+  --lightmode-colour-teal-dark: #2BAEAC;
+  --lightmode-colour-teal: #3BCECC;
+  --lightmode-colour-pink: #FF79C6;
+  --lightmode-colour-pink-lite: #FFA9D6;
+  --lightmode-colour-pink-dark: #FF39A6;
+  --lightmode-colour-brown: #A6511C;
+  --lightmode-colour-brown-lite: #FA9966;
+  --lightmode-colour-brown-lite-alt: #FAC966;
+  --lightmode-colour-brown-lite-alt-alt: #FCD986;
+
+  --main-footer-bg-colour: #FFA9D6;
+  --main-footer-txt-colour: #2B5E7C;
+  --main-footer-shdw-colour: #000000;
+  --colour-text-bg: #F5F4B0;
+  --colour-text-bg-pale: #B1D3B8;
+  --colour-text-bg-shdw: #91B378;
+  --colour-text: #274532;
+
+  --colour-tooltip-text: #000000;
+  --colour-tooltip-text-link: #FEFED0;
+  --colour-tooltip-text-link-shdw: #FF39A6;
+  --colour-tooltip-bg: #FFA9D6;
+  --colour-tooltip-bg-shdw: #4F1784;
+
+  --colour-button-bg: #FFA9D6;
+}
+
 html {
   background-image: url("/img/plants_pineapple_00_plain.svg");
   color: var(--lightmode-colour-green-dark);
