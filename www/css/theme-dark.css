@@ -41,6 +41,8 @@
   --colour-tooltip-bg-shdw: #4F1784;
 
   --colour-button-bg: #FFA9D6;
+
+  --colour-error-svg-bg: #000000;
 }
 
 html {

@@ -27,8 +27,3 @@ table.hljs-ln tbody > tr:nth-child(1n),
 table.hljs-ln tbody > tr:nth-child(2n) {
     background-color: transparent !important;
 }
-
-pre {
-    margin-left: -15%;
-    width: 130%;
-}

@@ -17,40 +17,40 @@ div.educational_link img.billet-img-top {
   margin-bottom: 1vw;
 }
 
-div.educational_link {
+.educational_link {
   margin-left: auto;
   margin-right: auto;
 }
 
-a.educational_a {
+.educational_a {
   vertical-align: top;
   display: inline-block;
 }
 
-a.educational_a {
+.educational_a {
   text-decoration: none;
 }
 
-a.educational_a:hover {
+.educational_a:hover {
   text-decoration: none;
   font-style:
 }
 
-div.educational_link h4 {
+.educational_link h4 {
   font-size: 0.90rem;
 }
 
-div.educational_link p {
+.educational_link p {
   font-size: 0.60rem;
 }
 
 
-div.article_body {
+.article_body {
   margin-left: auto;
   margin-right: auto;
 }
 
-div.article_body p {
+.article_body p {
   color: var(--lightmode-colour-green-dark);
   line-height: 1.75;
 }

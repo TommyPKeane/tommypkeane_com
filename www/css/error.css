@@ -7,3 +7,6 @@ div#id_404_svg_container svg {
   height: 100%;
 }
 
+div#id_404_svg_container svg #id_rect_bg {
+  fill: var(--colour-error-svg-bg);
+}

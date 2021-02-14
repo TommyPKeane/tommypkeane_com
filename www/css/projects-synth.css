@@ -158,3 +158,57 @@ canvas#freq_spectrum {
     inset -1px 1px 10px currentColor;
 }
 */
+
+#display canvas {
+  background-color: var(--lightmode-colour-green-dark);
+}
+
+#keys svg rect.blackkey {
+  fill: var(--colour-black);
+}
+
+#keys svg rect.whitekey {
+  fill: var(--colour-white);
+}
+
+#keys svg rect.blackkey.hover,
+#keys svg rect.whitekey.hover,
+#keys svg rect.blackkey:hover,
+#keys svg rect.whitekey:hover {
+  fill: var(--lightmode-colour-pink-lite);
+  /*opacity: 85%;*/
+}
+
+#keys svg rect.blackkey.active,
+#keys svg rect.whitekey.active,
+#keys svg rect.blackkey:active,
+#keys svg rect.whitekey:active {
+  fill: var(--lightmode-colour-blue-lite);
+  /*opacity: 85%;*/
+}
+
+#keyinfo p.keybutton {
+  color: var(--lightmode-colour-green-dark);
+  text-shadow: 0.01rem 0.01rem 0.2rem var(--colour-white);
+}
+
+#note_display {
+  color: orange;
+  background-color: var(--lightmode-colour-green-dark);
+}
+
+canvas#synthwaveform {
+  color: var(--colour-black);
+  background-size: 1.25rem 1.25rem;
+  background-image: linear-gradient(to right, var(--colour-gray-transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--colour-gray-transparent) 1px, transparent 1px);
+}
+
+canvas#freq_spectrum {
+  color: var(--colour-black);
+  background-color: var(--lightmode-colour-green-dark);
+  border-color: var(--lightmode-colour-green-dark);
+  background-size: 1.25rem 1.25rem;
+  background-image: linear-gradient(to right, var(--colour-gray-transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--colour-gray-transparent) 1px, transparent 1px);
+}

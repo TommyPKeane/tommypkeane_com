@@ -43,6 +43,8 @@
   --colour-button-bg: #FFA9D6;
   --colour-button-shdw-in: #FFFFFF77;
   --colour-button-shdw: #27453277;
+
+  --colour-error-svg-bg: #FFFFFF;
 }
 
 html {
