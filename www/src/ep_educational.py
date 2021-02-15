@@ -39,6 +39,7 @@ educational_desc = (
 site_author = "Tommy P. Keane";
 
 
+@app_bp.route("/teaches", methods=["GET",],)
 @app_bp.route("/articles", methods=["GET",],)
 @app_bp.route("/educational", methods=["GET",],)
 @app_bp.route("/educational.html", methods=["GET",],)
