@@ -57,15 +57,6 @@ body header nav a.dropdown-item {
   color: var(--darkmode-colour-yellow-pale-pale);
 }
 
-nav .btn-outline-success {
-  color: var(--colour-white);
-  border-color: var(--colour-white);
-}
-
-nav .navbar-toggler {
-  color: var(--darkmode-colour-yellow-pale);
-}
-
 a {
   color: var(--darkmode-colour-yellow-pale);
   text-decoration: none;
@@ -74,38 +65,6 @@ a {
 
 a:hover {
   color: var(--darkmode-colour-green-pale);
-}
-
-nav {
-  background-color: var(--darkmode-colour-red-dark) !important;
-}
-
-nav li.nav-item:hover {
-  background-color: var(--darkmode-colour-red-lite-alt);
-}
-
-nav a.dropdown-item.disabled {
-  color: var(--darkmode-colour-green-pale);
-}
-
-nav div.dropdown-menu {
-  background-color: var(--darkmode-colour-red-dark-dark);
-  box-shadow: -5px 5px 5px var(--colour-black);
-}
-
-nav div.dropdown-menu a:hover {
-  background-color: var(--darkmode-colour-red-lite-alt);
-}
-
-nav.bg-dark svg,
-nav a.dropdown-item svg {
-  color: var(--darkmode-colour-yellow-pale);
-  stroke: var(--darkmode-colour-yellow-pale);
-}
-
-nav div.dropdown-menu a.dropdown-item.disabled svg {
-  color: var(--darkmode-colour-green-pale);
-  stroke: var(--darkmode-colour-green-pale);
 }
 
 hr {

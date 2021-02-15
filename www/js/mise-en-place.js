@@ -100,6 +100,9 @@ document.addEventListener(
 );
 
 
+document.querySelector("#expand-intro").toggle("display");
+document.querySelector("#collapse-intro").fadeIn();
+
 document.querySelectorAll(".collapser").mouseover(
    function () {
       document.querySelectorAll(".collapser").tooltip("show");
@@ -114,69 +117,69 @@ document.querySelectorAll(".collapser").mouseout(
    }
 );
 
-// $(".collapser").click(
-//    function () {
-//       $(".collapser").tooltip("hide");
-//       $("#expand-intro").tooltip("hide");
-//       $("#expand-intro").toggle("display");
-//       $(".intro .billet-body").toggle("display");
-//       return false;
-//    }
-// );
+document.querySelector(".collapser").click(
+   function () {
+      document.querySelector(".collapser").tooltip("hide");
+      document.querySelector("#expand-intro").tooltip("hide");
+      document.querySelector("#expand-intro").toggle("display");
+      document.querySelector(".intro .billet-body").toggle("display");
+      return false;
+   }
+);
 
-// $("#expand-intro").mouseover(
-//    function () {
-//       $("#expand-intro").tooltip("show");
-//       return;
-//    }
-// );
+document.querySelector("#expand-intro").mouseover(
+   function () {
+      document.querySelector("#expand-intro").tooltip("show");
+      return;
+   }
+);
 
-// $("#expand-intro").mouseout(
-//    function () {
-//       $("#expand-intro").tooltip("hide");
-//       return;
-//    }
-// );
+document.querySelector("#expand-intro").mouseout(
+   function () {
+      document.querySelector("#expand-intro").tooltip("hide");
+      return;
+   }
+);
 
-// $("#expand-intro").click(
-//    function () {
-//       $(".collapser").tooltip("hide");
-//       $("#expand-intro").tooltip("hide");
-//       $(".collapser").toggle("display");
-//       $("#expand-intro").toggle("display");
-//       $(".intro .billet-body").toggle("display");
-//       return false;
-//    }
-// );
+$("#expand-intro").click(
+   function () {
+      document.querySelector(".collapser").tooltip("hide");
+      document.querySelector("#expand-intro").tooltip("hide");
+      document.querySelector(".collapser").toggle("display");
+      document.querySelector("#expand-intro").toggle("display");
+      document.querySelector(".intro .billet-body").toggle("display");
+      return false;
+   }
+);
 
-// $(function () {
-//   $('[data-toggle="tooltip"]').tooltip()
-// })
+document.querySelector(function () {
+  document.querySelector('[data-toggle="tooltip"]').tooltip()
+})
 
-// $(document).ready(
-//    function hst_ready_func() {
-//       for (let elm of document.getElementsByClassName("spinner-border")) {
-//          elm.style.display = "none";
-//       }
-//       $(window).scroll(
-//          function hst_window_scroll_func() {
-//             if ($(this).scrollTop() > 300) {
-//                 $("#back-to-top").fadeIn();
-//             } else {
-//                 $("#back-to-top").fadeOut();
-//             }
-//          }
-//       );
-//       $("#back-to-top").click(
-//          function () {
-//             $("body,html").animate(
-//                {
-//                   "scrollTop": 0
-//                },
-//                400
-//             );
-//             return false;
-//          }
-//       );
-//    }
-// );
+$(document).ready(
+   function hst_ready_func() {
+      for (let elm of document.getElementsByClassName("spinner-border")) {
+         elm.style.display = "none";
+      }
+      window.scroll(
+         function hst_window_scroll_func() {
+            if (this.scrollTop() > 300) {
+                document.querySelector("#back-to-top").fadeIn();
+            } else {
+                document.querySelector("#back-to-top").fadeOut();
+            }
+         }
+      );
+      document.querySelector("#back-to-top").click(
+         function () {
+            document.querySelector("body,html").animate(
+               {
+                  "scrollTop": 0
+               },
+               400
+            );
+            return false;
+         }
+      );
+   }
+);

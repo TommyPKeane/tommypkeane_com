@@ -3,10 +3,16 @@
   --colour-gray: #7F7F7F;
   --colour-gray-transparent: #78787878;
   --colour-black: #000000;
+
   --svg-dark-bg-colour: #4F1784;
   --svg-dark-shadow-colour: #000000;
   --svg-light-bg-colour: #F1FFF1;
   --svg-light-shadow-colour: #000000;
+
+  --colour-nav-text: #274532;
+  --colour-nav-bg: transparent;
+  --colour-nav-link-text: #274532;
+  --colour-nav-link-bg: #F5F4B0;
 
   --lightmode-colour-green-dark: #274532;
   --lightmode-colour-green-lite: #91B378;
@@ -50,53 +56,6 @@
 html {
   background-image: url("/img/plants_pineapple_01_plain.svg");
   color: var(--lightmode-colour-green-dark);
-}
-
-nav,
-nav li.nav-item a.nav-link,
-nav div.dropdown-menu,
-nav a.dropdown-item {
-  color: var(--lightmode-colour-green-dark);
-}
-
-nav .btn-outline-success {
-  color: var(--colour-white);
-  border-color: var(--colour-white);
-}
-
-nav .navbar-toggler {
-  color: var(--lightmode-colour-green-dark);
-}
-
-nav a.dropdown-item.disabled {
-  color: var(--lightmode-colour-green-lite);
-}
-
-nav div.dropdown-menu {
-  background-color: var(--lightmode-colour-yellow-pale);
-}
-
-nav svg,
-nav a.dropdown-item svg {
-  color: var(--lightmode-colour-green-dark);
-  stroke: var(--lightmode-colour-green-dark);
-}
-
-nav div.dropdown-menu a.dropdown-item.disabled svg {
-  color: var(--lightmode-colour-green-lite);
-  stroke: var(--lightmode-colour-green-lite);
-}
-
-nav {
-  background-color: var(--lightmode-colour-yellow-pale) !important;
-}
-
-nav li.nav-item:hover {
-  background-color: var(--lightmode-colour-green-lite-alt);
-}
-
-nav div.dropdown-menu a:hover {
-  background-color: var(--lightmode-colour-green-lite-alt);
 }
 
 select,

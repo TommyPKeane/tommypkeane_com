@@ -40,5 +40,4 @@ BASE_SCRIPTS = [
    { "scriptname": "/js/libs/d3/d3.min.js", },
    { "scriptname": "/js/mise-en-place.js", },
    { "scriptname": "/js/cookie.js", },
-   # { "scriptname": "/js/index.js", },
 ];

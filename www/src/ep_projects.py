@@ -72,7 +72,31 @@ def page_projects(theme_class):
    """Provide the Settings (Customisation) Page.
    """
 
-   return (None);
+   content_dct = {
+      "articles": [
+         {
+            "page_link": "/projects/hw/pinephone/hardware",
+            "img_src": _images.icon_data_dct["icon_raspberrypi"],
+            "img_alt": "PinePhone Hardware",
+            "card_title": "Hardware",
+            "card_desc": "An article with details about the PinePhone hardware that we have access to.",
+         },
+         {
+            "page_link": "/projects/hw/pinephone/os-manjaro-phosh",
+            "img_src": _images.icon_data_dct["icon_pinephone"],
+            "img_alt": "Manjaro",
+            "card_title": "OS: Manjaro (Phosh)",
+            "card_desc": (
+               "An article about setting-up and configuring the Phosh variant of Manjaro-ARM"
+               " as the Operating System for the PinePhone."
+            ),
+         },
+      ],
+   };
+
+   template_file = (projects_src_dir / "pinephone" / "index.mustache");
+
+   return (content_dct, template_file,);
 # fed
 
 
@@ -193,24 +217,6 @@ def page_pinephone_hardware(theme_class):
    """Provide the Settings (Customisation) Page.
    """
 
-   # content_file = (projects_src_dir / "pinephone" / "hardware.md")
-
-   # parser_obj = commonmark.Parser();
-   # html_renderer = commonmark.HtmlRenderer();
-   # ast_obj = None;
-
-   # with open(content_file, "r") as file_obj:
-   #    ast_obj = parser_obj.parse(
-   #       file_obj.read(),
-   #    );
-   # # htiw
-
-   # content_dct = {
-   #    "main_contents": html_renderer.render(ast_obj),
-   # };
-
-   # template_file = (projects_src_dir / "pinephone" / "base.mustache");
-
    yaml_content, template_file = http_request.parse_content_config(
       projects_src_dir / "pinephone" / "hardware.yaml"
    );
@@ -239,23 +245,12 @@ def page_pinephone_os_manjaro_phosh(theme_class):
    """Provide the Settings (Customisation) Page.
    """
 
-   content_file = (projects_src_dir / "pinephone" / "manjaro-arm-phosh-alpha2.md")
+   yaml_content, template_file = http_request.parse_content_config(
+      projects_src_dir / "pinephone" / "manjaro-arm.yaml"
+   );
 
-   parser_obj = commonmark.Parser();
-   html_renderer = commonmark.HtmlRenderer();
-   ast_obj = None;
-
-   with open(content_file, "r") as file_obj:
-      ast_obj = parser_obj.parse(
-         file_obj.read(),
-      );
-   # htiw
-
-   content_dct = {
-      "main_contents": html_renderer.render(ast_obj),
-   };
-
-   template_file = (projects_src_dir / "pinephone" / "base.mustache");
+   content_dct = dict();
+   content_dct.update(yaml_content);
 
    return (content_dct, template_file,);
 # fed

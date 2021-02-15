@@ -58,11 +58,49 @@ def generate_html_common(
       "header_contents": _util.get_file_contents_str("./src/templates/header_contents.mustache"),
       "header_modal_help": _util.get_file_contents_str("./src/templates/header-modal-help.mustache"),
       "header_modal_settings": _util.get_file_contents_str("./src/templates/header-modal-settings.mustache"),
+      "header_nav_main": _util.get_file_contents_str("./src/templates/header-nav-main.mustache"),
       "footer_contents": _util.get_file_contents_str("./src/templates/footer_contents.mustache"),
    };
 
    data_dct.update(
       {
+         "nav_links": [
+            {
+               "target": "/",
+               "icon": _images.icon_data_dct.get("icon_home", ""),
+               "title": "tommypkeane.com",
+            },
+            {
+               "target": "/resume",
+               "icon": _images.icon_data_dct.get("icon_cv_resume", ""),
+               "title": "professionalism",
+            },
+            {
+               "target": "https://www.github.com/tommypkeane",
+               "icon": _images.icon_data_dct.get("icon_github", ""),
+               "title": "polyglotism",
+            },
+            {
+               "target": "/projects",
+               "icon": _images.icon_data_dct.get("icon_raspberrypi", ""),
+               "title": "empiricism",
+            },
+            {
+               "target": "/artsycrafts",
+               "icon": _images.icon_data_dct.get("icon_photography", ""),
+               "title": "aestheticism",
+            },
+            {
+               "target": "/teaches",
+               "icon": _images.icon_data_dct.get("icon_books", ""),
+               "title": "gnosticism",
+            },
+            {
+               "target": "/about",
+               "icon": _images.icon_data_dct.get("icon_contact", ""),
+               "title": "solipsism",
+            },
+         ],
          "ep_last_modified_date": datetime.datetime.fromtimestamp(
                os.path.getmtime(source_file),
                datetime.timezone.utc,
@@ -93,7 +131,7 @@ def html_response(
    author,
    partials_dct= None,
 ):
-
+   """Wrapper function to use for HTML Response from Endpoints."""
    def argumentless_wrapper(func,):
 
       def inner_call(*args, **kwargs):

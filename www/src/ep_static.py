@@ -30,7 +30,6 @@ def get_static_js(path):
 # fed
 
 
-
 @app_bp.route("/css/<path:path>", methods=["GET",])
 def get_static_css(path):
    """Provide the static CSS files when requested.

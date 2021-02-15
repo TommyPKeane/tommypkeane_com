@@ -50,52 +50,9 @@ body > header nav {
 }
 
 body > main nav.breadcrumbs {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
   font-family: "Righteous", sans-serif;
 }
 
-nav ol.breadcrumb {
-  display: block;
-  background-color: transparent;
-  text-align: center;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-nav ol.breadcrumb li {
-  font-size: 1.5rem;
-  display: inline-block;
-  background-color: transparent;
-  min-width: 0vw;
-  width: auto;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.breadcrumb-item+.breadcrumb-item::before {
-  content: ">>";
-}
-
-nav li.nav-item,
-nav li.nav-item a.nav-link {
-  vertical-align: top;
-}
-
-.dropdown-item svg {
-  width: 40px;
-  height: 40px;
-}
-
-.dropdown-toggle::after {
-  content: "";
-  border-top: none;
-  border-right: none;
-  border-left: none;
-}
 
 body div.modal-body img {
   max-width: 95%;
@@ -119,23 +76,10 @@ body > footer {
   display: block;
 }
 
-div.dropdown-menu {
-}
-
 .back-to-top {
   cursor: pointer;
   position: fixed;
   display: none;
-}
-
-body > header nav svg,
-body > header nav a.dropdown-item svg {
-  vertical-align: middle;
-  margin-right: 0.25rem;
-}
-
-body > header nav div.dropdown-menu a.dropdown-item svg {
-  vertical-align: middle;
 }
 
 p.aside_par {

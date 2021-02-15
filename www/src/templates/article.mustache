@@ -1,5 +1,5 @@
 {{> page_head}}
-    <main class="padded-container">
+    <main class="simple-container">
       <nav class="breadcrumbs" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{bc_base_href}}">{{page_bc_base}}</a></li>
@@ -39,7 +39,7 @@
           </ul>
         </div>
       </div>
-      <div class="comfy">
+      <div class="simple-container">
         {{#content}}
           <div id="{{article_id}}" class="article">
             <div class="article-header" id="id_header_{{article_id}}">
@@ -49,7 +49,7 @@
                 </a>
               </h1>
             </div>
-            <div id="id_collapse_{{article_id}}" class="collapsable start_hidden article-body" aria-labelledby="id_header_{{article_id}}" data-parent="#{{article_id}}">
+            <div id="id_collapse_{{article_id}}" class="collapsable article-body" aria-labelledby="id_header_{{article_id}}" data-parent="#{{article_id}}">
               {{{article}}}
             </div>
           </div>

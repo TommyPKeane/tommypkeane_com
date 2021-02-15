@@ -1,0 +1,19 @@
+src_dir: ./src/templates/projects/pinephone/
+template: ./src/templates/article.mustache
+bc_base_href: /projects/hw/pinephone
+bc_topic_href: /projects/hw/pinephone
+page_bc_base: Projects
+page_topic: Pinephone
+page_name: Hardware
+intro_title: Manjaro ARM Phosh (v0.0.0a2)
+intro_subtitle: Tips and Tutorial(s) for Installing the Operating System
+intro:
+  filename: manjaro-arm-phosh-alpha2-00-intro.md
+  template_key: intro_content
+content:
+- article_id: hwOSManjaroPhosh
+  filename: manjaro-arm-phosh-alpha2-00-setup.md
+  article_title: Setup
+  subtitles: []
+raw_content_key: null
+raw_content: null
