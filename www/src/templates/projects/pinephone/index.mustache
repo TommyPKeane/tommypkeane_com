@@ -17,12 +17,14 @@
     <main>
       <div class="billet-grid">
         {{#articles}}
-          <div class="billet inline centered">
+          <div class="billet inline centered narrow">
             <div class="billet-header">
               <a class="" href="{{page_link}}">
                 {{{img_src}}}
                 <h3 class="billet-title">{{card_title}}</h3>
               </a>
+            </div>
+            <div class="billet-body">
               <p>{{{card_desc}}}</p>
             </div>
           </div>

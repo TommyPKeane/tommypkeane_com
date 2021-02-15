@@ -91,6 +91,15 @@ def page_projects(theme_class):
                " as the Operating System for the PinePhone."
             ),
          },
+         {
+            "page_link": "/projects/webgl/threejs/intro",
+            "img_src": _images.icon_data_dct["icon_photography"],
+            "img_alt": "WebGL",
+            "card_title": "Three.js: Introduction",
+            "card_desc": (
+               "A basic example of WebGL with a 3D object created in Blender, animating on a loop."
+            ),
+         },
       ],
    };
 
